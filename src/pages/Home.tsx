@@ -9,6 +9,7 @@ const Home = () => {
 
   return (
     <div className="pt-0">
+      {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
           initial={{ scale: 1.1 }}
@@ -24,6 +25,26 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
+
+        {/* Decorative Floating Elements */}
+        <div className="absolute inset-0 z-5 pointer-events-none">
+          <motion.div 
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 left-10 w-32 h-32 bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 hidden lg:block"
+          />
+          <motion.div 
+            animate={{ 
+              y: [0, 20, 0],
+              rotate: [0, -5, 0]
+            }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-1/4 right-10 w-40 h-40 bg-brand-olive/10 backdrop-blur-md rounded-full border border-white/10 hidden lg:block"
+          />
+        </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
           <motion.span 
@@ -56,9 +77,23 @@ const Home = () => {
             </Link>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:block"
+        >
+          <div className="w-[1px] h-20 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
+        </motion.div>
       </section>
 
-      <section className="py-32 px-6 bg-white">
+      {/* Featured Tours */}
+      <section className="py-32 px-6 bg-white relative overflow-hidden">
+        {/* Background Accent */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-stone-50 -z-10 skew-x-12 translate-x-1/2" />
+        
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
             <motion.div 
@@ -121,8 +156,83 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-32 px-6 bg-stone-50 overflow-hidden">
+      {/* Bento Grid - Discover the Region */}
+      <section className="py-32 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block"
+            >
+              Descubra a Região
+            </motion.span>
+            <h2 className="text-5xl md:text-6xl font-serif">Belezas Naturais</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px] md:h-[600px]">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="md:col-span-2 md:row-span-2 relative rounded-[2.5rem] overflow-hidden group"
+            >
+              <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800" alt="Cachoeiras" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10">
+                <h4 className="text-white text-3xl font-serif mb-2">Cachoeiras</h4>
+                <p className="text-white/70 text-sm">Quedas d'água majestosas e banhos revigorantes.</p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="md:col-span-2 relative rounded-[2.5rem] overflow-hidden group"
+            >
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Grutas" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+                <h4 className="text-white text-2xl font-serif mb-1">Grutas & Cavernas</h4>
+                <p className="text-white/70 text-xs">Formações milenares e águas cristalinas subterrâneas.</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative rounded-[2.5rem] overflow-hidden group"
+            >
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" alt="Trekking" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                <h4 className="text-white text-xl font-serif mb-1">Trekking</h4>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="relative rounded-[2.5rem] overflow-hidden group"
+            >
+              <img src="https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800" alt="Mirantes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                <h4 className="text-white text-xl font-serif mb-1">Mirantes</h4>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Tours */}
+      <section className="py-32 px-6 bg-stone-50 overflow-hidden relative">
+        {/* Decorative Blob */}
+        <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-olive/5 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <motion.span 
               initial={{ opacity: 0 }}
@@ -176,8 +286,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-brand-olive text-white px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
+      {/* Stats */}
+      <section className="py-24 bg-brand-olive text-white px-6 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16 text-center relative z-10">
           {[
             { label: "Anos de Experiência", value: "15+" },
             { label: "Roteiros Únicos", value: "50+" },
@@ -198,8 +313,46 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-32 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      {/* Parallax Quote */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <motion.div 
+          initial={{ y: -50 }}
+          whileInView={{ y: 50 }}
+          transition={{ ease: "linear" }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" 
+            alt="Nature Quote" 
+            className="w-full h-[120%] object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </motion.div>
+        
+        <div className="relative z-10 text-center text-white px-6 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span className="text-4xl md:text-6xl font-serif italic font-light leading-tight block mb-8">
+              "A natureza não tem pressa, <br /> e ainda assim tudo é realizado."
+            </span>
+            <div className="w-12 h-[1px] bg-white/50 mx-auto mb-4" />
+            <span className="uppercase tracking-[0.3em] text-xs font-bold opacity-70">Lao Tzu</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-32 px-6 bg-white overflow-hidden relative">
+        {/* Background Accents */}
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-cream/20 rounded-full blur-3xl -translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-olive/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <motion.span 
               initial={{ opacity: 0 }}
@@ -237,7 +390,7 @@ const Home = () => {
                 transition={{ delay: i * 0.2 }}
                 className="text-center group"
               >
-                <div className="text-5xl mb-8 bg-brand-cream/30 w-24 h-24 flex items-center justify-center rounded-full mx-auto group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
+                <div className="text-5xl mb-8 bg-brand-cream/30 w-24 h-24 flex items-center justify-center rounded-full mx-auto group-hover:scale-110 transition-transform duration-500 shadow-inner">{item.icon}</div>
                 <h4 className="text-2xl font-serif mb-5">{item.title}</h4>
                 <p className="text-stone-500 leading-relaxed text-lg">{item.desc}</p>
               </motion.div>
