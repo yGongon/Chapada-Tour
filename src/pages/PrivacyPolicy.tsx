@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
   return (
     <div className="pt-24 md:pt-40 pb-16 md:pb-24">
+      <SEO 
+        title="Política de Privacidade - Chapada Tour"
+        description="Saiba como a Chapada Tour coleta, utiliza e protege seus dados pessoais em nossa Política de Privacidade."
+      />
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

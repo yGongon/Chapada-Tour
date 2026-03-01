@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Star, MapPin, Coffee, Wifi, Waves, Wind } from 'lucide-react';
 import { accommodations } from '../data/accommodations';
+import SEO from '../components/SEO';
 
 const iconMap: { [key: string]: React.ReactNode } = {
   "Wi-Fi Grátis": <Wifi size={14} />,
@@ -14,6 +15,10 @@ const iconMap: { [key: string]: React.ReactNode } = {
 const Accommodations = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
+      <SEO 
+        title="Hospedagens - Chapada Tour"
+        description="Confira nossa seleção das melhores pousadas e hotéis na Chapada Diamantina. Garantimos o seu descanso após um dia de aventuras."
+      />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 md:mb-20">
           <motion.span 

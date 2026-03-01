@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Users, Clock, Star, Search, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
+import SEO from '../components/SEO';
 
 const Tours = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,6 +17,10 @@ const Tours = () => {
 
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
+      <SEO 
+        title="Nossos Passeios - Chapada Diamantina"
+        description="Confira todos os nossos roteiros na Chapada Diamantina. Oferecemos passeios para todos os gostos, desde trilhas leves até trekkings desafiadores."
+      />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
           <span className="text-brand-olive font-bold uppercase tracking-widest text-sm mb-4 block">Nossas Aventuras</span>

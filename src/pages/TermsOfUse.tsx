@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 const TermsOfUse = () => {
   return (
     <div className="pt-24 md:pt-40 pb-16 md:pb-24">
+      <SEO 
+        title="Termos de Uso - Chapada Tour"
+        description="Leia os Termos de Uso da Chapada Tour para entender as condições de utilização do nosso site e serviços."
+      />
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Blog = () => {
   const posts = [
@@ -35,6 +36,10 @@ const Blog = () => {
 
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="Blog - Chapada Tour"
+        description="Dicas de viagem, guias de trilhas e as melhores histórias sobre a Chapada Diamantina em nosso blog oficial."
+      />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center max-w-3xl mx-auto">
           <span className="text-brand-olive font-bold uppercase tracking-widest text-sm mb-4 block">Diário de Bordo</span>

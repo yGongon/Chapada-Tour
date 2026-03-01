@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { tours } from '../data/tours';
+import SEO from '../components/SEO';
 
 const TourDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,6 +20,7 @@ const TourDetail = () => {
   if (!tour) {
     return (
       <div className="pt-40 pb-24 text-center">
+        <SEO title="Passeio não encontrado" />
         <h2 className="text-3xl font-serif mb-4">Passeio não encontrado</h2>
         <Link to="/passeios" className="text-brand-olive font-bold underline">Voltar para a lista</Link>
       </div>
@@ -73,6 +75,12 @@ const TourDetail = () => {
 
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
+      <SEO 
+        title={tour.title}
+        description={tour.desc}
+        image={tour.img}
+        url={`https://chapadatour.com.br/passeios/${tour.slug}`}
+      />
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center mb-6 md:mb-8">
           {/* Back Button */}

@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-import { ChevronRight, Star, Eye } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const featuredTours = tours.slice(0, 2);
@@ -9,6 +10,10 @@ const Home = () => {
 
   return (
     <div className="pt-0">
+      <SEO 
+        title="Chapada Tour - Agência de Turismo na Chapada Diamantina"
+        description="Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis em Lençóis e região."
+      />
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
@@ -259,16 +264,8 @@ const Home = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute top-5 right-5 bg-brand-olive text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-lg">
-                      <Star size={10} fill="currentColor" /> {tour.rating}
-                    </div>
                   </div>
                   <div className="p-10">
-                    <div className="flex items-center justify-between mb-5">
-                      <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5">
-                        <Eye size={14} /> {tour.views.toLocaleString()} visualizações
-                      </span>
-                    </div>
                     <h4 className="text-2xl font-serif mb-4 group-hover:text-brand-olive transition-colors">{tour.title}</h4>
                     <p className="text-stone-500 text-sm mb-8 line-clamp-2 leading-relaxed">{tour.desc}</p>
                     <div className="flex items-center justify-between pt-6 border-t border-stone-100">

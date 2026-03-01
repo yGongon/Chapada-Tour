@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Users, Shield, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const team = [
   { name: "Ricardo Mendes", role: "Fundador & Guia Sênior", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=500" },
@@ -24,6 +25,10 @@ const About = () => {
 
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
+      <SEO 
+        title="Sobre Nós - Chapada Tour"
+        description="Conheça a história da Chapada Tour, nossa missão, valores e a equipe apaixonada por explorar e preservar a Chapada Diamantina."
+      />
       <div className="max-w-7xl mx-auto px-6">
         {/* Intro */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center mb-20 md:mb-32">

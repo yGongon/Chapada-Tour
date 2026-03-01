@@ -11,11 +11,17 @@ const languages = [
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('pt');
+  const [currentLang, setCurrentLang] = useState(() => {
+    // Initialize from localStorage or cookie
+    const saved = localStorage.getItem('selected_language');
+    if (saved && languages.some(l => l.code === saved)) return saved;
+    return 'pt';
+  });
 
   const changeLanguage = (langCode: string) => {
     setIsOpen(false);
     setCurrentLang(langCode); // Instant UI feedback
+    localStorage.setItem('selected_language', langCode);
     
     // Small delay to allow menu to close before potentially reloading
     setTimeout(() => {
@@ -31,7 +37,6 @@ const LanguageSelector = () => {
       if (select) {
         select.value = langCode;
         select.dispatchEvent(new Event('change'));
-        setCurrentLang(langCode);
         
         // Sometimes a small delay and second trigger helps
         setTimeout(() => {
@@ -39,7 +44,6 @@ const LanguageSelector = () => {
         }, 100);
       } else {
         // If the widget isn't ready yet, the cookie + reload is the fallback
-        setCurrentLang(langCode);
         window.location.reload();
       }
     }, 300);
@@ -62,6 +66,7 @@ const LanguageSelector = () => {
           const lang = decoded.split('/').pop();
           if (lang && languages.some(l => l.code === lang)) {
             setCurrentLang(lang);
+            localStorage.setItem('selected_language', lang);
           }
         } catch (e) {
           console.error('Error parsing googtrans cookie', e);
