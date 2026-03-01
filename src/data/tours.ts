@@ -22,9 +22,9 @@ export const tours: Tour[] = [
     title: "VALE DO PATI - 5 DIAS",
     desc: "A imersão completa no trekking mais bonito do Brasil. Cinco dias de pura conexão.",
     fullDesc: "O Vale do Pati é considerado o trekking mais bonito do Brasil. Nesta versão de 5 dias, exploramos cada detalhe com calma, visitando o Morro do Castelo, o Cachoeirão por cima e por baixo, e os Gerais do Rio Preto. A hospedagem em casas de nativos proporciona uma experiência cultural única e inesquecível.",
-    img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/Capa%20vale%20do%20pati%205%20dias.jpg?updatedAt=1772372075117",
     images: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/Capa%20vale%20do%20pati%205%20dias.jpg?updatedAt=1772372075117",
       "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "5 Dias",
@@ -41,9 +41,9 @@ export const tours: Tour[] = [
     title: "VALE DO PATI - 3 DIAS",
     desc: "Uma jornada intensa e transformadora pelo coração da Chapada Diamantina.",
     fullDesc: "Para quem tem menos tempo mas não quer abrir mão da experiência do Pati. Em 3 dias, visitamos os pontos principais, como o Mirante do Pati e o Morro do Castelo, mantendo a essência da caminhada e o contato com a comunidade local.",
-    img: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20Vale%20do%20pati%203%20dias.avif?updatedAt=1772372092370",
     images: [
-      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20Vale%20do%20pati%203%20dias.avif?updatedAt=1772372092370",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "3 Dias",
@@ -60,9 +60,9 @@ export const tours: Tour[] = [
     title: "CHAPADA PROFUNDA - 10 DIAS",
     desc: "A expedição definitiva. Dez dias explorando os recantos mais isolados da região.",
     fullDesc: "Uma jornada de 10 dias para quem busca isolamento e contato profundo com a natureza selvagem. Cruzamos vales, subimos picos e descobrimos cachoeiras que poucos visitam. Uma verdadeira expedição de autoconhecimento e aventura.",
-    img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20profunda.jpg?updatedAt=1772372076783",
     images: [
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20profunda.jpg?updatedAt=1772372076783",
       "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "10 Dias",
@@ -79,9 +79,9 @@ export const tours: Tour[] = [
     title: "CHAPADA HARDCORE - 10 DIAS",
     desc: "Desafio máximo. Trilhas técnicas e cenários brutais para aventureiros experientes.",
     fullDesc: "O roteiro mais exigente da nossa agência. Dez dias de trilhas técnicas, grandes desníveis e cenários de tirar o fôlego. Ideal para quem já tem experiência em montanhismo e busca superar seus limites na Chapada Diamantina.",
-    img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20hardcore.avif?updatedAt=1772372092029",
     images: [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20hardcore.avif?updatedAt=1772372092029",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "10 Dias",
@@ -98,9 +98,9 @@ export const tours: Tour[] = [
     title: "CHAPADA HORIZONTE - 5 DIAS",
     desc: "Vistas panorâmicas e os horizontes mais vastos da Chapada em cinco dias.",
     fullDesc: "Um roteiro focado em mirantes e paisagens de tirar o fôlego. Durante 5 dias, visitamos os pontos mais altos da região, proporcionando vistas que parecem não ter fim. Perfeito para fotógrafos e amantes de grandes paisagens.",
-    img: "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20horizonte.jpg?updatedAt=1772372074372",
     images: [
-      "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20horizonte.jpg?updatedAt=1772372074372",
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "5 Dias",
@@ -117,9 +117,9 @@ export const tours: Tour[] = [
     title: "CHAPADA SERENA - 6 DIAS",
     desc: "Um roteiro equilibrado entre aventura e momentos de pura contemplação.",
     fullDesc: "Seis dias de atividades que mesclam trilhas moderadas com banhos relaxantes em poços cristalinos. O roteiro Serena foi desenhado para quem quer conhecer a Chapada sem pressa, aproveitando cada momento de paz que a natureza oferece.",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20serena.jpg?updatedAt=1772372075493",
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20serena.jpg?updatedAt=1772372075493",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "6 Dias",
@@ -136,9 +136,9 @@ export const tours: Tour[] = [
     title: "CHAPADA SELVAGEM - 6 DIAS",
     desc: "Explore o lado menos conhecido e mais rústico da Chapada Diamantina.",
     fullDesc: "Seis dias explorando áreas de preservação e trilhas pouco batidas. O roteiro Selvagem foca na fauna e flora local, levando o viajante a lugares onde a natureza ainda reina absoluta e intocada.",
-    img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20selvagem.jpg?updatedAt=1772372077779",
     images: [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20selvagem.jpg?updatedAt=1772372077779",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "6 Dias",
@@ -155,9 +155,9 @@ export const tours: Tour[] = [
     title: "CHAPADA CLASSICA - 4 DIAS",
     desc: "Os pontos imperdíveis da Chapada em um roteiro otimizado de quatro dias.",
     fullDesc: "Ideal para a primeira visita. Visitamos o Morro do Pai Inácio, a Gruta da Lapa Doce, o Poço Azul e a Cachoeira do Mosquito. Quatro dias intensos com o melhor que a região tem a oferecer de forma acessível e confortável.",
-    img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20classica.avif?updatedAt=1772372091229",
     images: [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20classica.avif?updatedAt=1772372091229",
       "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "4 Dias",
@@ -174,9 +174,9 @@ export const tours: Tour[] = [
     title: "CHAPADA ADVENTURE - 3 DIAS",
     desc: "Três dias de adrenalina e aventura para quem busca emoção na natureza.",
     fullDesc: "Um roteiro curto mas cheio de ação. Inclui trilhas rápidas, banhos em cachoeiras de grande queda e visitas a mirantes impressionantes. Perfeito para um final de semana prolongado de muita energia.",
-    img: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20adventure.jpg?updatedAt=1772372074347",
     images: [
-      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20adventure.jpg?updatedAt=1772372074347",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "3 Dias",
@@ -193,9 +193,9 @@ export const tours: Tour[] = [
     title: "CHAPADA EXPRESS - 2 DIAS",
     desc: "O essencial da Chapada Diamantina em um roteiro rápido de dois dias.",
     fullDesc: "Para quem está de passagem ou tem pouco tempo. Focamos nos dois atrativos mais icônicos para garantir que você não saia da Chapada sem ver suas belezas principais.",
-    img: "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20express.jpg?updatedAt=1772372074459",
     images: [
-      "https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20express.jpg?updatedAt=1772372074459",
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "2 Dias",
@@ -212,9 +212,9 @@ export const tours: Tour[] = [
     title: "CHAPADA FACIL - 3 DIAS",
     desc: "Beleza e conforto em trilhas leves e acessíveis para todas as idades.",
     fullDesc: "Um roteiro pensado para famílias com crianças ou pessoas que preferem caminhadas curtas. Focamos no conforto e na contemplação, visitando lugares de fácil acesso mas de beleza extraordinária.",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20facil.jpg?updatedAt=1772372074623",
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20facil.jpg?updatedAt=1772372074623",
       "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "3 Dias",
@@ -231,9 +231,9 @@ export const tours: Tour[] = [
     title: "AMETISTA – 3 DIAS",
     desc: "Descubra o brilho das águas e das pedras em um roteiro místico de três dias.",
     fullDesc: "Um roteiro especial que visita áreas de antigos garimpos e formações geológicas únicas. Três dias de descobertas sobre a história da mineração e as belezas naturais que as pedras preciosas escondem.",
-    img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
+    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20ametista.jpg?updatedAt=1772372074336",
     images: [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
+      "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20ametista.jpg?updatedAt=1772372074336",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800"
     ],
     duration: "3 Dias",
