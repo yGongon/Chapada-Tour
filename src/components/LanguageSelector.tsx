@@ -15,6 +15,7 @@ const LanguageSelector = () => {
 
   const changeLanguage = (langCode: string) => {
     setIsOpen(false);
+    setCurrentLang(langCode); // Instant UI feedback
     
     // Small delay to allow menu to close before potentially reloading
     setTimeout(() => {
@@ -45,21 +46,34 @@ const LanguageSelector = () => {
   };
 
   useEffect(() => {
-    // Sync UI with current cookie if it exists
-    const getCookie = (name: string) => {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop()?.split(';').shift();
-      return null;
+    const syncLanguage = () => {
+      const getCookie = (name: string) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop()?.split(';').shift();
+        return null;
+      };
+
+      const googtrans = getCookie('googtrans');
+      if (googtrans) {
+        try {
+          // Decode and remove quotes if present
+          const decoded = decodeURIComponent(googtrans).replace(/"/g, '');
+          const lang = decoded.split('/').pop();
+          if (lang && languages.some(l => l.code === lang)) {
+            setCurrentLang(lang);
+          }
+        } catch (e) {
+          console.error('Error parsing googtrans cookie', e);
+        }
+      }
     };
 
-    const googtrans = getCookie('googtrans');
-    if (googtrans) {
-      const lang = googtrans.split('/').pop();
-      if (lang && languages.some(l => l.code === lang)) {
-        setCurrentLang(lang);
-      }
-    }
+    syncLanguage();
+    
+    // Also listen for changes in the document (in case the widget updates it)
+    const interval = setInterval(syncLanguage, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
