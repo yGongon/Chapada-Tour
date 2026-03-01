@@ -18,7 +18,7 @@ const Home = () => {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="https://images.unsplash.com/photo-1590424744257-fdb03ed78ae0?auto=format&fit=crop&q=80&w=2000" 
+            src="https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif" 
             alt="Chapada Diamantina" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -59,7 +59,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-6xl md:text-8xl font-serif mb-8 leading-tight"
+            className="text-5xl md:text-8xl font-serif mb-8 leading-tight"
           >
             Aventura & <br /> <span className="italic font-light">Conexão Natural</span>
           </motion.h1>
@@ -71,9 +71,6 @@ const Home = () => {
           >
             <Link to="/passeios" className="bg-white text-brand-olive px-10 py-4 rounded-full font-semibold hover:bg-brand-cream transition-all flex items-center justify-center gap-2 group">
               Ver Roteiros <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link to="/contato" className="border border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 transition-all">
-              Falar com Consultor
             </Link>
           </motion.div>
         </div>
@@ -90,12 +87,12 @@ const Home = () => {
       </section>
 
       {/* Featured Tours */}
-      <section className="py-32 px-6 bg-white relative overflow-hidden">
+      <section className="py-20 md:py-32 px-6 bg-white relative overflow-hidden">
         {/* Background Accent */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-stone-50 -z-10 skew-x-12 translate-x-1/2" />
         
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-20 gap-6 text-center md:text-left">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}

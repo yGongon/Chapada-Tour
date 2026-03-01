@@ -13,9 +13,9 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 const Accommodations = () => {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const Accommodations = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-6xl md:text-7xl font-serif mb-8"
+            className="text-4xl md:text-7xl font-serif mb-8"
           >
             Hospedagens <br /> <span className="italic font-light">Selecionadas</span>
           </motion.h1>
@@ -95,9 +95,14 @@ const Accommodations = () => {
                       <p className="text-[10px] text-stone-400 uppercase tracking-widest font-bold mb-1">Diárias a partir de</p>
                       <p className="text-brand-olive font-bold text-xl">{hotel.priceRange.split(' - ')[0]}</p>
                     </div>
-                    <button className="bg-brand-olive text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-stone-800 transition-colors">
+                    <a 
+                      href="https://api.whatsapp.com/send/?phone=5575998188802&text&type=phone_number&app_absent=0&utm_source=ig"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-brand-olive text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-stone-800 transition-colors"
+                    >
                       Consultar
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -114,9 +119,14 @@ const Accommodations = () => {
           <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
             Nossos consultores conhecem cada detalhe dessas hospedagens e podem indicar a melhor opção baseada no seu roteiro.
           </p>
-          <button className="bg-white text-brand-olive px-12 py-4 rounded-full font-bold hover:bg-brand-cream transition-colors">
+          <a 
+            href="https://api.whatsapp.com/send/?phone=5575998188802&text&type=phone_number&app_absent=0&utm_source=ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-brand-olive px-12 py-4 rounded-full font-bold hover:bg-brand-cream transition-colors inline-block"
+          >
             Falar com Especialista
-          </button>
+          </a>
         </motion.div>
       </div>
     </div>

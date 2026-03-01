@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check } from 'lucide-react';
+import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { tours } from '../data/tours';
 
 const TourDetail = () => {
@@ -10,6 +10,7 @@ const TourDetail = () => {
   const tour = tours.find(t => t.slug === slug);
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +24,16 @@ const TourDetail = () => {
       </div>
     );
   }
+
+  const tourImages = tour.images || [tour.img];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % tourImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + tourImages.length) % tourImages.length);
+  };
 
   const shareUrl = window.location.href;
   const shareTitle = `Confira este passeio na Chapada Diamantina: ${tour.title}`;
@@ -61,9 +72,9 @@ const TourDetail = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-6 md:mb-8">
           {/* Back Button */}
           <button 
             onClick={() => navigate(-1)}
@@ -138,13 +149,49 @@ const TourDetail = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-10 shadow-2xl">
-                <img 
-                  src={tour.img} 
-                  alt={tour.title} 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+              {/* Image Carousel */}
+              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-10 shadow-2xl group">
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={currentImageIndex}
+                    src={tourImages[currentImageIndex]} 
+                    alt={`${tour.title} - ${currentImageIndex + 1}`} 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </AnimatePresence>
+                
+                {tourImages.length > 1 && (
+                  <>
+                    <button 
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/40"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button 
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/40"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                    
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                      {tourImages.map((_, i) => (
+                        <button 
+                          key={i}
+                          onClick={() => setCurrentImageIndex(i)}
+                          className={`w-2 h-2 rounded-full transition-all ${i === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+
                 <div className="absolute top-6 left-6 flex gap-3">
                   <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                     <Clock size={14} /> {tour.duration}
@@ -155,12 +202,12 @@ const TourDetail = () => {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-serif mb-6">{tour.title}</h1>
-              <p className="text-xl text-stone-600 mb-10 leading-relaxed font-light">
+              <h1 className="text-4xl md:text-6xl font-serif mb-6">{tour.title}</h1>
+              <p className="text-lg md:text-xl text-stone-600 mb-10 leading-relaxed font-light">
                 {tour.fullDesc}
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -241,16 +288,18 @@ const TourDetail = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-brand-olive text-white font-bold py-5 rounded-2xl hover:bg-stone-800 transition-all mb-4 shadow-lg shadow-brand-olive/20">
+                <a 
+                  href="https://api.whatsapp.com/send/?phone=5575998188802&text&type=phone_number&app_absent=0&utm_source=ig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-brand-olive text-white font-bold py-5 rounded-2xl hover:bg-stone-800 transition-all mb-4 shadow-lg shadow-brand-olive/20 flex items-center justify-center"
+                >
                   Reservar este Passeio
-                </button>
-                <button className="w-full border border-stone-200 text-stone-600 font-bold py-5 rounded-2xl hover:bg-stone-50 transition-all flex items-center justify-center gap-2">
-                  <Phone size={18} /> Tirar Dúvidas
-                </button>
+                </a>
 
                 <div className="mt-8 pt-8 border-t border-stone-100 text-center">
                   <p className="text-xs text-stone-400 leading-relaxed">
-                    Pagamento facilitado via PIX ou Cartão de Crédito. Cancelamento grátis até 48h antes.
+                    Pagamento facilitado via PIX ou Cartão de Crédito.
                   </p>
                 </div>
               </div>

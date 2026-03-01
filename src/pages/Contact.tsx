@@ -3,7 +3,7 @@ import { Phone, Mail, Instagram, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="pt-32 pb-24 min-h-[80vh] flex items-center">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-[80vh] flex items-center">
       <div className="max-w-4xl mx-auto px-6 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -11,7 +11,7 @@ const Contact = () => {
           className="text-center"
         >
           <span className="text-brand-olive font-bold uppercase tracking-widest text-sm mb-4 block">Contato</span>
-          <h1 className="text-6xl md:text-7xl font-serif mb-8 leading-tight">Vamos Planejar <br /> <span className="italic">Sua Aventura?</span></h1>
+          <h1 className="text-4xl md:text-7xl font-serif mb-8 leading-tight">Vamos Planejar <br /> <span className="italic">Sua Aventura?</span></h1>
           <p className="text-stone-600 text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
             Dúvidas sobre roteiros, preços ou disponibilidade? Nossa equipe de consultores está pronta para criar o itinerário perfeito para você.
           </p>
@@ -22,7 +22,7 @@ const Contact = () => {
                 <Phone size={24} />
               </div>
               <h4 className="font-serif text-xl mb-2">WhatsApp</h4>
-              <p className="text-stone-500 mb-1">+55 (75) 99999-9999</p>
+              <p className="text-stone-500 mb-1">+55 (75) 99818-8802</p>
               <p className="text-[10px] text-stone-400 uppercase tracking-widest font-bold">Atendimento 08h às 20h</p>
             </div>
 
@@ -46,7 +46,12 @@ const Contact = () => {
           </div>
 
           <div className="mt-16 flex justify-center gap-6">
-            <a href="#" className="w-14 h-14 rounded-full bg-white flex items-center justify-center hover:bg-brand-olive hover:text-white transition-all shadow-sm border border-stone-100 group">
+            <a 
+              href="https://www.instagram.com/chapadatourbr" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white flex items-center justify-center hover:bg-brand-olive hover:text-white transition-all shadow-sm border border-stone-100 group"
+            >
               <Instagram size={24} className="group-hover:scale-110 transition-transform" />
             </a>
           </div>
