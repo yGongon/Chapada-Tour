@@ -14,21 +14,52 @@ const LanguageSelector = () => {
   const [currentLang, setCurrentLang] = useState('pt');
 
   const changeLanguage = (langCode: string) => {
-    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event('change'));
-      setCurrentLang(langCode);
-      setIsOpen(false);
-    } else {
-      // If the widget isn't ready yet, try again in a moment
-      setTimeout(() => changeLanguage(langCode), 500);
-    }
+    setIsOpen(false);
+    
+    // Small delay to allow menu to close before potentially reloading
+    setTimeout(() => {
+      // 1. Set the cookie (most reliable way for Google Translate)
+      const domain = window.location.hostname;
+      const cookieBase = `googtrans=/pt/${langCode}; path=/; SameSite=None; Secure`;
+      document.cookie = cookieBase;
+      document.cookie = `${cookieBase}; domain=.${domain}`;
+      document.cookie = `${cookieBase}; domain=${domain}`;
+
+      // 2. Try to find the select element and trigger it
+      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        setCurrentLang(langCode);
+        
+        // Sometimes a small delay and second trigger helps
+        setTimeout(() => {
+          select.dispatchEvent(new Event('change'));
+        }, 100);
+      } else {
+        // If the widget isn't ready yet, the cookie + reload is the fallback
+        setCurrentLang(langCode);
+        window.location.reload();
+      }
+    }, 300);
   };
 
   useEffect(() => {
-    // Check if there's a saved language in cookies or local storage if needed
-    // Google Translate usually handles this via cookies automatically
+    // Sync UI with current cookie if it exists
+    const getCookie = (name: string) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift();
+      return null;
+    };
+
+    const googtrans = getCookie('googtrans');
+    if (googtrans) {
+      const lang = googtrans.split('/').pop();
+      if (lang && languages.some(l => l.code === lang)) {
+        setCurrentLang(lang);
+      }
+    }
   }, []);
 
   return (
