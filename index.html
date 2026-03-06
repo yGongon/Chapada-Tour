@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapada Tour - Agência de Turismo na Chapada Diamantina</title>
+    <meta name="description" content="Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis em Lençóis e região." />
+    <meta name="keywords" content="Chapada Diamantina, Turismo, Lençóis, Bahia, Ecoturismo, Trilhas, Cachoeiras, Chapada Tour, Vale do Pati, Morro do Pai Inácio" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://chapadatour.com.br/" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://ik.imagekit.io" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chapadatour.com.br/" />
+    <meta property="og:title" content="Chapada Tour - Agência de Turismo na Chapada Diamantina" />
+    <meta property="og:description" content="Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis." />
+    <meta property="og:image" content="https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://chapadatour.com.br/" />
+    <meta property="twitter:title" content="Chapada Tour - Agência de Turismo na Chapada Diamantina" />
+    <meta property="twitter:description" content="Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis." />
+    <meta property="twitter:image" content="https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif" />
+    
+    <script>
+      // Prevent libraries from overwriting window.fetch if it already exists and is a getter
+      (function() {
+        const originalFetch = window.fetch;
+        if (originalFetch) {
+          Object.defineProperty(window, 'fetch', {
+            configurable: false,
+            enumerable: true,
+            get: function() { return originalFetch; },
+            set: function() { 
+              console.warn('Attempt to overwrite window.fetch blocked.');
+              return originalFetch; 
+            }
+          });
+        }
+      })();
+    </script>
+    <script type="text/javascript">
+      window.googleTranslateElementInit = function() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'pt',
+          includedLanguages: 'en,fr,es,pt,iw',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="google_translate_element" style="position: fixed; top: -100px; left: -100px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; z-index: -1;"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
