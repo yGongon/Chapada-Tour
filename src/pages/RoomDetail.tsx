@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Wifi, Wind, Ban, Bed, ShowerHead, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { rooms } from '../data/accommodations';
 import SEO from '../components/SEO';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 
 import { optimizeImageUrl } from '../utils/imageOptimizer';
 
@@ -45,8 +46,15 @@ const RoomDetail = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title={`${room.name} - Chapada Tour`}
+        title={`${room.name} | Hospedagem em Lençóis Chapada Diamantina`}
         description={room.desc}
+        keywords={[
+          ...SEO_KEYWORDS.LOCATION,
+          room.name.toLowerCase(),
+          'hospedagem em lençóis',
+          'onde dormir na chapada diamantina',
+          'pousada em lençóis bahia'
+        ]}
       />
       
       <div className="max-w-7xl mx-auto px-6">

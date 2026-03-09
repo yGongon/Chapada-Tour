@@ -9,7 +9,7 @@ const Footer = () => {
           <Link to="/" className="flex items-center mb-6">
             <img 
               src="https://ik.imagekit.io/ozcvccl1z/LOGOMARCA1__2_-removebg-preview-1-e1736863590369-300x162.webp?updatedAt=1772365084253" 
-              alt="Chapada Tour Logo" 
+              alt="Logo Chapada Tour - Turismo e Aventura na Chapada Diamantina" 
               className="h-16 w-auto object-contain"
               referrerPolicy="no-referrer"
             />

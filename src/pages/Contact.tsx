@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-[80vh] flex items-center">
       <SEO 
-        title="Contato - Chapada Tour"
+        title="Contato e Reservas | Chapada Tour Turismo"
         description="Entre em contato com a Chapada Tour. Estamos prontos para tirar suas dúvidas e ajudar você a planejar sua viagem para a Chapada Diamantina."
       />
       <div className="max-w-4xl mx-auto px-6 w-full">

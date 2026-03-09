@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { blogPosts } from '../data/blogPosts';
 import { optimizeImageUrl } from '../utils/imageOptimizer';
 import { useEffect } from 'react';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,6 +20,25 @@ const BlogPost = () => {
   }, [post, navigate]);
 
   if (!post) return null;
+
+  const getPostKeywords = () => {
+    const k = [...SEO_KEYWORDS.BLOG_SEO, ...SEO_KEYWORDS.GENERAL];
+    const titleLower = post.title.toLowerCase();
+    const contentLower = post.content.toLowerCase();
+
+    if (titleLower.includes('pati') || contentLower.includes('pati')) {
+      k.push(...SEO_KEYWORDS.TREKKING);
+    }
+    if (titleLower.includes('cachoeira') || contentLower.includes('cachoeira')) {
+      k.push(...SEO_KEYWORDS.WATERFALLS);
+    }
+    if (titleLower.includes('gruta') || titleLower.includes('poço') || contentLower.includes('gruta') || contentLower.includes('poço')) {
+      k.push(...SEO_KEYWORDS.CAVES_POOLS);
+    }
+    
+    k.push(post.title.toLowerCase());
+    return k;
+  };
 
   const handleShare = () => {
     if (navigator.share) {
@@ -35,6 +55,7 @@ const BlogPost = () => {
       <SEO 
         title={`${post.title} - Blog Chapada Tour`}
         description={post.excerpt}
+        keywords={getPostKeywords()}
       />
       
       <div className="max-w-4xl mx-auto px-6">
@@ -81,7 +102,7 @@ const BlogPost = () => {
           >
             <img 
               src={optimizeImageUrl(post.img, 1200)} 
-              alt={post.title}
+              alt={`Artigo: ${post.title} - Blog Chapada Tour`}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />

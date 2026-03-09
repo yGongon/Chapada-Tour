@@ -4,6 +4,7 @@ import { Wifi, Wind, Ban, Bed, ShowerHead, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { rooms } from '../data/accommodations';
 import SEO from '../components/SEO';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 
@@ -22,8 +23,15 @@ const Accommodations = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title="Hospedagens - Chapada Tour"
-        description="Confira nossa seleção de quartos na Chapada Diamantina. Garantimos o seu descanso após um dia de aventuras."
+        title="Hospedagens na Chapada Diamantina | Onde Ficar em Lençóis"
+        description="Confira nossa seleção de quartos na Chapada Diamantina. Garantimos o seu descanso após um dia de aventuras em Lençóis e região."
+        keywords={[
+          ...SEO_KEYWORDS.LOCATION,
+          'hospedagem chapada diamantina',
+          'onde ficar em lençóis',
+          'pousadas em lençóis bahia',
+          'hotéis em lençóis'
+        ]}
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 md:mb-20">
@@ -67,7 +75,7 @@ const Accommodations = () => {
                   src={optimizeImageUrl(room.img, 600)} 
                   srcSet={generateSrcSet(room.img, [400, 800])}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  alt={room.name} 
+                  alt={`Acomodação: ${room.name} em Lençóis Chapada Diamantina`} 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                   loading="lazy"

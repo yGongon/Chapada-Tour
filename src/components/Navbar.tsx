@@ -36,7 +36,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center">
           <img 
             src="https://ik.imagekit.io/ozcvccl1z/LOGOMARCA1__2_-removebg-preview-1-e1736863590369-300x162.webp?updatedAt=1772365084253" 
-            alt="Chapada Tour Logo" 
+            alt="Logo Chapada Tour - Agência de Turismo na Chapada Diamantina" 
             className="h-12 w-auto object-contain"
             referrerPolicy="no-referrer"
           />

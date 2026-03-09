@@ -1,19 +1,66 @@
-import { motion } from 'motion/react';
-import { ChevronRight } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
+import InstagramFeed from '../components/InstagramFeed';
+import GuidesSection from '../components/GuidesSection';
+import TransferSection from '../components/TransferSection';
+import TripAdvisorReviews from '../components/TripAdvisorReviews';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 
 const Home = () => {
   const featuredTours = tours.slice(0, 2);
   const popularTours = [...tours].sort((a, b) => b.views - a.views).slice(0, 3);
+  const oneDayTours = tours.filter(tour => tour.duration === '1 Dia');
+  
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === 'left' 
+        ? scrollLeft - clientWidth 
+        : scrollLeft + clientWidth;
+      
+      scrollRef.current.scrollTo({
+        left: scrollTo,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scroll('right');
+        }
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
     <div className="pt-0">
       <SEO 
-        title="Chapada Tour - Agência de Turismo na Chapada Diamantina"
-        description="Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis em Lençóis e região."
+        title="Melhor Agência de Turismo na Chapada Diamantina | Passeios e Roteiros"
+        description="Descubra a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores passeios, guias credenciados e transfers em Lençóis. Reserve sua aventura hoje!"
+        keywords={[
+          ...SEO_KEYWORDS.GENERAL,
+          ...SEO_KEYWORDS.LOCATION,
+          ...SEO_KEYWORDS.SERVICES,
+          ...SEO_KEYWORDS.FOREIGN
+        ]}
       />
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -25,7 +72,7 @@ const Home = () => {
         >
           <img 
             src="https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif" 
-            alt="Chapada Diamantina" 
+            alt="Vista panorâmica da Chapada Diamantina Bahia - Chapada Tour" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             fetchPriority="high"
@@ -140,7 +187,7 @@ const Home = () => {
                       src={optimizeImageUrl(tour.img, 800)} 
                       srcSet={generateSrcSet(tour.img, [400, 800, 1200])}
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      alt={tour.title} 
+                      alt={`Passeio ${tour.title} na Chapada Diamantina - Chapada Tour`} 
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                       loading="lazy"
@@ -186,7 +233,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="md:col-span-2 md:row-span-2 relative rounded-[2.5rem] overflow-hidden group"
             >
-              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-9997.jpg?updatedAt=1772812123258&tr=w-1200,q-80,f-auto" alt="Cachoeiras" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
+              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-9997.jpg?updatedAt=1772812123258&tr=w-1200,q-80,f-auto" alt="Cachoeiras deslumbrantes na Chapada Diamantina - Turismo de Natureza" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10">
                 <h4 className="text-white text-3xl font-serif mb-2">Cachoeiras</h4>
                 <p className="text-white/70 text-sm">Quedas d'água majestosas e banhos revigorantes.</p>
@@ -200,7 +247,7 @@ const Home = () => {
               transition={{ delay: 0.1 }}
               className="md:col-span-2 relative rounded-[2.5rem] overflow-hidden group"
             >
-              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/765d23f4-fabd-45e1-a0f8-da52978bdde1.jpg?updatedAt=1772812335266&tr=w-1200,q-80,f-auto" alt="Grutas" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
+              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/765d23f4-fabd-45e1-a0f8-da52978bdde1.jpg?updatedAt=1772812335266&tr=w-1200,q-80,f-auto" alt="Grutas e cavernas com águas cristalinas na Chapada Diamantina" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
                 <h4 className="text-white text-2xl font-serif mb-1">Grutas & Cavernas</h4>
                 <p className="text-white/70 text-xs">Formações milenares e águas cristalinas subterrâneas.</p>
@@ -214,7 +261,7 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="relative rounded-[2.5rem] overflow-hidden group"
             >
-              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-9466.jpg?updatedAt=1772812165593&tr=w-1200,q-80,f-auto" alt="Trekking" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
+              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-9466.jpg?updatedAt=1772812165593&tr=w-1200,q-80,f-auto" alt="Trekking e trilhas guiadas na Chapada Diamantina - Ecoturismo" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
                 <h4 className="text-white text-xl font-serif mb-1">Trekking</h4>
               </div>
@@ -227,7 +274,7 @@ const Home = () => {
               transition={{ delay: 0.3 }}
               className="relative rounded-[2.5rem] overflow-hidden group"
             >
-              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221&tr=w-1200,q-80,f-auto" alt="Mirantes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
+              <img src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221&tr=w-1200,q-80,f-auto" alt="Mirantes e paisagens icônicas da Chapada Diamantina" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
                 <h4 className="text-white text-xl font-serif mb-1">Mirantes</h4>
               </div>
@@ -269,7 +316,7 @@ const Home = () => {
                       src={optimizeImageUrl(tour.img, 600)} 
                       srcSet={generateSrcSet(tour.img, [400, 800])}
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      alt={tour.title} 
+                      alt={`Passeio popular: ${tour.title} - Chapada Tour`} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                       loading="lazy"
@@ -290,6 +337,98 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* 1 Day Tours Carousel */}
+      <section className="py-32 px-6 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 text-center md:text-left">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block">Aventura em Dose Única</span>
+              <h2 className="text-5xl md:text-6xl font-serif">Passeios de 1 Dia</h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/passeios" className="text-brand-olive font-semibold flex items-center gap-2 border-b border-brand-olive pb-1 hover:opacity-70 transition-opacity group">
+                Ver todos <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+
+          <div 
+            className="relative group/carousel"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Navigation Arrows */}
+            <button 
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
+              aria-label="Anterior"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
+            <button 
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
+              aria-label="Próximo"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div 
+              ref={scrollRef}
+              className="flex gap-8 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory scroll-smooth"
+            >
+              {oneDayTours.map((tour, idx) => (
+                <motion.div 
+                  key={tour.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="min-w-[300px] md:min-w-[400px] snap-start bg-stone-50 rounded-[2.5rem] overflow-hidden group border border-stone-100 shadow-sm hover:shadow-xl transition-all"
+                >
+                  <Link to={`/passeios/${tour.slug}`} className="block">
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      <img 
+                        src={optimizeImageUrl(tour.img, 600)} 
+                        alt={`Passeio de 1 dia: ${tour.title} na Chapada Diamantina`} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
+                      <div className="absolute bottom-8 left-8 right-8 text-white">
+                        <h4 className="text-2xl font-serif mb-3 leading-tight">{tour.title}</h4>
+                        <div className="flex items-center justify-between">
+                          <span className="text-white font-bold text-lg">{tour.price}</span>
+                          <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold border border-white/30">Ver Detalhes</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guides Section */}
+      <GuidesSection />
+
+      {/* Transfer Section */}
+      <TransferSection />
 
       {/* Stats */}
       <section className="py-24 bg-brand-olive text-white px-6 overflow-hidden relative">
@@ -325,7 +464,7 @@ const Home = () => {
         >
           <img 
             src="https://landedtravel.com/wp-content/uploads/2020/02/Private-Custom-Travel-Design-Brazil-Chapada-Diamantina-Pratinha-Cave.jpg" 
-            alt="Nature Quote" 
+            alt="Exploração de cavernas e grutas na Chapada Diamantina - Chapada Tour" 
             className="w-full h-[120%] object-cover"
             referrerPolicy="no-referrer"
             loading="lazy"
@@ -349,6 +488,12 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* TripAdvisor Reviews */}
+      <TripAdvisorReviews />
+
+      {/* Instagram Feed */}
+      <InstagramFeed />
 
       {/* Why Choose Us */}
       <section className="py-32 px-6 bg-white overflow-hidden relative">

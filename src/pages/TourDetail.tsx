@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play } from 'lucide-react';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 import BookingCalendar from '../components/BookingCalendar';
 
@@ -28,6 +29,26 @@ const TourDetail = () => {
       </div>
     );
   }
+
+  // Dynamic keywords based on tour content
+  const getSpecificKeywords = () => {
+    const k = [...SEO_KEYWORDS.GENERAL];
+    const titleLower = tour.title.toLowerCase();
+    const descLower = tour.desc.toLowerCase();
+
+    if (titleLower.includes('pati') || descLower.includes('pati')) {
+      k.push(...SEO_KEYWORDS.TREKKING);
+    }
+    if (titleLower.includes('cachoeira') || descLower.includes('cachoeira')) {
+      k.push(...SEO_KEYWORDS.WATERFALLS);
+    }
+    if (titleLower.includes('gruta') || titleLower.includes('poço') || descLower.includes('gruta') || descLower.includes('poço')) {
+      k.push(...SEO_KEYWORDS.CAVES_POOLS);
+    }
+    
+    k.push(tour.title.toLowerCase());
+    return k;
+  };
 
   const tourImages = tour.images || [tour.img];
 
@@ -80,6 +101,7 @@ const TourDetail = () => {
       <SEO 
         title={tour.title}
         description={tour.desc}
+        keywords={getSpecificKeywords()}
         image={tour.img}
         url={`https://chapadatour.com.br/passeios/${tour.slug}`}
       />

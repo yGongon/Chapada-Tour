@@ -4,6 +4,7 @@ import { Users, Clock, Star, Search, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 
 const Tours = () => {
@@ -19,8 +20,15 @@ const Tours = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title="Nossos Passeios - Chapada Diamantina"
-        description="Confira todos os nossos roteiros na Chapada Diamantina. Oferecemos passeios para todos os gostos, desde trilhas leves até trekkings desafiadores."
+        title="Passeios na Chapada Diamantina | Roteiros Completos em Lençóis"
+        description="Confira nossos roteiros exclusivos na Chapada Diamantina. Passeios de 1 dia, trekkings no Vale do Pati e muito mais com a melhor agência de Lençóis."
+        keywords={[
+          ...SEO_KEYWORDS.SERVICES,
+          ...SEO_KEYWORDS.TREKKING,
+          ...SEO_KEYWORDS.WATERFALLS,
+          ...SEO_KEYWORDS.ATTRACTIONS,
+          ...SEO_KEYWORDS.SPECIFIC_TOURS
+        ]}
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
@@ -73,7 +81,7 @@ const Tours = () => {
                       src={optimizeImageUrl(tour.img, 600)} 
                       srcSet={generateSrcSet(tour.img, [400, 800])}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      alt={tour.title} 
+                      alt={`Passeio ${tour.title} - Chapada Diamantina Bahia`} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                       loading="lazy"

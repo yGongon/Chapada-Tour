@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 import { blogPosts } from '../data/blogPosts';
+import { SEO_KEYWORDS } from '../constants/seoKeywords';
 
 const Blog = () => {
   return (
@@ -11,6 +12,10 @@ const Blog = () => {
       <SEO 
         title="Blog - Chapada Tour"
         description="Dicas de viagem, guias de trilhas e as melhores histórias sobre a Chapada Diamantina em nosso blog oficial."
+        keywords={[
+          ...SEO_KEYWORDS.BLOG_SEO,
+          ...SEO_KEYWORDS.GENERAL
+        ]}
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center max-w-3xl mx-auto">
@@ -35,7 +40,7 @@ const Blog = () => {
                     src={optimizeImageUrl(post.img, 800)} 
                     srcSet={generateSrcSet(post.img, [400, 800])}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    alt={post.title} 
+                    alt={`Artigo: ${post.title} - Blog Chapada Tour`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                     loading="lazy"

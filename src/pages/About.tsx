@@ -27,7 +27,7 @@ const About = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title="Sobre Nós - Chapada Tour"
+        title="Sobre a Chapada Tour | Especialistas em Chapada Diamantina"
         description="Conheça a história da Chapada Tour, nossa missão, valores e a equipe apaixonada por explorar e preservar a Chapada Diamantina."
       />
       <div className="max-w-7xl mx-auto px-6">
@@ -62,7 +62,7 @@ const About = () => {
           >
             <img 
               src="https://www.segueviagem.com.br/wp-content/uploads/2023/01/Fazenda-Pratinha-Chapada-Diamantina-Bahia-shutterstock_2112752663-960x720.jpg" 
-              alt="Equipe Chapada Tour" 
+              alt="Paisagem da Fazenda Pratinha na Chapada Diamantina - Chapada Tour" 
               className="rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -140,7 +140,7 @@ const About = () => {
                     <div className="w-full md:w-2/5 h-64 md:h-auto">
                       <img 
                         src={team[currentIndex].photo} 
-                        alt={team[currentIndex].name}
+                        alt={`Guia ${team[currentIndex].name} - Equipe Chapada Tour`}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                         loading="lazy"
