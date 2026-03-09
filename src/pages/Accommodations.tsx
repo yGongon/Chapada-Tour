@@ -68,7 +68,7 @@ const Accommodations = () => {
                   srcSet={generateSrcSet(room.img, [400, 800])}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   alt={room.name} 
-                  className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"

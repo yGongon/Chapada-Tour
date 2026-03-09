@@ -74,7 +74,7 @@ const Tours = () => {
                       srcSet={generateSrcSet(tour.img, [400, 800])}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       alt={tour.title} 
-                      className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                       decoding="async"

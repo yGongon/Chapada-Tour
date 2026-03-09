@@ -1281,5 +1281,423 @@ export const tours: Tour[] = [
     faqs: commonFaqs,
     views: 8200,
     rating: 4.8
+  },
+  {
+    id: "13",
+    slug: "lapa-doce-pratinha-pai-inacio",
+    title: "GRUTA DA LAPA DOCE, FAZENDA PRATINHA, GRUTA AZUL E MORRO DO PAI INÁCIO",
+    desc: "O roteiro Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio reúne alguns dos atrativos mais famosos da Chapada Diamantina em um único dia.",
+    fullDesc: "O roteiro Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio reúne alguns dos atrativos mais famosos da Chapada Diamantina em um único dia. A experiência começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas de calcário do Brasil, com impressionantes formações naturais. Em seguida, o passeio continua na Fazenda Pratinha, conhecida por suas águas cristalinas e pela Gruta Azul, onde a luz do sol cria um belo efeito azul na água. Para finalizar, a subida ao Morro do Pai Inácio revela um dos mirantes mais icônicos da Chapada, com vista panorâmica para a Serra do Sincorá.\n\n**Informações Adicionais:**\n- **Programação:** 08h30\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 1\n- **Caminhada total:** 2 km\n- **Desafios:** Caminhada em trilha com subida curta até o Morro do Pai Inácio",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_6229.JPG?updatedAt=1773060228788",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_8597.HEIC?updatedAt=1773060230891",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_9879.HEIC?updatedAt=1773060230631",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_8441.JPG?updatedAt=1773060229937",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_8293.HEIC?updatedAt=1773060230465",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/716cd744-0874-4b75-8bb1-8555c9015643.jpg?updatedAt=1773060229312",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_2402.JPG?updatedAt=1773060229325",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/68acdfb9-6806-4440-9b4b-06ff9449fe30.jpg?updatedAt=1773060229525",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/97846b33-c213-4db8-8bba-e60d4a2e07c6.jpg?updatedAt=1773060229408",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/0ede0e7b-9d10-4511-b3fa-77c20a8e99d6.jpg?updatedAt=1773060229264",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_6229.JPG?updatedAt=1773060228788"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 550,00",
+    highlights: [
+      "Exploração da Gruta da Lapa Doce, uma das maiores cavernas de calcário do Brasil",
+      "Banho nas águas cristalinas da Fazenda Pratinha",
+      "Contemplação da Gruta Azul com seus reflexos azulados",
+      "Pôr do sol inesquecível no Morro do Pai Inácio",
+      "Vista panorâmica da Serra do Sincorá",
+      "Roteiro clássico e imperdível na Chapada Diamantina"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "Almoço regional completo",
+      "Seguro viagem",
+      "Colete salva-vidas para banho na Pratinha"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Roteiro Clássico",
+        description: "Saída de Lençóis às 08h30 em direção a Iraquara. Visitamos a Gruta da Lapa Doce, almoçamos comida regional e seguimos para a Fazenda Pratinha e Gruta Azul. Finalizamos o dia com o pôr do sol no Morro do Pai Inácio."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 4500,
+    rating: 4.9
+  },
+  {
+    id: "14",
+    slug: "mosquito-mucugezinho-poco-do-diabo",
+    title: "CACHOEIRA DO MOSQUITO, RIO MUCUGÊZINHO E POÇO DO DIABO",
+    desc: "O roteiro Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo reúne três dos atrativos mais tradicionais da Chapada Diamantina em um único dia de passeio.",
+    fullDesc: "O roteiro Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo reúne três dos atrativos mais tradicionais da Chapada Diamantina em um único dia de passeio. A jornada começa com a visita à Cachoeira do Mosquito, localizada em uma fazenda particular, onde uma bela queda d’água em meio a paredões rochosos proporciona um banho revigorante. Na sequência, seguimos para o Rio Mucugêzinho, famoso por seus poços de águas escuras e cristalinas, ideais para relaxar. O dia termina no Poço do Diabo, uma das cachoeiras mais icônicas da região, com um grande poço cercado por formações geológicas impressionantes.\n\n**Informações Adicionais:**\n- **Programação:** 08h30\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 3\n- **Caminhada total:** 4 km\n- **Desafios:** Trilha curta com escadarias e trechos de terreno rochoso",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/CAPA.jpg?updatedAt=1773060096897",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/2ea401ca-d044-49a4-b232-a775820bfa17.jpg?updatedAt=1773060096837",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/1c946f4a-10ec-4057-9a53-acc4c7e72a94.jpg?updatedAt=1773060096881",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/IMG_3509.JPG?updatedAt=1773060096848",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/IMG_4177.jpg?updatedAt=1773060096871",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/IMG_6044.PNG?updatedAt=1773060096853",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/CAPA.jpg?updatedAt=1773060096897",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/IMG_6218.JPG?updatedAt=1773060096884",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/IMG_6221.JPG?updatedAt=1773060096887"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 450,00",
+    highlights: [
+      "Banho na Cachoeira do Mosquito, cercada por paredões rochosos",
+      "Relaxamento nos poços naturais do Rio Mucugêzinho",
+      "Contemplação e banho no icônico Poço do Diabo",
+      "Trilha leve com alto aproveitamento de banhos",
+      "Cenários clássicos da Chapada Diamantina",
+      "Ideal para quem busca um dia de lazer e natureza"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "Almoço regional completo",
+      "Seguro viagem"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Cachoeiras e Poços",
+        description: "Saída de Lençóis às 08h30. Visitamos a Cachoeira do Mosquito pela manhã, almoçamos e seguimos para o Rio Mucugêzinho e Poço do Diabo à tarde."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 3800,
+    rating: 4.8
+  },
+  {
+    id: "15",
+    slug: "poco-encantado-poco-azul",
+    title: "POÇO ENCANTADO E POÇO AZUL",
+    desc: "O roteiro Poço Encantado e Poço Azul revela dois dos cenários subterrâneos mais impressionantes da Chapada Diamantina.",
+    fullDesc: "O roteiro Poço Encantado e Poço Azul revela dois dos cenários subterrâneos mais impressionantes da Chapada Diamantina. O passeio começa com a visita ao Poço Encantado, uma caverna monumental onde a luz do sol, ao atravessar uma fenda, cria um raio azulado que ilumina a água cristalina, revelando o fundo da caverna com perfeição (visita contemplativa). Em seguida, seguimos para o Poço Azul, onde a transparência da água e os tons azulados convidam para uma experiência única de flutuação dentro da caverna, permitindo observar as formações rochosas submersas em um ambiente mágico.\n\n**Informações Adicionais:**\n- **Programação:** 08h00\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 1\n- **Caminhada total:** 1 km\n- **Desafios:** Acesso por escadarias nas cavernas e flutuação no Poço Azul",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/CAPA?updatedAt=1773060161737",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/IMG_5279_Original.jpg?updatedAt=1773060161470",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/IMG_9466.HEIC?updatedAt=1773060161894",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/CAPA?updatedAt=1773060161737",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/IMG_6735.HEIC?updatedAt=1773060161705",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/5badd24a-0f4b-4416-91a9-8be07c233877.jpg?updatedAt=1773060161712",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/IMG_6736.HEIC?updatedAt=1773060161761",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Po%C3%A7os%20azul%20e%20encantado/f65c3a32-a0c9-4f83-8f9f-b0648d117c16.jpg?updatedAt=1773060160837"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 600,00",
+    highlights: [
+      "Contemplação do raio de luz azul no Poço Encantado",
+      "Experiência de flutuação nas águas cristalinas do Poço Azul",
+      "Visita a duas das cavernas mais famosas do Brasil",
+      "Observação de formações geológicas subterrâneas",
+      "Roteiro contemplativo e de relaxamento",
+      "Cenários cinematográficos e únicos"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "Almoço regional completo",
+      "Seguro viagem",
+      "Equipamentos para flutuação (colete, máscara e snorkel)"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Mundo Subterrâneo",
+        description: "Saída de Lençóis às 08h00. Visitamos o Poço Encantado pela manhã, almoçamos e seguimos para o Poço Azul para flutuação à tarde."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 5200,
+    rating: 5.0
+  },
+  {
+    id: "16",
+    slug: "parque-da-muritiba",
+    title: "PARQUE DA MURITIBA",
+    desc: "O roteiro Parque da Muritiba é uma das experiências mais completas e acessíveis dentro do Parque Nacional da Chapada Diamantina.",
+    fullDesc: "O roteiro Parque da Muritiba é uma das experiências mais completas e acessíveis dentro do Parque Nacional da Chapada Diamantina. Localizado bem próximo ao centro de Lençóis, o passeio percorre diversos atrativos naturais em uma trilha circular. Visitamos o Salão de Areias Coloridas, o Poço Halley, a Cachoeira da Primavera e o Poço do Paraíso. O roteiro também inclui passagens por mirantes com vista panorâmica para a cidade e serras vizinhas, finalizando com banhos relaxantes na Cachoeirinha e nas Piscinas Naturais do Rio Serrano.\n\n**Informações Adicionais:**\n- **Programação:** 09h00\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 5\n- **Caminhada total:** 6 km\n- **Desafios:** Trilha leve com trechos de pedras e pequenas subidas",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/CAPA.jpg?updatedAt=1773060111141",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/CAPA.jpg?updatedAt=1773060111141",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/608bede9-d179-449c-8892-d92430949305.jpg?updatedAt=1773060111059",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/eb74d1ab-03a0-4085-bc1c-16ad54489db0.jpg?updatedAt=1773060110835",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/518dadca-3355-48aa-94da-cccccf958ae9.jpg?updatedAt=1773060110686",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/c1929186-1089-4592-9337-e77d861e14cc.jpg?updatedAt=1773060110780",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/3de3e604-d7eb-4190-ba82-ec102f44e1e4.jpg?updatedAt=1773060110507",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/13fdfc9b-e57e-4e4a-8b1c-e1f64603f805.jpg?updatedAt=1773060110542",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Parque%20da%20muritiba/5dcc09f1-31e6-410b-af0f-4513fcaf794d.jpg?updatedAt=1773060110564"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 250,00",
+    highlights: [
+      "Visita ao Salão de Areias Coloridas",
+      "Banho no Poço Halley e Poço do Paraíso",
+      "Contemplação da Cachoeira da Primavera",
+      "Vista panorâmica do Mirante de Lençóis",
+      "Relaxamento nas Piscinas Naturais do Serrano",
+      "Roteiro prático e próximo à cidade"
+    ],
+    included: [
+      "Guia local credenciado e experiente",
+      "Seguro viagem",
+      "Taxas de acesso (quando aplicável)"
+    ],
+    notIncluded: ["Transporte (saída a pé de Lençóis)", "Almoço", "Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Caminhada no Parque",
+        description: "Saída a pé de Lençóis às 09h00. Percorremos o Rio Serrano, Salão de Areias, Poço Halley, Cachoeira da Primavera e Mirante, retornando à tarde."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 3100,
+    rating: 4.7
+  },
+  {
+    id: "17",
+    slug: "fumaca-riachinho",
+    title: "CACHOEIRA DA FUMAÇA E CACHOEIRA DO RIACHINHO",
+    desc: "O roteiro Cachoeira da Fumaça e Cachoeira do Riachinho reúne dois dos cenários mais impressionantes da Chapada Diamantina.",
+    fullDesc: "O roteiro Cachoeira da Fumaça e Cachoeira do Riachinho reúne dois dos cenários mais impressionantes da Chapada Diamantina. A experiência começa com a trilha para a Cachoeira da Fumaça (por cima), uma das quedas d’água mais altas do Brasil, com cerca de 340 metros de altura. A caminhada exige esforço físico, mas a vista do cânion e da queda d’água é monumental. Após a contemplação, o passeio segue para a Cachoeira do Riachinho, um local perfeito para relaxar e tomar um banho refrescante em suas piscinas naturais, encerrando o dia com um belo visual da Serra do Sincorá.\n\n**Informações Adicionais:**\n- **Programação:** 08h00\n- **Nível de esforço físico:** Moderado\n- **Pontos de banho:** 1\n- **Caminhada total:** 12 km\n- **Desafios:** Subida inicial intensa e caminhada longa em terreno aberto",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/CAPA.jpg?updatedAt=1773059874369",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/IMG_1636_Original.jpg?updatedAt=1773059875891",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/IMG_1622_Original.jpg?updatedAt=1773059874791",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/CAPA.jpg?updatedAt=1773059874369",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/2505e1e2-c538-41d9-a393-e7ab68d80da9.jpg?updatedAt=1773059873695"
+    ],
+    duration: "1 Dia",
+    difficulty: "Moderado",
+    price: "R$ 450,00",
+    highlights: [
+      "Vista panorâmica da Cachoeira da Fumaça (340m de altura)",
+      "Caminhada pelos Gerais da Fumaça com vistas do cânion",
+      "Banho relaxante na Cachoeira do Riachinho",
+      "Um dos visuais mais emblemáticos da Chapada Diamantina",
+      "Contato intenso com a natureza e grandes altitudes",
+      "Pôr do sol opcional no Riachinho"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "Lanche de trilha completo",
+      "Seguro viagem"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "A Gigante da Chapada",
+        description: "Saída de Lençóis às 08h00. Trilha de 6km (ida) até o topo da Fumaça, lanche com vista e retorno para banho no Riachinho ao final do dia."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 6100,
+    rating: 4.9
+  },
+  {
+    id: "18",
+    slug: "cachoeira-do-buracao",
+    title: "CACHOEIRA DO BURACÃO",
+    desc: "O roteiro Cachoeira do Buracão leva a um dos cenários mais impressionantes e famosos da Chapada Diamantina.",
+    fullDesc: "O roteiro Cachoeira do Buracão leva a um dos cenários mais impressionantes e famosos da Chapada Diamantina. Localizada no município de Ibicoara, a cachoeira é acessada por uma trilha que percorre as margens do rio até a entrada de um cânion monumental. A experiência de nadar entre paredões de pedra de quase 100 metros de altura até alcançar a imponente queda d’água é considerada uma das mais emocionantes da região. O passeio também inclui visitas a outros atrativos próximos, como a Cachoeira das Orquídeas e o Recanto Verde, proporcionando um dia completo de aventura e contemplação.\n\n**Informações Adicionais:**\n- **Programação:** 06h00\n- **Nível de esforço físico:** Moderado\n- **Pontos de banho:** 1\n- **Caminhada total:** 6 km\n- **Desafios:** Travessia por cânion e caminhada em terreno natural",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20do%20burac%C3%A3o/CAPA.jpg?updatedAt=1773059905704",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20do%20burac%C3%A3o/39a35a2f-baf4-4448-ad24-c04a1c8d99b5.jpg?updatedAt=1773059906409",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20do%20burac%C3%A3o/7eec9d7c-24fb-4050-bf51-9d914963ca21.jpg?updatedAt=1773059906346",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20do%20burac%C3%A3o/CAPA.jpg?updatedAt=1773059905704"
+    ],
+    duration: "1 Dia",
+    difficulty: "Moderado",
+    price: "R$ 850,00",
+    highlights: [
+      "Nado pelo cânion até a base da Cachoeira do Buracão",
+      "Contemplação de uma das quedas mais bonitas do Brasil",
+      "Visita à Cachoeira das Orquídeas e Recanto Verde",
+      "Cenários de tirar o fôlego entre paredões monumentais",
+      "Experiência de aventura e conexão profunda com a natureza",
+      "Roteiro exclusivo no sul da Chapada Diamantina"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "Almoço regional completo",
+      "Seguro viagem",
+      "Colete salva-vidas (obrigatório para o nado no cânion)"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "O Espetáculo de Ibicoara",
+        description: "Saída antecipada de Lençóis (06h00). Viagem até Ibicoara, trilha leve e nado no cânion do Buracão. Almoço e retorno no final do dia."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 7200,
+    rating: 5.0
+  },
+  {
+    id: "19",
+    slug: "buracao-fumacinha-2-dias",
+    title: "CACHOEIRA DO BURACÃO E CACHOEIRA DA FUMACINHA",
+    desc: "O roteiro Cachoeira do Buracão e Cachoeira da Fumacinha é uma das experiências mais intensas e impressionantes da Chapada Diamantina.",
+    fullDesc: "O roteiro Cachoeira do Buracão e Cachoeira da Fumacinha é uma das experiências mais intensas e impressionantes da Chapada Diamantina. En dois dias de expedição, visitamos duas das cachoeiras mais desejadas da região. No primeiro dia, exploramos a Cachoeira do Buracão, com seu cânion monumental e nado entre paredões. No segundo dia, enfrentamos o desafio da Cachoeira da Fumacinha, uma trilha técnica e selvagem por dentro de um cânion estreito com paredões verticais gigantescos. O roteiro inclui pernoite em Ibicoara, garantindo logística eficiente para aproveitar ao máximo esses dois gigantes da natureza.\n\n**Informações Adicionais:**\n- **Programação:** 06h00\n- **Nível de esforço físico:** Difícil\n- **Pontos de banho:** 1 (por dia)\n- **Caminhada total:** 6 km (Dia 1) + 18 km (Dia 2)\n- **Desafios:** Travessia por cânion, caminhada em terreno natural, trilha longa com caminhada sobre pedras e leito de rio",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/CAPA.jpg?updatedAt=1773059845452",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/7eec9d7c-24fb-4050-bf51-9d914963ca21.jpg?updatedAt=1773059846068",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/39a35a2f-baf4-4448-ad24-c04a1c8d99b5.jpg?updatedAt=1773059845620",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/CAPA.jpg?updatedAt=1773059845452",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6230.JPG?updatedAt=1773059845163",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6210.JPG?updatedAt=1773059844874",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6240.JPG?updatedAt=1773059844797",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6209.JPG?updatedAt=1773059844945",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6236.JPG?updatedAt=1773059844777",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6213.JPG?updatedAt=1773059844932"
+    ],
+    duration: "2 Dias",
+    difficulty: "Avançado",
+    price: "R$ 1.300,00",
+    highlights: [
+      "Visita às duas cachoeiras mais icônicas do sul da Chapada",
+      "Nado pelo cânion da Cachoeira do Buracão",
+      "Expedição técnica pelo cânion da Fumacinha",
+      "Pernoite em Ibicoara com imersão na cultura local",
+      "Cenários selvagens e natureza intocada",
+      "Desafio físico e superação em trilhas épicas"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada de todos os atrativos",
+      "01 pernoite em Ibicoara com café da manhã e jantar",
+      "Almoço regional ou lanche de trilha nos dois dias",
+      "Seguro viagem",
+      "Colete salva-vidas"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "Dia 1",
+        title: "Cachoeira do Buracão",
+        description: "Saída de Lençóis às 06h00. Visita à Cachoeira do Buracão e pernoite em Ibicoara."
+      },
+      {
+        day: "Dia 2",
+        title: "Cachoeira da Fumacinha",
+        description: "Trilha técnica de 18km pelo leito do rio até a base da Fumacinha. Retorno para Lençóis à noite."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 4800,
+    rating: 5.0
+  },
+  {
+    id: "20",
+    slug: "vinicola-uvva",
+    title: "VINÍCOLA UVVA",
+    desc: "O roteiro Vinícola Uvva oferece uma experiência diferente na Chapada Diamantina, combinando paisagens naturais com enoturismo.",
+    fullDesc: "O roteiro Vinícola Uvva oferece uma experiência diferente na Chapada Diamantina, combinando paisagens naturais com enoturismo de alto nível. Localizada em Mucugê, a vinícola é um projeto arquitetônico e enológico impressionante, com vinhedos situados a mais de 1.100 metros de altitude. O passeio inclui visita guiada pelas áreas de produção, laboratórios e caves, finalizando com uma degustação orientada de vinhos premiados. É a oportunidade perfeita para conhecer a produção de vinhos de altitude em pleno sertão baiano, com vista para a Serra do Sincorá.\n\n**Informações Adicionais:**\n- **Programação:** 08h30\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 0\n- **Caminhada total:** 1 km\n- **Desafios:** Caminhada leve pela vinícola",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/CAPA.webp?updatedAt=1773060254054",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/IMG_7388.JPG?updatedAt=1773060254366",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/IMG_7391.WEBP?updatedAt=1773060254451",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/IMG_7392.JPG?updatedAt=1773060254191",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/IMG_7389.JPG?updatedAt=1773060254319",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/IMG_7387.JPG?updatedAt=1773060253874",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Vinicula/CAPA.webp?updatedAt=1773060254054"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 780,00",
+    highlights: [
+      "Visita guiada à moderna estrutura da Vinícola Uvva",
+      "Degustação de vinhos premiados produzidos na Chapada",
+      "Conhecimento sobre o terroir e viticultura de altitude",
+      "Vista panorâmica dos vinhedos e da Serra do Sincorá",
+      "Experiência gastronômica e cultural diferenciada",
+      "Roteiro de sofisticação e relaxamento"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada e visita guiada na vinícola",
+      "Degustação orientada",
+      "Seguro viagem"
+    ],
+    notIncluded: ["Almoço", "Compra de garrafas de vinho", "Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Enoturismo na Chapada",
+        description: "Saída de Lençóis às 08h30. Visita técnica e sensorial à Vinícola Uvva em Mucugê, com degustação e tempo para contemplação dos vinhedos."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 3500,
+    rating: 4.9
+  },
+  {
+    id: "21",
+    slug: "marimbus-roncador",
+    title: "MARIMBUS E RIO RONCADOR",
+    desc: "O roteiro Marimbus e Rio Roncador proporciona uma experiência diferenciada e relaxante no Mini Pantanal da Chapada Diamantina.",
+    fullDesc: "O roteiro Marimbus e Rio Roncador proporciona uma experiência diferenciada e relaxante no Mini Pantanal da Chapada Diamantina. Visitamos o Mini Pantanal do Marimbus, uma extensa área alagada repleta de vegetação aquática e rica biodiversidade. O passeio é realizado em barco tradicional, navegando por canais naturais, com grandes chances de observação de aves e contemplação da paisagem. Em seguida, visitamos o Rio Roncador, conhecido por suas águas claras e tranquilas, perfeitas para banho e relaxamento em meio à natureza.\n\n**Informações Adicionais:**\n- **Programação:** 08h30\n- **Nível de esforço físico:** Fácil\n- **Pontos de banho:** 1\n- **Caminhada total:** 2 km\n- **Desafios:** Caminhada leve e passeio de barco",
+    img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Marimbus/CAPA.jpg?updatedAt=1773059960719",
+    images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Marimbus/IMG_6205.JPG?updatedAt=1773059961025",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Marimbus/IMG_6204.JPG?updatedAt=1773059961056",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Marimbus/IMG_6201.JPG?updatedAt=1773059961039",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Marimbus/CAPA.jpg?updatedAt=1773059960719"
+    ],
+    duration: "1 Dia",
+    difficulty: "Leve",
+    price: "R$ 450,00",
+    highlights: [
+      "Passeio de barco pelo Mini Pantanal do Marimbus",
+      "Observação de aves e biodiversidade local",
+      "Banho relaxante nas águas do Rio Roncador",
+      "Cenários de áreas alagadas únicos na região",
+      "Roteiro de contemplação e tranquilidade",
+      "Ideal para todas as idades"
+    ],
+    included: [
+      "Transporte de ida e volta a partir de Lençóis",
+      "Guia local credenciado e experiente",
+      "Taxas de entrada e passeio de barco",
+      "Almoço regional completo",
+      "Seguro viagem"
+    ],
+    notIncluded: ["Itens não mencionados como inclusos"],
+    itinerary: [
+      {
+        day: "1 Dia",
+        title: "Pantanal e Rio",
+        description: "Saída de Lençóis às 08h30. Passeio de barco pelo Marimbus e banho no Rio Roncador com almoço regional."
+      }
+    ],
+    faqs: commonFaqs,
+    views: 3200,
+    rating: 4.8
   }
 ];
