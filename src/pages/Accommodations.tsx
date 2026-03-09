@@ -24,13 +24,18 @@ const Accommodations = () => {
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
         title="Hospedagens na Chapada Diamantina | Onde Ficar em Lençóis"
-        description="Confira nossa seleção de quartos na Chapada Diamantina. Garantimos o seu descanso após um dia de aventuras em Lençóis e região."
+        description="Confira nossa seleção de quartos na Chapada Diamantina. Garantimos o seu descanso após um dia de aventuras em Lençóis e região com conforto e praticidade."
         keywords={[
           ...SEO_KEYWORDS.LOCATION,
           'hospedagem chapada diamantina',
           'onde ficar em lençóis',
           'pousadas em lençóis bahia',
           'hotéis em lençóis'
+        ]}
+        schemaType="BreadcrumbList"
+        schemaData={[
+          { name: 'Início', path: '/' },
+          { name: 'Hospedagem', path: '/hospedagem' }
         ]}
       />
       <div className="max-w-7xl mx-auto px-6">

@@ -46,7 +46,7 @@ const RoomDetail = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title={`${room.name} | Hospedagem em Lençóis Chapada Diamantina`}
+        title={`${room.name} | Chapada Tour`}
         description={room.desc}
         keywords={[
           ...SEO_KEYWORDS.LOCATION,
@@ -55,6 +55,12 @@ const RoomDetail = () => {
           'onde dormir na chapada diamantina',
           'pousada em lençóis bahia'
         ]}
+        schemaType="Hotel"
+        schemaData={{
+          name: room.name,
+          description: room.desc,
+          price: room.price
+        }}
       />
       
       <div className="max-w-7xl mx-auto px-6">
@@ -193,7 +199,7 @@ const RoomDetail = () => {
             <div className="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-100">
               <h3 className="font-serif text-2xl mb-4 text-brand-olive">Reserve sua estadia</h3>
               <p className="text-stone-500 text-sm mb-8">
-                Entre em contato com nossos consultores para verificar a disponibilidade e garantir sua reserva na Chapada Diamantina.
+                Entre em contato com nossos consultores para verificar a disponibilidade e garantir sua reserva na Chapada Diamantina. Aproveite e confira nossos <Link to="/passeios" className="text-brand-olive font-bold hover:underline">passeios exclusivos</Link>.
               </p>
               <a 
                 href={whatsappLink}

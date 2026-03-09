@@ -56,6 +56,12 @@ const BlogPost = () => {
         title={`${post.title} - Blog Chapada Tour`}
         description={post.excerpt}
         keywords={getPostKeywords()}
+        schemaType="BlogPosting"
+        schemaData={{
+          title: post.title,
+          date: post.date,
+          author: post.author
+        }}
       />
       
       <div className="max-w-4xl mx-auto px-6">
@@ -149,7 +155,7 @@ const BlogPost = () => {
         <div className="mt-32 bg-stone-900 rounded-[3rem] p-12 md:p-20 text-center text-white">
           <h3 className="text-3xl md:text-4xl font-serif mb-6">Inspirado para sua próxima aventura?</h3>
           <p className="text-stone-400 mb-10 max-w-2xl mx-auto">
-            Nossos guias estão prontos para levar você aos lugares mais incríveis da Chapada Diamantina com segurança e conhecimento.
+            Nossos guias estão prontos para levar você aos lugares mais incríveis da Chapada Diamantina com segurança e conhecimento. Conheça nossos roteiros para o <Link to="/passeios/vale-do-pati-5-dias" className="text-brand-olive font-bold hover:underline">Vale do Pati</Link> ou a <Link to="/passeios/chapada-profunda-10-dias" className="text-brand-olive font-bold hover:underline">Chapada Profunda</Link>.
           </p>
           <Link 
             to="/passeios" 

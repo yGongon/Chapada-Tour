@@ -99,11 +99,18 @@ const TourDetail = () => {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
-        title={tour.title}
+        title={`${tour.title} | Chapada Tour`}
         description={tour.desc}
         keywords={getSpecificKeywords()}
         image={tour.img}
         url={`https://chapadatour.com.br/passeios/${tour.slug}`}
+        schemaType="Trip"
+        schemaData={{
+          name: tour.title,
+          description: tour.desc,
+          itinerary: tour.itinerary,
+          price: tour.price
+        }}
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center mb-6 md:mb-8">
@@ -417,6 +424,34 @@ const TourDetail = () => {
                     </ul>
                   </motion.div>
                 )}
+              </div>
+
+              {/* Related Tours Section */}
+              <div className="mt-20 pt-20 border-t border-stone-100">
+                <h3 className="text-3xl font-serif mb-10 flex items-center gap-3">
+                  Outros Passeios Recomendados
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {tours.filter(t => t.id !== tour.id).slice(0, 2).map((relatedTour) => (
+                    <Link 
+                      key={relatedTour.id} 
+                      to={`/passeios/${relatedTour.slug}`}
+                      className="group block bg-stone-50 rounded-3xl overflow-hidden border border-stone-100 hover:shadow-xl transition-all"
+                    >
+                      <div className="aspect-video overflow-hidden">
+                        <img 
+                          src={optimizeImageUrl(relatedTour.img, 600)} 
+                          alt={relatedTour.title} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h4 className="text-xl font-serif mb-2 group-hover:text-brand-olive transition-colors">{relatedTour.title}</h4>
+                        <p className="text-stone-500 text-sm line-clamp-2">{relatedTour.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* FAQ Section */}

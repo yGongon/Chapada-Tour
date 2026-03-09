@@ -39,38 +39,118 @@
   <!-- Tours -->
   <url>
     <loc>https://chapadatour.com.br/passeios/vale-do-pati-5-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chapadatour.com.br/passeios/vale-do-pati-3-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chapadatour.com.br/passeios/chapada-profunda-10-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chapadatour.com.br/passeios/chapada-hardcore-10-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chapadatour.com.br/passeios/chapada-selvagem-6-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chapadatour.com.br/passeios/chapada-horizonte-5-dias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/chapada-adventure-4-dias</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/chapada-classica-4-dias</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/cachoeira-do-buracao-1-dia</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/cachoeira-da-fumaca-1-dia</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/grutas-e-pai-inacio-1-dia</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/passeios/cachoeira-do-mosquito-e-azul-1-dia</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog -->
+  <url>
+    <loc>https://chapadatour.com.br/blog/chapada-diamantina-viajantes-solo</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/blog/chapada-diamantina-casais</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/blog/lencois-joia-historica</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/blog/chapada-melhor-destino-ano</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Accommodations -->
+  <url>
+    <loc>https://chapadatour.com.br/hospedagem/quarto-duplo-banheiro-compartilhado</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/hospedagem/quarto-duplo-com-varanda</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com.br/hospedagem/quarto-triplo-com-varanda</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

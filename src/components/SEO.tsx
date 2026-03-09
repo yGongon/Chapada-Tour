@@ -8,6 +8,8 @@ interface SEOProps {
   keywords?: string | string[];
   image?: string;
   url?: string;
+  schemaType?: 'TravelAgency' | 'Trip' | 'BlogPosting' | 'BreadcrumbList' | 'Hotel';
+  schemaData?: any;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -16,74 +18,118 @@ const SEO: React.FC<SEOProps> = ({
   keywords = DEFAULT_KEYWORDS,
   image = 'https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif',
   url = 'https://chapadatour.com.br/',
+  schemaType = 'TravelAgency',
+  schemaData,
 }) => {
   const fullTitle = title.includes('Chapada Tour') ? title : `${title} | Chapada Tour`;
   const canonicalUrl = url.endsWith('/') ? url : `${url}/`;
   const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
-  // JSON-LD Structured Data for Local Business
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Chapada Tour",
-    "alternateName": "Chapada Tour Turismo",
-    "description": description,
-    "url": canonicalUrl,
-    "logo": image,
-    "image": image,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lençóis",
-      "addressRegion": "Bahia",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -12.5597,
-      "longitude": -41.3881
-    },
-    "telephone": "+5575998393393",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+5575998393393",
-      "contactType": "reservations",
-      "areaServed": "BR",
-      "availableLanguage": ["Portuguese", "English"]
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Lençóis",
-        "sameAs": "https://pt.wikipedia.org/wiki/Len%C3%A7%C3%B3is"
+  // JSON-LD Structured Data
+  const getStructuredData = () => {
+    const baseData = {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Chapada Tour",
+      "alternateName": "Chapada Tour Turismo",
+      "description": description,
+      "url": "https://chapadatour.com.br/",
+      "logo": "https://ik.imagekit.io/ozcvccl1z/LOGOMARCA1__2_-removebg-preview-1-e1736863590369-300x162.webp?updatedAt=1772365084253",
+      "image": image,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Praça Horácio de Matos",
+        "addressLocality": "Lençóis",
+        "addressRegion": "Bahia",
+        "postalCode": "46960-000",
+        "addressCountry": "BR"
       },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Chapada Diamantina",
-        "sameAs": "https://pt.wikipedia.org/wiki/Parque_Nacional_da_Chapada_Diamantina"
-      }
-    ],
-    "priceRange": "$$",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "08:00",
-        "closes": "20:00"
-      }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/chapadatour/",
-      "https://wa.me/5575998393393"
-    ]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -12.5597,
+        "longitude": -41.3881
+      },
+      "telephone": "+5575998188802",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+5575998188802",
+        "contactType": "reservations",
+        "areaServed": "BR",
+        "availableLanguage": ["Portuguese", "English"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/chapadatourbr",
+        "https://api.whatsapp.com/send/?phone=5575998188802"
+      ]
+    };
+
+    if (schemaType === 'Trip' && schemaData) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "Trip",
+        "name": schemaData.name,
+        "description": schemaData.description,
+        "image": image,
+        "provider": baseData,
+        "itinerary": schemaData.itinerary?.map((item: any, index: number) => ({
+          "@type": "City",
+          "name": item.title,
+          "description": item.description
+        })),
+        "offers": {
+          "@type": "Offer",
+          "price": schemaData.price?.replace('R$ ', '').replace('.', '').replace(',', '.'),
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock"
+        }
+      };
+    }
+
+    if (schemaType === 'BlogPosting' && schemaData) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": schemaData.title,
+        "image": image,
+        "author": {
+          "@type": "Organization",
+          "name": "Chapada Tour"
+        },
+        "publisher": baseData,
+        "datePublished": schemaData.date,
+        "description": description
+      };
+    }
+
+    if (schemaType === 'Hotel' && schemaData) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": schemaData.name,
+        "description": schemaData.description,
+        "image": image,
+        "address": baseData.address,
+        "priceRange": schemaData.price
+      };
+    }
+
+    if (schemaType === 'BreadcrumbList' && schemaData) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": schemaData.map((item: any, index: number) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": `https://chapadatour.com.br${item.path}`
+        }))
+      };
+    }
+
+    return baseData;
   };
+
+  const structuredData = getStructuredData();
 
   return (
     <Helmet>

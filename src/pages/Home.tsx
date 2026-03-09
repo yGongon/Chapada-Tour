@@ -61,6 +61,10 @@ const Home = () => {
           ...SEO_KEYWORDS.SERVICES,
           ...SEO_KEYWORDS.FOREIGN
         ]}
+        schemaType="BreadcrumbList"
+        schemaData={[
+          { name: 'Início', path: '/' }
+        ]}
       />
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -156,7 +160,7 @@ const Home = () => {
               className="max-w-2xl"
             >
               <h2 className="text-5xl md:text-6xl font-serif mb-6">Escolha seu próximo destino na Chapada</h2>
-              <p className="text-stone-600 text-lg">Pacotes completos para você viver dias inesquecíveis em um dos cenários mais impressionantes do Brasil.</p>
+              <p className="text-stone-600 text-lg">Pacotes completos para você viver dias inesquecíveis em um dos cenários mais impressionantes do Brasil. Conheça o <Link to="/passeios/vale-do-pati-5-dias" className="text-brand-olive font-bold hover:underline">Vale do Pati</Link> ou explore as <Link to="/passeios" className="text-brand-olive font-bold hover:underline">Cachoeiras de Lençóis</Link>.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}

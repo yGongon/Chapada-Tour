@@ -28,7 +28,12 @@ const About = () => {
     <div className="pt-24 md:pt-32 pb-16 md:pb-24">
       <SEO 
         title="Sobre a Chapada Tour | Especialistas em Chapada Diamantina"
-        description="Conheça a história da Chapada Tour, nossa missão, valores e a equipe apaixonada por explorar e preservar a Chapada Diamantina."
+        description="Conheça a história da Chapada Tour, nossa missão, valores e a equipe apaixonada por explorar e preservar a Chapada Diamantina. Turismo com propósito."
+        schemaType="BreadcrumbList"
+        schemaData={[
+          { name: 'Início', path: '/' },
+          { name: 'Sobre Nós', path: '/sobre' }
+        ]}
       />
       <div className="max-w-7xl mx-auto px-6">
         {/* Intro */}

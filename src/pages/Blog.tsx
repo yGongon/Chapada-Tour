@@ -10,11 +10,16 @@ const Blog = () => {
   return (
     <div className="pt-32 pb-24">
       <SEO 
-        title="Blog - Chapada Tour"
-        description="Dicas de viagem, guias de trilhas e as melhores histórias sobre a Chapada Diamantina em nosso blog oficial."
+        title="Blog - Chapada Tour | Dicas e Histórias da Chapada Diamantina"
+        description="Dicas de viagem, guias de trilhas e as melhores histórias sobre a Chapada Diamantina em nosso blog oficial. Planeje sua aventura com quem conhece o terreno."
         keywords={[
           ...SEO_KEYWORDS.BLOG_SEO,
           ...SEO_KEYWORDS.GENERAL
+        ]}
+        schemaType="BreadcrumbList"
+        schemaData={[
+          { name: 'Início', path: '/' },
+          { name: 'Blog', path: '/blog' }
         ]}
       />
       <div className="max-w-7xl mx-auto px-6">

@@ -29,6 +29,11 @@ const Tours = () => {
           ...SEO_KEYWORDS.ATTRACTIONS,
           ...SEO_KEYWORDS.SPECIFIC_TOURS
         ]}
+        schemaType="BreadcrumbList"
+        schemaData={[
+          { name: 'Início', path: '/' },
+          { name: 'Passeios', path: '/passeios' }
+        ]}
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
