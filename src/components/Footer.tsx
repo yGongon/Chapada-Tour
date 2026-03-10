@@ -63,7 +63,10 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto pt-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-        <p>© 2024 Chapada Tour. Todos os direitos reservados.</p>
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <p>© 2024 Chapada Tour. Todos os direitos reservados.</p>
+          <p className="text-stone-600">Cadastur: 64.703.393/0001-82</p>
+        </div>
         <div className="flex gap-6">
           <Link to="/politica-de-privacidade" className="hover:text-white">Política de Privacidade</Link>
           <Link to="/termos-de-uso" className="hover:text-white">Termos de Uso</Link>

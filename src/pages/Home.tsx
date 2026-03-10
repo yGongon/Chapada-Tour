@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Users, Compass, Heart, Shield, MapPin, Languages } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
@@ -213,6 +213,73 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Stats Section - Trust & Impact */}
+      <section className="py-32 px-6 bg-stone-50 overflow-hidden relative">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-olive/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-cream/30 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block"
+            >
+              Nossa Essência
+            </motion.span>
+            <h2 className="text-5xl md:text-6xl font-serif">Compromisso & Impacto</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              { label: "Vidas Guiadas", value: "+5 mil", icon: <Users size={24} />, desc: "Experiências transformadoras compartilhadas." },
+              { label: "Experiência", value: "+10 Anos", icon: <Compass size={24} />, desc: "Conhecimento profundo de cada trilha e segredo." },
+              { label: "Renda Local", value: "80%", icon: <Heart size={24} />, desc: "Investimento direto no desenvolvimento da comunidade." },
+              { label: "Cadastur", value: "100%", icon: <Shield size={24} />, desc: "Regularização total e segurança jurídica." },
+              { label: "Guias Locais", value: "100%", icon: <MapPin size={24} />, desc: "Nascidos e criados no coração da Chapada." },
+              { label: "Idiomas", value: "4", icon: <Languages size={24} />, desc: "Atendimento em PT, EN, FR e ES." }
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                className="bg-white p-10 rounded-[2.5rem] border border-stone-100 shadow-sm hover:shadow-xl transition-all group"
+              >
+                <div className="w-14 h-14 bg-brand-cream/30 rounded-2xl flex items-center justify-center mb-8 text-brand-olive group-hover:scale-110 transition-transform duration-500">
+                  {stat.icon}
+                </div>
+                <p className="text-4xl md:text-5xl font-serif mb-3 text-stone-900">{stat.value}</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-brand-olive mb-4">{stat.label}</p>
+                <p className="text-stone-500 text-sm leading-relaxed">{stat.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="mt-20 p-12 bg-brand-olive rounded-[3rem] text-white text-center relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+            <p className="text-xl md:text-2xl font-serif italic opacity-90 max-w-3xl mx-auto relative z-10">
+              "Nossa missão é promover um turismo que respeita a natureza e valoriza quem nela vive, proporcionando conexões reais e seguras."
+            </p>
+            <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 relative z-10">
+              <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Cadastur: 64.703.393/0001-82</p>
+              <div className="hidden md:block w-1 h-1 bg-white/30 rounded-full" />
+              <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Lençóis, Bahia</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -434,28 +501,71 @@ const Home = () => {
       {/* Transfer Section */}
       <TransferSection />
 
-      {/* Stats */}
-      <section className="py-24 bg-brand-olive text-white px-6 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-        </div>
+      {/* Personalized Itinerary Section */}
+      <section className="py-32 px-6 bg-stone-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-olive/5 -z-0 skew-x-12 translate-x-1/4" />
         
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-16 text-center relative z-10">
-          {[
-            { label: "Guias Locais", value: "100%" }
-          ].map((stat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block">Exclusividade</span>
+            <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">Roteiro <br /> <span className="italic font-light">Personalizado</span></h2>
+            <p className="text-stone-400 text-lg mb-10 leading-relaxed">
+              Não encontrou o que procurava? Criamos uma experiência sob medida para você, sua família ou grupo de amigos. Escolha os destinos, o ritmo e o nível de aventura.
+            </p>
+            <ul className="space-y-4 mb-12">
+              {[
+                "Flexibilidade total de datas e horários",
+                "Seleção personalizada de atrativos",
+                "Guia privativo exclusivo",
+                "Logística completa de transporte e alimentação"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-stone-300">
+                  <div className="w-1.5 h-1.5 bg-brand-olive rounded-full" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a 
+              href="https://api.whatsapp.com/send/?phone=5575998188802&text=Olá! Gostaria de montar um roteiro personalizado para a Chapada Diamantina." 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-brand-olive text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-brand-olive transition-all group"
             >
-              <p className="text-5xl font-serif mb-3">{stat.value}</p>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60">{stat.label}</p>
-            </motion.div>
-          ))}
+              Montar meu Roteiro <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
+              <img 
+                src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221" 
+                alt="Roteiro personalizado na Chapada Diamantina" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl max-w-xs hidden md:block text-stone-900">
+              <p className="font-serif text-xl mb-2">Sua viagem, suas regras.</p>
+              <p className="text-sm text-stone-500">Atendimento especializado para criar a jornada dos seus sonhos.</p>
+            </div>
+          </motion.div>
         </div>
+      </section>
+
+      {/* Stats */}
+      <section className="hidden">
+        {/* Old stats section removed or hidden as it was moved up */}
       </section>
 
       {/* Parallax Quote */}

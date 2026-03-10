@@ -51,10 +51,14 @@ const About = () => {
             <p className="text-stone-600 text-lg mb-8 leading-relaxed">
               Acreditamos que cada trilha conta uma história e cada cachoeira renova a alma. Por isso, trabalhamos exclusivamente com guias locais que conhecem cada palmo desta terra e respeitam profundamente seu ecossistema.
             </p>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-4xl font-serif text-brand-olive mb-1">100%</p>
                 <p className="text-xs uppercase tracking-widest font-bold text-stone-400">Guias Certificados</p>
+              </div>
+              <div>
+                <p className="text-4xl font-serif text-brand-olive mb-1">Cadastur</p>
+                <p className="text-xs uppercase tracking-widest font-bold text-stone-400">64.703.393/0001-82</p>
               </div>
             </div>
           </motion.div>
@@ -121,47 +125,45 @@ const About = () => {
 
           <div className="relative max-w-4xl mx-auto">
             <div className="overflow-hidden rounded-[3rem] bg-white shadow-2xl border border-stone-100">
-              <div className="relative aspect-[16/9] md:aspect-[21/9]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentIndex}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0 flex flex-col md:flex-row cursor-grab active:cursor-grabbing"
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={(_, info) => {
-                      const swipeThreshold = 50;
-                      if (info.offset.x > swipeThreshold) {
-                        prevMember();
-                      } else if (info.offset.x < -swipeThreshold) {
-                        nextMember();
-                      }
-                    }}
-                  >
-                    <div className="w-full md:w-2/5 h-64 md:h-auto">
-                      <img 
-                        src={team[currentIndex].photo} 
-                        alt={`Guia ${team[currentIndex].name} - Equipe Chapada Tour`}
-                        className="w-full h-full object-cover"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center bg-white">
-                      <h3 className="text-3xl md:text-4xl font-serif mb-2">{team[currentIndex].name}</h3>
-                      <p className="text-brand-olive font-bold uppercase tracking-widest text-sm mb-6">{team[currentIndex].role}</p>
-                      <p className="text-stone-500 leading-relaxed">
-                        Apaixonado pela Chapada Diamantina, {team[currentIndex].name.split(' ')[0]} dedica sua vida a compartilhar as belezas e segredos desta região com segurança e respeito à natureza.
-                      </p>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex flex-col md:flex-row cursor-grab active:cursor-grabbing"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_, info) => {
+                    const swipeThreshold = 50;
+                    if (info.offset.x > swipeThreshold) {
+                      prevMember();
+                    } else if (info.offset.x < -swipeThreshold) {
+                      nextMember();
+                    }
+                  }}
+                >
+                  <div className="w-full md:w-2/5 h-80 md:h-[450px]">
+                    <img 
+                      src={team[currentIndex].photo} 
+                      alt={`Guia ${team[currentIndex].name} - Equipe Chapada Tour`}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="w-full md:w-3/5 p-10 md:p-16 flex flex-col justify-center bg-white">
+                    <h3 className="text-3xl md:text-5xl font-serif mb-3 leading-tight">{team[currentIndex].name}</h3>
+                    <p className="text-brand-olive font-bold uppercase tracking-[0.2em] text-xs mb-8">{team[currentIndex].role}</p>
+                    <p className="text-stone-500 leading-relaxed text-base md:text-lg">
+                      Apaixonado pela Chapada Diamantina, {team[currentIndex].name.split(' ')[0]} dedica sua vida a compartilhar as belezas e segredos desta região com segurança e respeito à natureza. Um especialista pronto para transformar sua trilha em uma jornada inesquecível.
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Controls */}
