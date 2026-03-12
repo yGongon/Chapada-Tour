@@ -38,7 +38,7 @@ const Tours = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
           <span className="text-brand-olive font-bold uppercase tracking-widest text-sm mb-4 block">Nossas Aventuras</span>
-          <h1 className="text-4xl md:text-6xl font-serif mb-6">Explore a Chapada</h1>
+          <h1 className="text-4xl md:text-6xl font-serif mb-6">Conheça Nossos Pacotes De Passeios</h1>
           <p className="text-stone-600 text-lg mb-10">De caminhadas leves a trekkings de vários dias, temos o roteiro perfeito para você descobrir os segredos da Bahia.</p>
           
           {/* Search Bar */}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play } from 'lucide-react';
+import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play, Activity, Waves, Car, Footprints, Mountain } from 'lucide-react';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
@@ -290,7 +290,65 @@ const TourDetail = () => {
                       <div key={i} className="relative pl-8 border-l-2 border-stone-100 pb-8 last:pb-0">
                         <div className="absolute -left-[9px] top-0 w-4 h-4 bg-brand-olive rounded-full border-4 border-white shadow-sm" />
                         <h4 className="text-xl font-serif mb-2 text-brand-olive">{item.day} – {item.title}</h4>
-                        <p className="text-stone-600 leading-relaxed">{item.description}</p>
+                        <p className="text-stone-600 leading-relaxed mb-4">{item.description}</p>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 bg-stone-50 p-5 rounded-2xl border border-stone-100">
+                          {item.physicalEffort && (
+                            <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-olive shadow-sm">
+                                <Activity size={16} />
+                              </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Esforço Físico</p>
+                                <p className="text-sm text-stone-700">{item.physicalEffort}</p>
+                              </div>
+                            </div>
+                          )}
+                          {item.bathingSpots && (
+                            <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-olive shadow-sm">
+                                <Waves size={16} />
+                              </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Locais para Banho</p>
+                                <p className="text-sm text-stone-700">{item.bathingSpots}</p>
+                              </div>
+                            </div>
+                          )}
+                          {item.carJourney && (
+                            <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-olive shadow-sm">
+                                <Car size={16} />
+                              </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Percurso de Carro</p>
+                                <p className="text-sm text-stone-700">{item.carJourney}</p>
+                              </div>
+                            </div>
+                          )}
+                          {item.hiking && (
+                            <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-olive shadow-sm">
+                                <Footprints size={16} />
+                              </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Caminhada</p>
+                                <p className="text-sm text-stone-700">{item.hiking}</p>
+                              </div>
+                            </div>
+                          )}
+                          {item.challenges && (
+                            <div className="flex items-center gap-3 sm:col-span-2">
+                              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-olive shadow-sm">
+                                <Mountain size={16} />
+                              </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-stone-400">Desafios</p>
+                                <p className="text-sm text-stone-700">{item.challenges}</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>

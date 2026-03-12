@@ -2,6 +2,11 @@ export interface ItineraryDay {
   day: string;
   title: string;
   description: string;
+  physicalEffort?: string;
+  bathingSpots?: string;
+  carJourney?: string;
+  hiking?: string;
+  challenges?: string;
 }
 
 export interface FAQ {
@@ -126,27 +131,52 @@ export const tours: Tour[] = [
       {
         day: "Dia 1",
         title: "Subida dos Aleixos, Gerais do Rio Preto, Mirante do Pati e Cachoeiras do Funil",
-        description: "Nosso dia começa às 7h, com saída de Lençóis em direção ao povoado de Guiné (aproximadamente 2 horas de deslocamento). É ali que iniciamos oficialmente a travessia pelo Vale do Pati, começando pela clássica e desafiadora Subida dos Aleixos, um dos trechos mais marcantes da entrada no vale. Após vencer o aclive, seguimos pelos impressionantes Gerais do Rio Preto, uma vasta área de campos naturais com paisagens abertas e vistas amplas, considerada um dos trechos mais bonitos da travessia. Durante o percurso, realizamos parada para banho refrescante em rios naturais. A caminhada continua até o icônico Mirante do Vale do Pati, de onde se tem uma vista panorâmica espetacular de todo o vale, um dos momentos mais emocionantes da expedição. Após o almoço tipo piquenique no alto, iniciamos a descida pela famosa Rampa, seguindo até as Cachoeiras do Rio Funil, onde encerramos o dia com mais um banho revigorante. À noite, realizamos o pernoite em casa de moradores locais, com jantar caseiro incluso, proporcionando uma experiência autêntica sob o céu estrelado do Vale do Pati."
+        description: "Nosso dia começa às 7h, com saída de Lençóis em direção ao povoado de Guiné (aproximadamente 2 horas de deslocamento). É ali que iniciamos oficialmente a travessia pelo Vale do Pati, começando pela clássica e desafiadora Subida dos Aleixos, um dos trechos mais marcantes da entrada no vale. Após vencer o aclive, seguimos pelos impressionantes Gerais do Rio Preto, uma vasta área de campos naturais com paisagens abertas e vistas amplas, considerada um dos trechos mais bonitos da travessia. Durante o percurso, realizamos parada para banho refrescante em rios naturais. A caminhada continua até o icônico Mirante do Vale do Pati, de onde se tem uma vista panorâmica espetacular de todo o vale, um dos momentos mais emocionantes da expedição. Após o almoço tipo piquenique no alto, iniciamos a descida pela famosa Rampa, seguindo até as Cachoeiras do Rio Funil, onde encerramos o dia com mais um banho revigorante. À noite, realizamos o pernoite em casa de moradores locais, com jantar caseiro incluso, proporcionando uma experiência autêntica sob o céu estrelado do Vale do Pati.",
+        physicalEffort: "Alto",
+        bathingSpots: "Cachoeiras do Rio Funil",
+        carJourney: "160 km (total ida e volta)",
+        hiking: "12 km (total do dia)",
+        challenges: "Subida dos Aleixos (trecho íngreme inicial)"
       },
       {
         day: "Dia 2",
         title: "Cachoeirão por Cima, Mirantes Naturais e Interior do Vale",
-        description: "Após o café da manhã regional preparado pelos moradores, seguimos em direção ao Mirante do Cachoeirão por Cima, um dos maiores cartões-postais da Chapada Diamantina. Em períodos de maior volume de água, o paredão revela dezenas de quedas d’água despencando de cerca de 300 metros de altura, formando um espetáculo natural de grandes proporções. O almoço tipo piquenique é realizado com essa vista cinematográfica como pano de fundo, proporcionando um dos momentos mais memoráveis da travessia. No período da tarde, seguimos caminhando pelo interior do vale até uma nova casa de moradores locais, onde realizamos o pernoite com jantar incluso e descanso."
+        description: "Após o café da manhã regional preparado pelos moradores, seguimos em direção ao Mirante do Cachoeirão por Cima, um dos maiores cartões-postais da Chapada Diamantina. Em períodos de maior volume de água, o paredão revela dezenas de quedas d’água despencando de cerca de 300 metros de altura, formando um espetáculo natural de grandes proporções. O almoço tipo piquenique é realizado com essa vista cinematográfica como pano de fundo, proporcionando um dos momentos mais memoráveis da travessia. No período da tarde, seguimos caminhando pelo interior do vale até uma nova casa de moradores locais, onde realizamos o pernoite com jantar incluso e descanso.",
+        physicalEffort: "Alto",
+        bathingSpots: "Rios no percurso",
+        carJourney: "0 km",
+        hiking: "18 km (total do dia)",
+        challenges: "Caminhada longa em terreno irregular"
       },
       {
         day: "Dia 3",
         title: "Morro do Castelo e Gruta da Lapinha",
-        description: "Após um café da manhã reforçado, partimos para um dos dias mais desafiadores e aguardados da expedição: a subida ao Morro do Castelo. A trilha exige bom preparo físico, mas a recompensa é única. O acesso ao topo inclui a travessia da Gruta da Lapinha, uma caverna natural que atravessamos com lanternas até emergir no alto do morro. Do topo, temos uma das vistas mais grandiosas do Vale do Pati, com panoramas amplos e sensação de conquista. O almoço tipo piquenique é realizado com esse cenário espetacular ao fundo. Após a descida, aproveitamos um banho de rio para relaxamento, encerrando o dia com mais um pernoite em casa de nativos e jantar incluso."
+        description: "Após um café da manhã reforçado, partimos para um dos dias mais desafiadores e aguardados da expedição: a subida ao Morro do Castelo. A trilha exige bom preparo físico, mas a recompensa é única. O acesso ao topo inclui a travessia da Gruta da Lapinha, uma caverna natural que atravessamos com lanternas até emergir no alto do morro. Do topo, temos uma das vistas mais grandiosas do Vale do Pati, com panoramas amplos e sensação de conquista. O almoço tipo piquenique é realizado com esse cenário espetacular ao fundo. Após a descida, aproveitamos um banho de rio para relaxamento, encerrando o dia with mais um pernoite em casa de nativos e jantar incluso.",
+        physicalEffort: "Muito Alto",
+        bathingSpots: "Poço da Árvore",
+        carJourney: "0 km",
+        hiking: "10 km (total do dia)",
+        challenges: "Subida íngreme e técnica ao Morro do Castelo e travessia de caverna"
       },
       {
         day: "Dia 4",
         title: "Cachoeirão por Baixo, Cânion do Cachoeirão e Pati de Baixo",
-        description: "Após o café da manhã, seguimos para o setor mais remoto e selvagem do Vale do Pati: o Pati de Baixo. Este trecho é caracterizado por natureza praticamente intocada, trilhas menos frequentadas e paisagens imponentes. Nossa caminhada atravessa o cânion do Cachoeirão, permitindo observar de baixo as gigantescas quedas d’água que no segundo dia foram vistas do alto. A sensação de estar entre paredões monumentais, em um ambiente silencioso e preservado, proporciona um dos momentos mais intensos de conexão com a natureza durante toda a travessia. Ao final do dia, chegamos a mais uma casa de moradores locais, onde realizamos o pernoite com jantar incluso, em clima de acolhimento e descanso."
+        description: "Após o café da manhã, seguimos para o setor mais remoto e selvagem do Vale do Pati: o Pati de Baixo. Este trecho é caracterizado por natureza praticamente intocada, trilhas menos frequentadas e paisagens imponentes. Nossa caminhada atravessa o cânion do Cachoeirão, permitindo observar de baixo as gigantescas quedas d’água que no segundo dia foram vistas do alto. A sensação de estar entre paredões monumentais, em um ambiente silencioso e preservado, proporciona um dos momentos mais intensos de conexão com a natureza durante toda a travessia. Ao final do dia, chegamos a mais uma casa de moradores locais, onde realizamos o pernoite com jantar incluso, em clima de acolhimento e descanso.",
+        physicalEffort: "Alto",
+        bathingSpots: "Cachoeirão por Baixo",
+        carJourney: "0 km",
+        hiking: "15 km (total do dia)",
+        challenges: "Caminhada em leito de rio com pedras soltas"
       },
       {
         day: "Dia 5",
         title: "Subida do Império e antiga Estrada Real",
-        description: "Após o café preparado em casas de nativos, damos início ao último dia de travessia pelo Vale do Pati. A jornada começa com a tradicional Subida do Império, antigo caminho utilizado pelos moradores da região para transportar a produção agrícola do vale até outras localidades. A trilha exige fôlego, mas cada passo é recompensado. Ao alcançar o topo, somos presenteados com uma vista ampla e marcante das montanhas e vales que acompanharam toda a expedição é o momento perfeito para contemplar e se despedir desse cenário único. Na sequência, iniciamos a descida em direção ao município de Andaraí. Ao final da caminhada, embarcamos em veículo de apoio para retorno a Lençóis, encerrando essa experiência inesquecível no coração da Chapada Diamantina."
+        description: "Após o café preparado em casas de nativos, damos início ao último dia de travessia pelo Vale do Pati. A jornada começa com a tradicional Subida do Império, antigo caminho utilizado pelos moradores da região para transportar a produção agrícola do vale até outras localidades. A trilha exige fôlego, mas cada passo é recompensado. Ao alcançar o topo, somos presenteados com uma vista ampla e marcante das montanhas e vales que acompanharam toda a expedição é o momento perfeito para contemplar e se despedir desse cenário único. Na sequência, iniciamos a descida em direção ao município de Andaraí. Ao final da caminhada, embarcamos em veículo de apoio para retorno a Lençóis, encerrando essa experiência inesquecível no coração da Chapada Diamantina.",
+        physicalEffort: "Alto",
+        bathingSpots: "Rio em Andaraí",
+        carJourney: "100 km (retorno a Lençóis)",
+        hiking: "15 km (total do dia)",
+        challenges: "Subida e descida íngreme da Ladeira do Império"
       }
     ],
     accommodation: "A hospedagem no Vale do Pati acontece em casas de moradores locais, proporcionando uma experiência autêntica de imersão cultural e conexão com o modo de vida tradicional da região. As casas são simples, porém limpas, organizadas e acolhedoras, oferecendo o conforto essencial para o descanso após os dias de trilha.\n\n• Casas de moradores locais\n• Quartos e banheiros compartilhados\n• Chuveiro com água fria\n• Ambiente simples, seguro e familiar\n• Ausência de Wi-Fi e sinal de celular (experiência de desconexão total e imersão na natureza)",
@@ -225,17 +255,32 @@ export const tours: Tour[] = [
       {
         day: "1º dia",
         title: "Entrada no Vale, Gerais do Rio Preto e Mirante do Pati",
-        description: "Saída de Lençóis em direção ao povoado de Guiné, onde iniciamos a travessia pelo Vale do Pati. A trilha começa com a clássica Subida dos Aleixos, um trecho exigente que conduz aos Gerais do Rio Preto, uma vasta área de campos naturais com paisagens abertas. Durante o percurso, realizamos paradas para descanso e banho em rios naturais. O grande destaque do dia é a chegada ao Mirante do Vale do Pati, um dos visuais mais emblemáticos da Chapada Diamantina, com vista panorâmica para o vale. Após o almoço tipo piquenique, iniciamos a descida em direção ao interior do vale, com parada para banho na Cachoeira da Altina. Encerramos o dia com pernoite em casa de moradores locais, com jantar incluso."
+        description: "Saída de Lençóis em direção ao povoado de Guiné, onde iniciamos a travessia pelo Vale do Pati. A trilha começa com a clássica Subida dos Aleixos, um trecho exigente que conduz aos Gerais do Rio Preto, uma vasta área de campos naturais com paisagens abertas. Durante o percurso, realizamos paradas para descanso e banho em rios naturais. O grande destaque do dia é a chegada ao Mirante do Vale do Pati, um dos visuais mais emblemáticos da Chapada Diamantina, com vista panorâmica para o vale. Após o almoço tipo piquenique, iniciamos a descida em direção ao interior do vale, com parada para banho na Cachoeira da Altina. Encerramos o dia com pernoite em casa de moradores locais, com jantar incluso.",
+        physicalEffort: "Alto",
+        bathingSpots: "Cachoeira da Altina",
+        carJourney: "160 km (total ida e volta)",
+        hiking: "12 km (total do dia)",
+        challenges: "Subida dos Aleixos (trecho íngreme inicial)"
       },
       {
         day: "2º dia",
         title: "Morro do Castelo, Gruta da Lapinha e Cachoeira do Funil",
-        description: "Após o café da manhã, partimos para a trilha do Morro do Castelo, um dos pontos mais altos e desafiadores do Vale do Pati. O percurso inclui subidas íngremes e trechos técnicos, sendo recompensado pela chegada à Gruta da Lapinha, localizada no topo da serra. Seguimos pela parte alta do morro, passando por mirantes naturais com vistas amplas do Vale do Pati, onde realizamos o almoço tipo piquenique. Na sequência, iniciamos a descida até a Cachoeira do Funil, onde encerramos o dia com banho e descanso. Retorno para a casa de nativos para pernoite com jantar incluso."
+        description: "Após o café da manhã, partimos para a trilha do Morro do Castelo, um dos pontos mais altos e desafiadores do Vale do Pati. O percurso inclui subidas íngremes e trechos técnicos, sendo recompensado pela chegada à Gruta da Lapinha, localizada no topo da serra. Seguimos pela parte alta do morro, passando por mirantes naturais com vistas amplas do Vale do Pati, onde realizamos o almoço tipo piquenique. Na sequência, iniciamos a descida até a Cachoeira do Funil, onde encerramos o dia com banho e descanso. Retorno para a casa de nativos para pernoite com jantar incluso.",
+        physicalEffort: "Muito Alto",
+        bathingSpots: "Cachoeira do Funil",
+        carJourney: "0 km",
+        hiking: "10 km (total do dia)",
+        challenges: "Subida íngreme e técnica ao Morro do Castelo e travessia de caverna"
       },
       {
         day: "3º dia",
         title: "Cachoeirão por Cima e saída do Vale",
-        description: "Após o café da manhã, seguimos em direção ao Cachoeirão por Cima, um dos maiores cartões-postais da Chapada Diamantina. Em épocas de chuva, é possível observar dezenas de quedas d’água despencando dos paredões, formando um espetáculo natural de grandes proporções. Após a contemplação, realizamos o lanche no local e iniciamos o retorno pelos Gerais do Rio Preto até o povoado de Guiné, onde nosso transporte nos aguarda para retorno a Lençóis, com chegada prevista para o início da noite."
+        description: "Após o café da manhã, seguimos em direção ao Cachoeirão por Cima, um dos maiores cartões-postais da Chapada Diamantina. Em épocas de chuva, é possível observar dezenas de quedas d’água despencando dos paredões, formando um espetáculo natural de grandes proporções. Após a contemplação, realizamos o lanche no local e iniciamos o retorno pelos Gerais do Rio Preto até o povoado de Guiné, onde nosso transporte nos aguarda para retorno a Lençóis, com chegada prevista para o início da noite.",
+        physicalEffort: "Alto",
+        bathingSpots: "Rios no percurso",
+        carJourney: "160 km (total ida e volta)",
+        hiking: "18 km (total do dia)",
+        challenges: "Caminhada longa em terreno irregular"
       }
     ],
     accommodation: "A hospedagem no Vale do Pati acontece em casas de moradores locais, proporcionando uma experiência autêntica de imersão cultural e conexão com o modo de vida tradicional da região. As casas são simples, porém limpas, organizadas e acolhedoras, oferecendo o conforto essencial para o descanso após os dias de trilha.\n\n• Casas de moradores locais\n• Quartos e banheiros compartilhados\n• Chuveiro com água fria\n• Ambiente simples, seguro e familiar\n• Ausência de Wi-Fi e sinal de celular (experiência de desconexão total e imersão na natureza)",
@@ -320,42 +365,82 @@ export const tours: Tour[] = [
       {
         day: "1º dia",
         title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "Iniciamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas extremamente cristalinas, ideais para banho e descanso. Ao lado, visitamos a Gruta Azul. Finalizamos o dia com a subida ao Morro do Pai Inácio para uma vista panorâmica inesquecível."
+        description: "Iniciamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas extremamente cristalinas, ideais para banho e descanso. Ao lado, visitamos a Gruta Azul. Finalizamos o dia com a subida ao Morro do Pai Inácio para uma vista panorâmica inesquecível.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Subida ao Morro do Pai Inácio (20 min)"
       },
       {
         day: "2º dia",
         title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "Exploramos a Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra. Seguimos para o Rio Mucugêzinho e encerramos no Poço do Diabo, ideal para banho e contemplação."
+        description: "Exploramos a Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra. Seguimos para o Rio Mucugêzinho e encerramos no Poço do Diabo, ideal para banho e contemplação.",
+        physicalEffort: "Leve",
+        bathingSpots: "Cachoeira do Mosquito e Poço do Diabo",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Descida de escadaria na Cachoeira do Mosquito"
       },
       {
         day: "3º dia",
         title: "Cachoeira da Fumaça e Cachoeira do Riachinho",
-        description: "Visitamos a Cachoeira da Fumaça por cima, uma das mais altas do Brasil (340m). A trilha tem uma subida íngreme inicial seguida por caminhada nos gerais. Após a contemplação, seguimos para a Cachoeira do Riachinho para banho."
+        description: "Visitamos a Cachoeira da Fumaça por cima, uma das mais altas do Brasil (340m). A trilha tem uma subida íngreme inicial seguida por caminhada nos gerais. Após a contemplação, seguimos para a Cachoeira do Riachinho para banho.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Riachinho",
+        carJourney: "150 km (total ida e volta)",
+        hiking: "12 km (total do dia)",
+        challenges: "Subida inicial intensa e caminhada em terreno aberto"
       },
       {
         day: "4º dia",
         title: "Parque da Muritiba e Mirantes de Lençóis",
-        description: "Passeio leve pelo Parque da Muritiba: Salão de Areia, Poço Halley, Cachoeira da Primavera e Poço do Paraíso. Vista panorâmica do Mirante de Lençóis e banho na Cachoeirinha e Piscinas Naturais."
+        description: "Passeio leve pelo Parque da Muritiba: Salão de Areia, Poço Halley, Cachoeira da Primavera e Poço do Paraíso. Vista panorâmica do Mirante de Lençóis e banho na Cachoeirinha e Piscinas Naturais.",
+        physicalEffort: "Leve",
+        bathingSpots: "Piscinas do Serrano e Cachoeirinha",
+        carJourney: "0 km (saída a pé)",
+        hiking: "6 km (total do dia)",
+        challenges: "Caminhada em terreno irregular com pedras"
       },
       {
         day: "5º, 6º e 7º dia",
         title: "Vale do Pati",
-        description: "Três dias dedicados ao Vale do Pati. A travessia combina trilhas em gerais, vales profundos e rios de águas cristalinas. Destaque para o Cachoeirão por cima. Pernoites em casas de moradores locais com imersão na cultura do vale. No último dia, seguimos para Ibicoara."
+        description: "Três dias dedicados ao Vale do Pati. A travessia combina trilhas em gerais, vales profundos e rios de águas cristalinas. Destaque para o Cachoeirão por cima. Pernoites em casas de moradores locais com imersão na cultura do vale. No último dia, seguimos para Ibicoara.",
+        physicalEffort: "Alto",
+        bathingSpots: "Vários (Cachoeira do Funil e rios)",
+        carJourney: "160 km (total)",
+        hiking: "40 km (total 3 dias)",
+        challenges: "Subida dos Aleixos e longas caminhadas"
       },
       {
         day: "8º dia",
         title: "Cachoeira do Buracão + pernoite em Ibicoara",
-        description: "Visitamos a impressionante Cachoeira do Buracão. A trilha percorre mata, leito de rio e um cânion estreito até a grande queda d’água. Pernoite em casa de nativos com jantar incluso."
+        description: "Visitamos a impressionante Cachoeira do Buracão. A trilha percorre mata, leito de rio e um cânion estreito até a grande queda d’água. Pernoite em casa de nativos com jantar incluso.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "60 km",
+        hiking: "6 km (total do dia)",
+        challenges: "Nado no cânion do Buracão"
       },
       {
         day: "9º dia",
         title: "Cachoeira da Fumacinha + terceira pernoite em Ibicoara",
-        description: "Um dos dias mais intensos. Visitamos a Cachoeira da Fumacinha por trilha dentro de um cânion, com travessias de rio e trechos técnicos. Pernoite em casa de nativos."
+        description: "Um dos dias mais intensos. Visitamos a Cachoeira da Fumacinha por trilha dentro de um cânion, com travessias de rio e trechos técnicos. Pernoite em casa de nativos.",
+        physicalEffort: "Muito Alto",
+        bathingSpots: "Cachoeira da Fumacinha",
+        carJourney: "40 km",
+        hiking: "18 km (total do dia)",
+        challenges: "Caminhada técnica sobre pedras no leito do rio"
       },
       {
         day: "10º dia",
         title: "Poço Encantado, Poço Azul e retorno para Lençóis",
-        description: "Visita ao Poço Encantado, famoso pelo fenômeno da luz azulada. Em seguida, visitamos o Poço Azul para flutuação. Retorno para Lençóis ao final do dia."
+        description: "Visita ao Poço Encantado, famoso pelo fenômeno da luz azulada. Em seguida, visitamos o Poço Azul para flutuação. Retorno para Lençóis ao final do dia.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Azul (flutuação)",
+        carJourney: "250 km (retorno a Lençóis)",
+        hiking: "2 km (total do dia)",
+        challenges: "Acesso por escadarias nas grutas"
       }
     ],
     whatToBring: [
@@ -542,28 +627,53 @@ export const tours: Tour[] = [
     itinerary: [
       {
         day: "1º dia",
-        title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "O primeiro dia é dedicado aos clássicos da região de Iraquara. Começamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por amplos salões e formações calcárias impressionantes. Em seguida, visitamos a Fazenda Pratinha, conhecida por suas águas extremamente cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar em suas águas azuladas. O dia se encerra com a subida ao Morro do Pai Inácio, cartão-postal da Chapada, oferecendo uma vista panorâmica inesquecível da região."
+        title: "Gruta da Lapa Doce, Pratinha, Gruta Azul e Morro do Pai Inácio",
+        description: "O primeiro dia é dedicado aos clássicos da região de Iraquara. Começamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por amplos salões e formações calcárias impressionantes. Em seguida, visitamos a Fazenda Pratinha, conhecida por suas águas extremamente cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar em suas águas azuladas. O dia se encerra com a subida ao Morro do Pai Inácio, cartão-postal da Chapada, oferecendo uma vista panorâmica inesquecível da região.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha e Poço do Diabo",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Pequena descida em pedras para acessar o Poço do Diabo"
       },
       {
         day: "2º dia",
-        title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "Neste dia, exploramos algumas das cachoeiras mais tradicionais da Chapada Diamantina. Iniciamos pela Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma bela queda d’água forma um poço excelente para banho. Seguimos para o Rio Mucugêzinho, com seu poço profundo cercado por paredões rochosos. Finalizamos no Poço do Diabo, uma cachoeira de aproximadamente 20 metros de queda, com grande poço ideal para banho e contemplação."
+        title: "Poço Encantado e Poço Azul",
+        description: "O segundo dia é dedicado a dois dos fenômenos naturais mais impressionantes da Chapada Diamantina. Pela manhã, visitamos o Poço Encantado, famoso pelo efeito da luz azulada que atravessa suas águas extremamente transparentes. Em seguida, seguimos para o Poço Azul, onde é possível realizar flutuação em águas cristalinas.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Encantado (apenas contemplação) e Poço Azul (flutuação)",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "2 km (total do dia)",
+        challenges: "Escadaria para acessar o Poço Encantado"
       },
       {
         day: "3º dia",
-        title: "Poço Encantado e Poço Azul",
-        description: "O terceiro dia é dedicado a dois dos fenômenos naturais mais impressionantes da Chapada Diamantina. Pela manhã, visitamos o Poço Encantado, famoso pelo efeito da luz azulada que atravessa suas águas extremamente transparentes, criando um espetáculo natural único no mundo. A visita é contemplativa, respeitando as normas de preservação ambiental. Em seguida, seguimos para o Poço Azul, onde, em períodos específicos do ano, a incidência da luz solar cria um efeito visual surpreendente dentro da caverna, além da possibilidade de flutuação com equipamentos de segurança."
+        title: "Cachoeira do Mosquito",
+        description: "Neste dia, exploramos a Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma bela queda d’água forma um poço excelente para banho.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Mosquito",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Escadaria íngreme para acessar a Cachoeira do Mosquito"
       },
       {
         day: "4º dia",
-        title: "Mini Pantanal do Marimbus e Rio Roncador",
-        description: "O quarto dia proporciona uma experiência diferente e encantadora. Visitamos o Mini Pantanal do Marimbus, uma extensa área alagada repleta de vegetação aquática e rica biodiversidade. O passeio é realizado em barco tradicional, navegando por canais naturais, com grandes chances de observação de aves e contemplação da paisagem. Em seguida, visitamos o Rio Roncador, conhecido por suas águas claras e tranquilas, perfeitas para banho e relaxamento em meio à natureza."
+        title: "Cachoeira do Buracão",
+        description: "A Cachoeira do Buracão, em Ibicoara, é um dos destinos mais impressionantes da Chapada Diamantina. A trilha segue pelas margens do rio até a entrada de um cânion monumental, onde você nada entre paredões de 100 metros de altura para alcançar a queda d’água.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "440 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Caminhada em cânion estreito e travessia a nado (opcional) para chegar à queda"
       },
       {
         day: "5º dia",
-        title: "Parque da Muritiba e Mirantes de Lençóis",
-        description: "No último dia, exploramos o Parque da Muritiba, um dos complexos naturais mais completos de Lençóis. O roteiro inclui visita ao Salão de Areia, formação rochosa esculpida pela ação da água, seguida de banhos no Poço Halley e na Cachoeira da Primavera. Continuamos até o Poço do Paraíso, conhecido por suas águas calmas e cristalinas. Do Mirante de Lençóis, contemplamos uma vista panorâmica da cidade e das serras ao redor. Finalizamos com visita à Cachoeirinha e às Piscinas Naturais, ideais para relaxar antes do retorno."
+        title: "Cachoeira da Fumaça e Riachinho",
+        description: "A Cachoeira da Fumaça é uma das maiores do Brasil, com 340 metros de queda livre. A trilha leva ao topo da cachoeira, de onde se tem uma vista vertiginosa do vale. No retorno, relaxamos nas águas do Riachinho.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira da Fumaça (parte superior) e Riachinho",
+        carJourney: "150 km (total ida e volta)",
+        hiking: "12 km (total do dia)",
+        challenges: "Subida íngreme de 2 km no início da trilha da Fumaça"
       }
     ],
     whatToBring: [
@@ -647,32 +757,62 @@ export const tours: Tour[] = [
       {
         day: "1º dia",
         title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "O primeiro dia é dedicado aos clássicos da região de Iraquara. Iniciamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, explorando salões amplos e formações calcárias impressionantes com acompanhamento de guia local. Em seguida, visitamos a Fazenda Pratinha, famosa por suas águas cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar em suas águas azuladas. O dia se encerra com a subida ao Morro do Pai Inácio, onde apreciamos uma vista panorâmica inesquecível da Chapada."
+        description: "O primeiro dia é dedicado aos clássicos da região de Iraquara. Iniciamos com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, explorando salões amplos e formações calcárias impressionantes com acompanhamento de guia local. Em seguida, visitamos a Fazenda Pratinha, famosa por suas águas cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar em suas águas azuladas. O dia se encerra com a subida ao Morro do Pai Inácio, onde apreciamos uma vista panorâmica inesquecível da Chapada.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Subida ao Morro do Pai Inácio (20 min)"
       },
       {
         day: "2º dia",
         title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "Neste dia, conhecemos algumas das cachoeiras mais tradicionais da Chapada Diamantina. Começamos pela Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma bela queda d’água forma um poço ideal para banho. Seguimos para o Rio Mucugêzinho, com seu poço profundo cercado por paredões rochosos. Finalizamos no Poço do Diabo, uma cachoeira de cerca de 20 metros de queda, com um amplo poço perfeito para banho e contemplação."
+        description: "Neste dia, conhecemos algumas das cachoeiras mais tradicionais da Chapada Diamantina. Começamos pela Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma bela queda d’água forma um poço ideal para banho. Seguimos para o Rio Mucugêzinho, com seu poço profundo cercado por paredões rochosos. Finalizamos no Poço do Diabo, uma cachoeira de cerca de 20 metros de queda, com um amplo poço perfeito para banho e contemplação.",
+        physicalEffort: "Leve",
+        bathingSpots: "Cachoeira do Mosquito e Poço do Diabo",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Descida de escadaria na Cachoeira do Mosquito"
       },
       {
         day: "3º dia",
         title: "Mini Pantanal do Marimbus e Rio Roncador",
-        description: "O terceiro dia proporciona uma experiência diferenciada e relaxante. Visitamos o Mini Pantanal do Marimbus, uma extensa área alagada com rica biodiversidade, onde realizamos um passeio de barco por canais naturais, observando aves e a vegetação típica da região. Em seguida, seguimos para o Rio Roncador, conhecido por suas águas calmas e cristalinas, ideais para banho e descanso em meio à natureza."
+        description: "O terceiro dia proporciona uma experiência diferenciada e relaxante. Visitamos o Mini Pantanal do Marimbus, uma extensa área alagada com rica biodiversidade, onde realizamos um passeio de barco por canais naturais, observando aves e a vegetação típica da região. Em seguida, seguimos para o Rio Roncador, conhecido por suas águas calmas e cristalinas, ideais para banho e descanso em meio à natureza.",
+        physicalEffort: "Leve",
+        bathingSpots: "Rio Roncador",
+        carJourney: "40 km (total ida e volta)",
+        hiking: "2 km (total do dia)",
+        challenges: "Passeio de barco a remo (sentado)"
       },
       {
         day: "4º dia",
         title: "Parque da Muritiba e Mirantes de Lençóis",
-        description: "Neste dia exploramos o Parque da Muritiba, um dos complexos naturais mais completos de Lençóis. O roteiro inclui visita ao Salão de Areia, seguido de banhos no Poço Halley e na Cachoeira da Primavera. Continuamos até o Poço do Paraíso, conhecido por suas águas tranquilos. Do Mirante de Lençóis, apreciamos uma vista panorâmica da cidade e das serras ao redor. O dia se encerra com visita à Cachoeirinha e às Piscinas Naturais, perfeitas para relaxar."
+        description: "Neste dia exploramos o Parque da Muritiba, um dos complexos naturais mais completos de Lençóis. O roteiro inclui visita ao Salão de Areia, seguido de banhos no Poço Halley e na Cachoeira da Primavera. Continuamos até o Poço do Paraíso, conhecido por suas águas tranquilos. Do Mirante de Lençóis, apreciamos uma vista panorâmica da cidade e das serras ao redor. O dia se encerra com visita à Cachoeirinha e às Piscinas Naturais, perfeitas para relaxar.",
+        physicalEffort: "Leve",
+        bathingSpots: "Piscinas do Serrano e Cachoeirinha",
+        carJourney: "0 km (saída a pé)",
+        hiking: "6 km (total do dia)",
+        challenges: "Caminhada em terreno irregular com pedras"
       },
       {
         day: "5º dia",
         title: "Cachoeira do Buracão + Pernoite em Mucugê",
-        description: "O quinto dia é dedicado a uma das cachoeiras mais impressionantes da Chapada Diamantina: a Cachoeira do Buracão. Após o deslocamento até Ibicoara, iniciamos a trilha que leva ao cânion, com trechos de caminhada, travessia de rio e passagem entre paredões rochosos. A recompensa é a chegada à imponente queda d’água, formando um cenário grandioso e inesquecível. Após o passeio, seguimos para Mucugê, onde realizamos o pernoite em pousada, com conforto e descanso."
+        description: "O quinto dia é dedicado a uma das cachoeiras mais impressionantes da Chapada Diamantina: a Cachoeira do Buracão. Após o deslocamento até Ibicoara, iniciamos a trilha que leva ao cânion, com trechos de caminhada, travessia de rio e passagem entre paredões rochosos. A recompensa é a chegada à imponente queda d’água, formando um cenário grandioso e inesquecível. Após o passeio, seguimos para Mucugê, onde realizamos o pernoite em pousada, com conforto e descanso.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "200 km (total do dia)",
+        hiking: "6 km (total do dia)",
+        challenges: "Nado no cânion do Buracão"
       },
       {
         day: "6º dia",
         title: "Poço Encantado, Poço Azul e retorno para Lençóis",
-        description: "Após o café da manhã na pousada em Mucugê, seguimos para o último dia de roteiro. Visitamos o Poço Encantado, famoso pelo fenômeno da luz azulada que atravessa suas águas extremamente cristalinas, criando um espetáculo natural único. A visita é contemplativa, respeitando as normas ambientais. Em seguida, visitamos o Poço Azul, onde é possível realizar flutuação e observar a impressionante transparência da água. Após o passeio, retornamos para Lençóis, encerrando a experiência com uma sensação de plenitude e conexão com a Chapada Diamantina."
+        description: "Após o café da manhã na pousada em Mucugê, seguimos para o último dia de roteiro. Visitamos o Poço Encantado, famoso pelo fenômeno da luz azulada que atravessa suas águas extremamente cristalinas, criando um espetáculo natural único. A visita é contemplativa, respeitando as normas ambientais. Em seguida, visitamos o Poço Azul, onde é possível realizar flutuação e observar a impressionante transparência da água. Após o passeio, retornamos para Lençóis, encerrando a experiência com uma sensação de plenitude e conexão com a Chapada Diamantina.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Azul (flutuação)",
+        carJourney: "150 km (total do dia)",
+        hiking: "2 km (total do dia)",
+        challenges: "Acesso por escadarias nas grutas"
       }
     ],
     whatToBring: [
@@ -759,22 +899,42 @@ export const tours: Tour[] = [
       {
         day: "1º, 2º e 3º dia",
         title: "Vale do Pati",
-        description: "Os três primeiros dias são inteiramente dedicados ao Vale do Pati, considerado um dos trekkings mais bonitos do Brasil. A travessia percorre trilhas históricas, gerais amplos, vales profundos e rios de águas cristalinas, passando por mirantes impressionantes e áreas preservadas. Entre os destaques está o Cachoeirão por cima, com suas múltiplas quedas formando um espetáculo natural de grandes proporções (dependendo do volume de água). Durante a travessia, os pernoites acontecem em casas de moradores locais, com alimentação completa inclusa: café da manhã, almoço tipo piquenique levado para a trilha e jantar caseiro preparado no fogão a lenha. No final do terceiro dia, realizamos a saída do Vale do Pati e seguimos viagem para Ibicoara para o pernoite."
+        description: "Os três primeiros dias são inteiramente dedicados ao Vale do Pati, considerado um dos trekkings mais bonitos do Brasil. A travessia percorre trilhas históricas, gerais amplos, vales profundos e rios de águas cristalinas, passando por mirantes impressionantes e áreas preservadas. Entre os destaques está o Cachoeirão por cima, com suas múltiplas quedas formando um espetáculo natural de grandes proporções (dependendo do volume de água). Durante a travessia, os pernoites acontecem em casas de moradores locais, com alimentação completa inclusa: café da manhã, almoço tipo piquenique levado para a trilha e jantar caseiro preparado no fogão a lenha. No final do terceiro dia, realizamos a saída do Vale do Pati e seguimos viagem para Ibicoara para o pernoite.",
+        physicalEffort: "Alto",
+        bathingSpots: "Vários (Cachoeira do Funil, Altina e rios)",
+        carJourney: "160 km (total ida e volta)",
+        hiking: "40 km (total 3 dias)",
+        challenges: "Subida dos Aleixos e caminhada longa em terreno irregular"
       },
       {
         day: "4º dia",
         title: "Cachoeira do Buracão + pernoite em Ibicoara",
-        description: "Visitamos a Cachoeira do Buracão, uma das mais impressionantes da Chapada Diamantina. A trilha percorre áreas de mata e cânion, incluindo travessias de rio até a entrada do corredor de pedra que leva à grande queda d’água. Após o passeio, retornamos para as casas de nativos para o pernoite com jantar incluso."
+        description: "Visitamos a Cachoeira do Buracão, uma das mais impressionantes da Chapada Diamantina. A trilha percorre áreas de mata e cânion, incluindo travessias de rio até a entrada do corredor de pedra que leva à grande queda d’água. Após o passeio, retornamos para as casas de nativos para o pernoite com jantar incluso.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "60 km",
+        hiking: "6 km (total do dia)",
+        challenges: "Nado no cânion do Buracão"
       },
       {
         day: "5º dia",
         title: "Cachoeira da Fumacinha + segunda pernoite em Ibicoara",
-        description: "Partimos para a trilha da Cachoeira da Fumacinha, uma das mais técnicas e selvagens da Chapada. O percurso acontece dentro de um cânion estreito, com múltiplas travessias de rio e pedras escorregadias. A recompensa é um cenário monumental com paredões verticais e uma queda d’água impressionante. Seguimos para mais um pernoite em casas de nativos."
+        description: "Partimos para a trilha da Cachoeira da Fumacinha, uma das mais técnicas e selvagens da Chapada. O percurso acontece dentro de um cânion estreito, com múltiplas travessias de rio e pedras escorregadias. A recompensa é um cenário monumental com paredões verticais e uma queda d’água impressionante. Seguimos para mais um pernoite em casas de nativos.",
+        physicalEffort: "Muito Alto",
+        bathingSpots: "Cachoeira da Fumacinha",
+        carJourney: "40 km",
+        hiking: "18 km (total do dia)",
+        challenges: "Caminhada técnica sobre pedras no leito do rio"
       },
       {
         day: "6º dia",
         title: "Poço Encantado, Poço Azul e retorno para Lençóis",
-        description: "Iniciamos o último dia com visita ao Poço Encantado, famoso pelo fenômeno da luz solar que atravessa suas águas cristalinas. Em seguida, visitamos o Poço Azul para flutuação e observação da transparência única da água. Após os passeios, retornamos para Lençóis."
+        description: "Iniciamos o último dia com visita ao Poço Encantado, famoso pelo fenômeno da luz solar que atravessa suas águas cristalinas. Em seguida, visitamos o Poço Azul para flutuação e observação da transparência única da água. Após os passeios, retornamos para Lençóis.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Azul (flutuação)",
+        carJourney: "250 km (retorno a Lençóis)",
+        hiking: "2 km (total do dia)",
+        challenges: "Acesso por escadarias nas grutas"
       }
     ],
     whatToBring: [
@@ -851,23 +1011,43 @@ export const tours: Tour[] = [
     itinerary: [
       {
         day: "1º dia",
-        title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "O primeiro dia começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por salões amplos e formações calcárias impressionantes. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar que colore suas águas em tons intensos de azul. Finalizamos o dia com a subida ao Morro do Pai Inácio, cartão-postal da Chapada, onde apreciamos uma das vistas panorâmicas mais famosas da região."
+        title: "Gruta da Lapa Doce, Pratinha, Gruta Azul e Morro do Pai Inácio",
+        description: "O primeiro dia começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por salões amplos e formações calcárias impressionantes. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas cristalinas, ideais para banho e descanso, com opção de atividades extras como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o reflexo da luz solar que colore suas águas em tons intensos de azul. Finalizamos o dia com a subida ao Morro do Pai Inácio, cartão-postal da Chapada, onde apreciamos uma das vistas panorâmicas mais famosas da região.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha e Poço do Diabo",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Pequena descida em pedras para acessar o Poço do Diabo"
       },
       {
         day: "2º dia",
         title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "O segundo dia é dedicado a algumas das cachoeiras mais tradicionais da Chapada. Começamos pela Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma queda d’água imponente forma um poço excelente para banho. Seguimos para o Rio Mucugêzinho, com seu poço profundo cercado por paredões rochosos. Finalizamos no Poço do Diabo, uma cachoeira de cerca de 20 metros de queda, com um grande poço ideal para banho e contemplação."
+        description: "O segundo dia é dedicado a algumas das cachoeiras mais tradicionais da Chapada. Começamos pela Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma queda d’água imponente forma um poço excelente para banho. Seguimos para o Rio Mucugêzinho, com seu poço profundo cercado por paredões rochosos. Finalizamos no Poço do Diabo, uma cachoeira de cerca de 20 metros de queda, com um grande poço ideal para banho e contemplação.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Mosquito",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Escadaria íngreme para acessar a Cachoeira do Mosquito"
       },
       {
         day: "3º dia",
-        title: "Poço Azul e Poço Encantado",
-        description: "O terceiro dia é reservado para dois dos fenômenos naturais mais impressionantes da Chapada Diamantina. Pela manhã, visitamos o Poço Azul, famoso por suas águas incrivelmente transparentes, onde, em períodos específicos do ano, é possível observar o efeito da luz solar criando um espetáculo visual dentro da caverna. Em seguida, seguimos para o Poço Encantado, um dos cartões-postais da Chapada, conhecido pelo fenômeno da luz azulada que atravessa a água cristalina da caverna, criando um cenário único no mundo. Neste local, a visita é contemplativa, respeitando as normas de preservação ambiental."
+        title: "Poço Encantado e Poço Azul",
+        description: "O terceiro dia é reservado para dois dos fenômenos naturais mais impressionantes da Chapada Diamantina. Pela manhã, visitamos o Poço Azul, famoso por suas águas incrivelmente transparentes, onde, em períodos específicos do ano, é possível observar o efeito da luz solar criando um espetáculo visual dentro da caverna. Em seguida, seguimos para o Poço Encantado, um dos cartões-postais da Chapada, conhecido pelo fenômeno da luz azulada que atravessa a água cristalina da caverna, criando um cenário único no mundo. Neste local, a visita é contemplativa, respeitando as normas de preservação ambiental.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Encantado (apenas contemplação) e Poço Azul (flutuação)",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "2 km (total do dia)",
+        challenges: "Escadaria para acessar o Poço Encantado"
       },
       {
         day: "4º dia",
-        title: "Parque da Muritiba e Mirantes de Lençóis",
-        description: "No último dia, exploramos o Parque da Muritiba, um dos complexos naturais mais completos de Lençóis. O roteiro inclui visita ao Salão de Areia, formação rochosa esculpida pela ação da água, seguida de banhos no Poço Halley e na Cachoeira da Primavera. Continuamos até o Poço do Paraíso, conhecido por suas águas tranquilas. Do alto do Mirante de Lençóis, apreciamos uma vista panorâmica da cidade e das serras ao redor. O dia se encerra com visita à Cachoeirinha, conhecido por suas águas claras e às Piscinas Naturais, ideais para relaxar antes do retorno."
+        title: "Cachoeira do Buracão",
+        description: "A Cachoeira do Buracão, em Ibicoara, é um dos destinos mais impressionantes da Chapada Diamantina. A trilha segue pelas margens do rio até a entrada de um cânion monumental, onde você nada entre paredões de 100 metros de altura para alcançar a queda d’água. Uma experiência de tirar o fôlego e conexão profunda com a natureza.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "440 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Caminhada em cânion estreito e travessia a nado (opcional) para chegar à queda"
       }
     ],
     whatToBring: [
@@ -954,18 +1134,33 @@ export const tours: Tour[] = [
     itinerary: [
       {
         day: "1º dia",
-        title: "Cachoeira do Buracão + pernoite em Ibicoara",
-        description: "Trilha até a Cachoeira do Buracão, passando por cânions e travessias de rio. Nadamos entre paredões rochosos até a queda d'água. Pernoite em casas de nativos em Ibicoara com jantar incluso."
+        title: "Cachoeira da Fumaça e Riachinho",
+        description: "A Cachoeira da Fumaça é uma das maiores do Brasil, com 340 metros de queda livre. A trilha leva ao topo da cachoeira, de onde se tem uma vista vertiginosa do vale. No retorno, relaxamos nas águas do Riachinho.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira da Fumaça (parte superior) e Riachinho",
+        carJourney: "150 km (total ida e volta)",
+        hiking: "12 km (total do dia)",
+        challenges: "Subida íngreme de 2 km no início da trilha da Fumaça"
       },
       {
         day: "2º dia",
-        title: "Cachoeira da Fumacinha + segunda pernoite em Ibicoara",
-        description: "Trilha técnica e selvagem dentro de um cânion fechado até a Cachoeira da Fumacinha. Diversas travessias de rio e terreno técnico. Pernoite em casas de nativos."
+        title: "Cachoeira do Buracão",
+        description: "A Cachoeira do Buracão, em Ibicoara, é um dos destinos mais impressionantes da Chapada Diamantina. A trilha segue pelas margens do rio até a entrada de um cânion monumental, onde você nada entre paredões de 100 metros de altura para alcançar a queda d’água.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Buracão",
+        carJourney: "440 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Caminhada em cânion estreito e travessia a nado (opcional) para chegar à queda"
       },
       {
         day: "3º dia",
-        title: "Poço Encantado, Poço Azul e retorno para Lençóis",
-        description: "Visita ao Poço Encantado para observar o fenômeno da luz solar. Em seguida, flutuação no Poço Azul. Retorno para Lençóis."
+        title: "Poço Encantado e Poço Azul",
+        description: "Visita ao Poço Encantado para observar o fenômeno da luz solar. Em seguida, flutuação no Poço Azul.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Poço Azul (flutuação)",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Escadaria para acessar o Poço Encantado"
       }
     ],
     whatToBring: [
@@ -1050,13 +1245,23 @@ export const tours: Tour[] = [
     itinerary: [
       {
         day: "1º dia",
-        title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "O dia começa com a exploração da Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, em um percurso guiado entre salões amplos e impressionantes formações rochosas. Em seguida, visitamos a Fazenda Pratinha, famosa por suas águas cristalinas, onde é possível relaxar com banho refrescante ou aproveitar atividades opcionais como flutuação e tirolesa. Ao lado, a Gruta Azul surpreende com o fenômeno da luz solar que ilumina suas águas, criando tons intensos de azul. Para fechar o dia, a subida ao Morro do Pai Inácio revela uma das vistas panorâmicas mais famosas do Brasil, com um pôr do sol inesquecível sobre a Chapada."
+        title: "Gruta da Lapa Doce, Pratinha, Gruta Azul e Morro do Pai Inácio",
+        description: "O dia começa com a exploração da Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, em um percurso guiado entre salões amplos e impressionantes formações rochosas. Em seguida, visitamos a Fazenda Pratinha, famosa por suas águas cristalinas, onde é possível relaxar com banho refrescante ou aproveitar atividades opcionais como flutuação e tirolesa. Ao lado, a Gruta Azul surpreende com o fenômeno da luz solar que ilumina suas águas, criando tons intensos de azul. Para fechar o dia, a subida ao Morro do Pai Inácio revela uma das vistas panorâmicas mais famosas do Brasil, com um pôr do sol inesquecível sobre a Chapada.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha e Poço do Diabo",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Pequena descida em pedras para acessar o Poço do Diabo"
       },
       {
         day: "2º dia",
         title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "O segundo dia começa na Cachoeira do Mosquito, acessada por trilha curta e escadarias de pedra, com uma queda d’água imponente que forma um poço ideal para banho. O roteiro segue para o Rio Mucugêzinho, onde se encontra um poço profundo formado pelo rio, cercado por paredões rochosos, excelente para banho. Finalizamos no Poço do Diabo, uma cachoeira com cerca de 20 metros de queda que forma um poço amplo, um dos pontos mais tradicionais para banho e contemplação na região."
+        description: "O segundo dia começa na Cachoeira do Mosquito, acessada por trilha curta e escadarias de pedra, com uma queda d’água imponente que forma um poço ideal para banho. O roteiro segue para o Rio Mucugêzinho, onde se encontra um poço profundo formado pelo rio, cercado por paredões rochosos, excelente para banho. Finalizamos no Poço do Diabo, uma cachoeira com cerca de 20 metros de queda que forma um poço amplo, um dos pontos mais tradicionais para banho e contemplação na região.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Mosquito",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Escadaria íngreme para acessar a Cachoeira do Mosquito"
       }
     ],
     whatToBring: [
@@ -1172,18 +1377,33 @@ export const tours: Tour[] = [
     itinerary: [
       {
         day: "1º dia",
-        title: "Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio",
-        description: "O dia começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por salões amplos e formações calcárias impressionantes. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas extremamente cristalinas, onde é possível relaxar com banho refrescante ou realizar atividades opcionais como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o fenômeno da luz solar refletindo em suas águas azuladas. Para encerrar o dia, subimos o Morro do Pai Inácio, um dos cartões-postais da Chapada, com vista panorâmica inesquecível, especialmente no pôr do sol."
+        title: "Gruta da Lapa Doce, Pratinha, Gruta Azul e Morro do Pai Inácio",
+        description: "O dia começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas da Chapada Diamantina, percorrida com guia local por salões amplos e formações calcárias impressionantes. Em seguida, seguimos para a Fazenda Pratinha, famosa por suas águas extremamente cristalinas, onde é possível relaxar com banho refrescante ou realizar atividades opcionais como flutuação e tirolesa. Ao lado, a Gruta Azul encanta com o fenômeno da luz solar refletindo em suas águas azuladas. Para encerrar o dia, subimos o Morro do Pai Inácio, um dos cartões-postais da Chapada, com vista panorâmica inesquecível, especialmente no pôr do sol.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha e Poço do Diabo",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total do dia)",
+        challenges: "Pequena descida em pedras para acessar o Poço do Diabo"
       },
       {
         day: "2º dia",
-        title: "Cachoeira do Mosquito, Rio Mucugêzinho e Poço do Diabo",
-        description: "O segundo dia começa na Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma queda d’água imponente forma um poço excelente para banho. O roteiro segue para o Rio Mucugêzinho, conhecido por seu poço profundo entre paredões rochosos, ideal para nadar e relaxar. Finalizamos no Poço do Diabo, uma das cachoeiras mais tradicionais da região, com aproximadamente 20 metros de queda e um grande poço para banho e contemplação."
+        title: "Poço Encantado e Poço Azul",
+        description: "O segundo dia é dedicado a dois dos fenômenos naturais mais impressionantes da Chapada Diamantina. Pela manhã, visitamos o Poço Encantado, famoso pelo efeito da luz azulada que atravessa suas águas extremamente transparentes. Em seguida, seguimos para o Poço Azul, onde é possível realizar flutuação em águas cristalinas.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Encantado (apenas contemplação) e Poço Azul (flutuação)",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "2 km (total do dia)",
+        challenges: "Escadaria para acessar o Poço Encantado"
       },
       {
         day: "3º dia",
-        title: "Parque da Muritiba e Mirantes de Lençóis",
-        description: "O último dia é dedicado ao Parque da Muritiba, um dos conjuntos naturais mais completos de Lençóis. O roteiro inclui visita ao Salão de Areia, formação rochosa esculpida pela ação da água, seguida de banhos no Poço Halley e na Cachoeira da Primavera. O percurso continua até o Poço do Paraíso, conhecido por suas águas tranquilas. Do alto do Mirante de Lençóis, contemplamos uma vista privilegiada da cidade e do vale ao redor. Finalizamos com visita à Cachoeirinha conhecida pelas suas águas claras e às Piscinas Naturais, perfeitas para relaxar antes do retorno."
+        title: "Cachoeira do Mosquito",
+        description: "O terceiro dia começa na Cachoeira do Mosquito, acessada por trilha curta com escadarias de pedra, onde uma queda d’água imponente forma um poço excelente para banho.",
+        physicalEffort: "Moderado",
+        bathingSpots: "Cachoeira do Mosquito",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "6 km (total do dia)",
+        challenges: "Escadaria íngreme para acessar a Cachoeira do Mosquito"
       }
     ],
     whatToBring: [
@@ -1277,6 +1497,38 @@ export const tours: Tour[] = [
     difficulty: "Leve",
     price: "R$ 1.115,00",
     highlights: ["História do garimpo", "Geologia", "Cachoeiras"],
+    itinerary: [
+      {
+        day: "Dia 1",
+        title: "Cachoeira do Mosquito e Rio Mucugezinho",
+        description: "Visita à imponente Cachoeira do Mosquito e banho nas águas do Rio Mucugezinho e Poço do Diabo.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço do Diabo e Rio Mucugezinho",
+        carJourney: "40 km",
+        hiking: "3 km",
+        challenges: "Descida de escadaria na Cachoeira do Mosquito"
+      },
+      {
+        day: "Dia 2",
+        title: "Grutas e Morro do Pai Inácio",
+        description: "Exploração das grutas da Lapa Doce e Pratinha, finalizando com o pôr do sol no Morro do Pai Inácio.",
+        physicalEffort: "Leve",
+        bathingSpots: "Fazenda Pratinha",
+        carJourney: "150 km",
+        hiking: "2 km",
+        challenges: "Subida curta ao Morro do Pai Inácio"
+      },
+      {
+        day: "Dia 3",
+        title: "Poço Encantado e Poço Azul",
+        description: "Visita aos famosos poços de águas cristalinas e azuladas, com flutuação no Poço Azul.",
+        physicalEffort: "Leve",
+        bathingSpots: "Poço Azul (flutuação)",
+        carJourney: "180 km",
+        hiking: "1 km",
+        challenges: "Acesso por escadarias nas grutas"
+      }
+    ],
     included: ["Guia historiador", "Transporte", "Seguro"],
     faqs: commonFaqs,
     views: 8200,
@@ -1325,7 +1577,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Roteiro Clássico",
-        description: "Saída de Lençóis às 08h30 em direção a Iraquara. Visitamos a Gruta da Lapa Doce, almoçamos comida regional e seguimos para a Fazenda Pratinha e Gruta Azul. Finalizamos o dia com o pôr do sol no Morro do Pai Inácio."
+        description: "Saída de Lençóis às 08h30 em direção a Iraquara. Visitamos a Gruta da Lapa Doce, almoçamos comida regional e seguimos para a Fazenda Pratinha e Gruta Azul. Finalizamos o dia com o pôr do sol no Morro do Pai Inácio.",
+        physicalEffort: "Leve",
+        bathingSpots: "1 (Fazenda Pratinha)",
+        carJourney: "140 km (total ida e volta)",
+        hiking: "4 km (total)",
+        challenges: "Subida ao Morro do Pai Inácio (20 min)"
       }
     ],
     faqs: commonFaqs,
@@ -1372,7 +1629,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Cachoeiras e Poços",
-        description: "Saída de Lençóis às 08h30. Visitamos a Cachoeira do Mosquito pela manhã, almoçamos e seguimos para o Rio Mucugêzinho e Poço do Diabo à tarde."
+        description: "Saída de Lençóis às 08h30. Visitamos a Cachoeira do Mosquito pela manhã, almoçamos e seguimos para o Rio Mucugêzinho e Poço do Diabo à tarde.",
+        physicalEffort: "Fácil",
+        bathingSpots: "3",
+        carJourney: "80 km (total ida e volta)",
+        hiking: "4 km (total)",
+        challenges: "Trilha curta com escadarias e trechos de terreno rochoso"
       }
     ],
     faqs: commonFaqs,
@@ -1419,7 +1681,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Mundo Subterrâneo",
-        description: "Saída de Lençóis às 08h00. Visitamos o Poço Encantado pela manhã, almoçamos e seguimos para o Poço Azul para flutuação à tarde."
+        description: "Saída de Lençóis às 08h00. Visitamos o Poço Encantado pela manhã, almoçamos e seguimos para o Poço Azul para flutuação à tarde.",
+        physicalEffort: "Leve",
+        bathingSpots: "1 (Poço Azul)",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "2 km (total)",
+        challenges: "Escadarias para acesso aos poços"
       }
     ],
     faqs: commonFaqs,
@@ -1464,7 +1731,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Caminhada no Parque",
-        description: "Saída a pé de Lençóis às 09h00. Percorremos o Rio Serrano, Salão de Areias, Poço Halley, Cachoeira da Primavera e Mirante, retornando à tarde."
+        description: "Saída a pé de Lençóis às 09h00. Percorremos o Rio Serrano, Salão de Areias, Poço Halley, Cachoeira da Primavera e Mirante, retornando à tarde.",
+        physicalEffort: "Fácil",
+        bathingSpots: "5",
+        carJourney: "0 km (saída a pé)",
+        hiking: "6 km (total)",
+        challenges: "Trilha leve com trechos de pedras e pequenas subidas"
       }
     ],
     faqs: commonFaqs,
@@ -1507,7 +1779,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "A Gigante da Chapada",
-        description: "Saída de Lençóis às 08h00. Trilha de 6km (ida) até o topo da Fumaça, lanche com vista e retorno para banho no Riachinho ao final do dia."
+        description: "Saída de Lençóis às 08h00. Trilha de 6km (ida) até o topo da Fumaça, lanche com vista e retorno para banho no Riachinho ao final do dia.",
+        physicalEffort: "Moderado",
+        bathingSpots: "1",
+        carJourney: "150 km (total ida e volta)",
+        hiking: "12 km (total)",
+        challenges: "Subida inicial intensa e caminhada longa em terreno aberto"
       }
     ],
     faqs: commonFaqs,
@@ -1550,7 +1827,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "O Espetáculo de Ibicoara",
-        description: "Saída antecipada de Lençóis (06h00). Viagem até Ibicoara, trilha leve e nado no cânion do Buracão. Almoço e retorno no final do dia."
+        description: "Saída antecipada de Lençóis (06h00). Viagem até Ibicoara, trilha leve e nado no cânion do Buracão. Almoço e retorno no final do dia.",
+        physicalEffort: "Moderado",
+        bathingSpots: "1",
+        carJourney: "440 km (total ida e volta)",
+        hiking: "6 km (total)",
+        challenges: "Travessia por cânion e caminhada em terreno natural"
       }
     ],
     faqs: commonFaqs,
@@ -1600,12 +1882,22 @@ export const tours: Tour[] = [
       {
         day: "Dia 1",
         title: "Cachoeira do Buracão",
-        description: "Saída de Lençóis às 06h00. Visita à Cachoeira do Buracão e pernoite em Ibicoara."
+        description: "Saída de Lençóis às 06h00. Visita à Cachoeira do Buracão e pernoite em Ibicoara.",
+        physicalEffort: "Moderado",
+        bathingSpots: "1",
+        carJourney: "440 km (total ida e volta)",
+        hiking: "6 km (total)",
+        challenges: "Travessia por cânion e caminhada em terreno natural"
       },
       {
         day: "Dia 2",
         title: "Cachoeira da Fumacinha",
-        description: "Trilha técnica de 18km pelo leito do rio até a base da Fumacinha. Retorno para Lençóis à noite."
+        description: "Trilha técnica de 18km pelo leito do rio até a base da Fumacinha. Retorno para Lençóis à noite.",
+        physicalEffort: "Difícil",
+        bathingSpots: "1",
+        carJourney: "100 km (total)",
+        hiking: "18 km (total)",
+        challenges: "Trilha longa com caminhada sobre pedras e leito de rio"
       }
     ],
     faqs: commonFaqs,
@@ -1650,7 +1942,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Enoturismo na Chapada",
-        description: "Saída de Lençóis às 08h30. Visita técnica e sensorial à Vinícola Uvva em Mucugê, com degustação e tempo para contemplação dos vinhedos."
+        description: "Saída de Lençóis às 08h30. Visita técnica e sensorial à Vinícola Uvva em Mucugê, com degustação e tempo para contemplação dos vinhedos.",
+        physicalEffort: "Fácil",
+        bathingSpots: "0",
+        carJourney: "300 km (total ida e volta)",
+        hiking: "1 km (total)",
+        challenges: "Caminhada leve pela vinícola"
       }
     ],
     faqs: commonFaqs,
@@ -1693,7 +1990,12 @@ export const tours: Tour[] = [
       {
         day: "1 Dia",
         title: "Pantanal e Rio",
-        description: "Saída de Lençóis às 08h30. Passeio de barco pelo Marimbus e banho no Rio Roncador com almoço regional."
+        description: "Saída de Lençóis às 08h30. Passeio de barco pelo Marimbus e banho no Rio Roncador com almoço regional.",
+        physicalEffort: "Fácil",
+        bathingSpots: "1",
+        carJourney: "40 km (total ida e volta)",
+        hiking: "2 km (total)",
+        challenges: "Caminhada leve e passeio de barco"
       }
     ],
     faqs: commonFaqs,
