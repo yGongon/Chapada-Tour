@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, ChevronLeft, Users, Compass, Heart, Shield, MapPin, Languages } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Users, Compass, Heart, Shield, MapPin, Languages, Mountain, Utensils, ShieldCheck, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
@@ -216,72 +216,251 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section - Trust & Impact */}
-      <section className="py-32 px-6 bg-stone-50 overflow-hidden relative">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-olive/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-cream/30 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block"
-            >
-              Nossa Essência
-            </motion.span>
-            <h2 className="text-5xl md:text-6xl font-serif">Compromisso & Impacto</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {/* Experiences Section - "O que você vive" */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-[1400px] mx-auto bg-[#FDF8F3] rounded-[3rem] p-10 md:p-20 relative overflow-hidden border border-[#F5E6D3]">
+          {/* Tag */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block bg-[#F5E6D3] px-6 py-2 rounded-full mb-8"
+          >
+            <span className="text-[#8B7355] text-xs md:text-sm font-bold uppercase tracking-wider">Suas memórias na Chapada</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-[#8B7355] text-3xl md:text-5xl font-serif mb-20 leading-tight"
+          >
+            O que você vive na Chapada com a gente
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-16 gap-x-8">
             {[
-              { label: "Vidas Guiadas", value: "+5 mil", icon: <Users size={24} />, desc: "Experiências transformadoras compartilhadas." },
-              { label: "Experiência", value: "+10 Anos", icon: <Compass size={24} />, desc: "Conhecimento profundo de cada trilha e segredo." },
-              { label: "Renda Local", value: "80%", icon: <Heart size={24} />, desc: "Investimento direto no desenvolvimento da comunidade." },
-              { label: "Cadastur", value: "100%", icon: <Shield size={24} />, desc: "Regularização total e segurança jurídica." },
-              { label: "Guias Locais", value: "100%", icon: <MapPin size={24} />, desc: "Nascidos e criados no coração da Chapada." },
-              { label: "Idiomas", value: "4", icon: <Languages size={24} />, desc: "Atendimento em PT, EN, FR e ES." }
-            ].map((stat, idx) => (
+              { label: "Paisagens que ficam na memória", icon: <Mountain size={32} /> },
+              { label: "Trilhas guiadas com segurança", icon: <Compass size={32} /> },
+              { label: "Sabores da Chapada", icon: <Utensils size={32} /> },
+              { label: "Contato com a cultura local", icon: <Users size={32} /> },
+              { label: "Turismo responsável", icon: <ShieldCheck size={32} /> },
+              { label: "Experiências autênticas", icon: <Flame size={32} /> }
+            ].map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white p-10 rounded-[2.5rem] border border-stone-100 shadow-sm hover:shadow-xl transition-all group"
+                transition={{ delay: idx * 0.1 }}
+                className="flex flex-col items-center text-center group"
               >
-                <div className="w-14 h-14 bg-brand-cream/30 rounded-2xl flex items-center justify-center mb-8 text-brand-olive group-hover:scale-110 transition-transform duration-500">
-                  {stat.icon}
+                <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
+                  {/* Overlapping Circles */}
+                  <div className="absolute top-0 left-0 w-16 h-16 bg-[#FAD4C0] rounded-full opacity-60 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#FDE68A] rounded-full opacity-60 group-hover:scale-110 transition-transform duration-500 delay-75" />
+                  
+                  {/* Icon */}
+                  <div className="relative z-10 text-[#8B7355] group-hover:rotate-12 transition-transform duration-500">
+                    {item.icon}
+                  </div>
                 </div>
-                <p className="text-4xl md:text-5xl font-serif mb-3 text-stone-900">{stat.value}</p>
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-brand-olive mb-4">{stat.label}</p>
-                <p className="text-stone-500 text-sm leading-relaxed">{stat.desc}</p>
+                <p className="text-[#8B7355] text-sm md:text-base font-medium leading-snug px-2">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-20 p-12 bg-brand-olive rounded-[3rem] text-white text-center relative overflow-hidden"
+          <div className="mt-20 pt-8 border-t border-[#F5E6D3]/50 text-center">
+            <span className="text-[#8B7355]/20 text-[10px] uppercase tracking-[0.4em] font-bold">Chapada Tour</span>
+          </div>
+        </div>
+      </section>
+
+      {/* 1 Day Tours Carousel */}
+      <section className="py-32 px-6 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 text-center md:text-left">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block">Aventura em Dose Única</span>
+              <h2 className="text-5xl md:text-6xl font-serif">Passeios de 1 Dia</h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/passeios" className="text-brand-olive font-semibold flex items-center gap-2 border-b border-brand-olive pb-1 hover:opacity-70 transition-opacity group">
+                Ver todos <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+
+          <div 
+            className="relative group/carousel"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <p className="text-xl md:text-2xl font-serif italic opacity-90 max-w-3xl mx-auto relative z-10">
-              "Nossa missão é promover um turismo que respeita a natureza e valoriza quem nela vive, proporcionando conexões reais e seguras."
-            </p>
-            <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 relative z-10">
-              <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Cadastur: 64.703.393/0001-82</p>
-              <div className="hidden md:block w-1 h-1 bg-white/30 rounded-full" />
-              <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Lençóis, Bahia</p>
+            {/* Navigation Arrows */}
+            <button 
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
+              aria-label="Anterior"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
+            <button 
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
+              aria-label="Próximo"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div 
+              ref={scrollRef}
+              className="flex gap-8 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory scroll-smooth"
+            >
+              {oneDayTours.map((tour, idx) => (
+                <motion.div 
+                  key={tour.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="min-w-[300px] md:min-w-[400px] snap-start bg-stone-50 rounded-[2.5rem] overflow-hidden group border border-stone-100 shadow-sm hover:shadow-xl transition-all"
+                >
+                  <Link to={`/passeios/${tour.slug}`} className="block">
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      <img 
+                        src={optimizeImageUrl(tour.img, 600)} 
+                        alt={`Passeio de 1 dia: ${tour.title} na Chapada Diamantina`} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
+                      <div className="absolute bottom-8 left-8 right-8 text-white">
+                        <h4 className="text-2xl font-serif mb-3 leading-tight">{tour.title}</h4>
+                        <div className="flex items-center justify-between">
+                          <span className="text-white font-bold text-lg">{tour.price}</span>
+                          <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold border border-white/30">Ver Detalhes</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transfer Section */}
+      <TransferSection />
+
+      {/* TripAdvisor Reviews */}
+      <TripAdvisorReviews />
+
+      {/* Personalized Itinerary Section */}
+      <section className="py-24 px-6 bg-[#E8E8E8] overflow-hidden relative">
+        {/* Decorative Blobs */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4A373] opacity-20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#8B7355] opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#FAD4C0] opacity-30 rounded-full blur-3xl translate-y-1/4 translate-x-1/4" />
+        
+        {/* Corner SVG Blobs (Approximating the image) */}
+        <div className="absolute -top-10 -right-10 w-40 h-40 text-[#D4A373] opacity-60 hidden lg:block">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.6,-31.3,86.9,-15.7,85.4,-0.9C83.8,13.9,77.4,27.8,68.8,40.1C60.2,52.4,49.4,63.1,36.5,70.1C23.6,77.1,8.6,80.4,-5.8,78.4C-20.2,76.4,-34,69.1,-46.3,59.8C-58.6,50.5,-69.4,39.2,-75.8,25.8C-82.2,12.4,-84.2,-3.1,-80.7,-17.3C-77.2,-31.5,-68.2,-44.4,-56.4,-52.4C-44.6,-60.4,-30,-63.5,-16.6,-70.7C-3.2,-77.9,9,-89.2,23.6,-89.2C38.2,-89.2,55.2,-77.9,44.7,-76.4Z" transform="translate(100 100)" />
+          </svg>
+        </div>
+        <div className="absolute -bottom-20 -left-20 w-60 h-60 text-[#8B7355] opacity-40 hidden lg:block">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M39.9,-65.7C51.4,-59.2,60.2,-48.1,66.5,-35.6C72.8,-23.1,76.6,-9.2,75.4,4.4C74.2,18,68,31.3,59.1,42.5C50.2,53.7,38.6,62.8,25.4,68.1C12.2,73.4,-2.6,74.9,-17.1,71.8C-31.6,68.7,-45.8,61,-56.4,50C-67,39,-74,24.7,-76.1,9.8C-78.2,-5.1,-75.4,-20.6,-67.6,-33.5C-59.8,-46.4,-47,-56.7,-34.1,-62.4C-21.2,-68.1,-8.2,-69.2,2.4,-73.3C13,-77.4,28.4,-72.2,39.9,-65.7Z" transform="translate(100 100)" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left Side: Organic Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden">
+              {/* Organic Mask using SVG ClipPath */}
+              <svg width="0" height="0" className="absolute">
+                <defs>
+                  <clipPath id="blobMask" clipPathUnits="objectBoundingBox">
+                    <path d="M0.85,0.2 C0.95,0.35,1,0.5,0.95,0.65 C0.9,0.8,0.75,0.9,0.6,0.95 C0.45,1,0.3,0.95,0.15,0.85 C0,0.75,-0.05,0.55,0.05,0.35 C0.15,0.15,0.35,0,0.55,0.05 C0.75,0.1,0.8,0.15,0.85,0.2" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <img 
+                src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221" 
+                alt="Planeje sua aventura na Chapada Diamantina" 
+                className="w-full h-full object-cover"
+                style={{ clipPath: 'url(#blobMask)' }}
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
+
+          {/* Right Side: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
+            {/* Tag */}
+            <div className="bg-[#F4A261] text-white px-8 py-3 rounded-full mb-8 shadow-lg">
+              <span className="text-lg md:text-xl font-medium">Sua aventura começa aqui</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-sans font-medium text-stone-900 mb-6 leading-tight">
+              Vamos planejar sua aventura na Chapada?
+            </h2>
+            
+            <p className="text-stone-600 text-lg mb-10 max-w-xl leading-relaxed">
+              Não encontrou o que procurava? Criamos uma experiência sob medida para você, sua família ou grupo de amigos. Escolha os destinos, o ritmo e o nível de aventura.
+            </p>
+
+            <a 
+              href="https://api.whatsapp.com/send/?phone=5575998188802&text=Olá! Gostaria de montar um roteiro personalizado para a Chapada Diamantina." 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-4 bg-[#F4A261] text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-xl group"
+            >
+              <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.59-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.448-1.271.607-1.445.159-.173.346-.217.462-.217h.332c.101 0 .23.007.335.252.115.271.395.964.43 1.035.035.071.058.154.011.248-.047.094-.071.154-.144.242-.073.088-.154.196-.22.262-.073.072-.15.15-.065.296.085.146.376.621.808 1.006.557.496 1.026.65 1.171.722.145.072.23.059.315-.039.085-.098.365-.426.462-.573.097-.146.194-.123.327-.073.133.05.845.399.99.471.145.072.242.108.278.17.036.062.036.359-.108.764zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.168L2 22l4.958-1.303A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.634 0-3.166-.435-4.49-1.192l-.322-.183-2.946.774.787-2.876-.201-.319A7.956 7.956 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+              </svg>
+              fale conosco
+            </a>
           </motion.div>
         </div>
       </section>
+
+      {/* Stats */}
+      <section className="hidden">
+        {/* Old stats section removed or hidden as it was moved up */}
+      </section>
+
+      {/* Instagram Feed */}
+      <InstagramFeed />
 
       {/* Bento Grid - Discover the Region */}
       <section className="py-32 px-6 bg-white overflow-hidden">
@@ -409,205 +588,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 1 Day Tours Carousel */}
-      <section className="py-32 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 text-center md:text-left">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block">Aventura em Dose Única</span>
-              <h2 className="text-5xl md:text-6xl font-serif">Passeios de 1 Dia</h2>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <Link to="/passeios" className="text-brand-olive font-semibold flex items-center gap-2 border-b border-brand-olive pb-1 hover:opacity-70 transition-opacity group">
-                Ver todos <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          </div>
-
-          <div 
-            className="relative group/carousel"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* Navigation Arrows */}
-            <button 
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
-              aria-label="Anterior"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            
-            <button 
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-olive opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 transition-all duration-300 hover:bg-brand-olive hover:text-white"
-              aria-label="Próximo"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            <div 
-              ref={scrollRef}
-              className="flex gap-8 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory scroll-smooth"
-            >
-              {oneDayTours.map((tour, idx) => (
-                <motion.div 
-                  key={tour.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="min-w-[300px] md:min-w-[400px] snap-start bg-stone-50 rounded-[2.5rem] overflow-hidden group border border-stone-100 shadow-sm hover:shadow-xl transition-all"
-                >
-                  <Link to={`/passeios/${tour.slug}`} className="block">
-                    <div className="relative aspect-[4/5] overflow-hidden">
-                      <img 
-                        src={optimizeImageUrl(tour.img, 600)} 
-                        alt={`Passeio de 1 dia: ${tour.title} na Chapada Diamantina`} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
-                      <div className="absolute bottom-8 left-8 right-8 text-white">
-                        <h4 className="text-2xl font-serif mb-3 leading-tight">{tour.title}</h4>
-                        <div className="flex items-center justify-between">
-                          <span className="text-white font-bold text-lg">{tour.price}</span>
-                          <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold border border-white/30">Ver Detalhes</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Guides Section */}
       <GuidesSection />
-
-      {/* Transfer Section */}
-      <TransferSection />
-
-      {/* Personalized Itinerary Section */}
-      <section className="py-32 px-6 bg-stone-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-olive/5 -z-0 skew-x-12 translate-x-1/4" />
-        
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-brand-olive font-bold uppercase tracking-widest text-xs mb-4 block">Exclusividade</span>
-            <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">Roteiro <br /> <span className="italic font-light">Personalizado</span></h2>
-            <p className="text-stone-400 text-lg mb-10 leading-relaxed">
-              Não encontrou o que procurava? Criamos uma experiência sob medida para você, sua família ou grupo de amigos. Escolha os destinos, o ritmo e o nível de aventura.
-            </p>
-            <ul className="space-y-4 mb-12">
-              {[
-                "Flexibilidade total de datas e horários",
-                "Seleção personalizada de atrativos",
-                "Guia privativo exclusivo",
-                "Logística completa de transporte e alimentação"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-stone-300">
-                  <div className="w-1.5 h-1.5 bg-brand-olive rounded-full" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <a 
-              href="https://api.whatsapp.com/send/?phone=5575998188802&text=Olá! Gostaria de montar um roteiro personalizado para a Chapada Diamantina." 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-brand-olive text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-brand-olive transition-all group"
-            >
-              Montar meu Roteiro <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
-              <img 
-                src="https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221" 
-                alt="Roteiro personalizado na Chapada Diamantina" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl max-w-xs hidden md:block text-stone-900">
-              <p className="font-serif text-xl mb-2">Sua viagem, suas regras.</p>
-              <p className="text-sm text-stone-500">Atendimento especializado para criar a jornada dos seus sonhos.</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="hidden">
-        {/* Old stats section removed or hidden as it was moved up */}
-      </section>
-
-      {/* Parallax Quote */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <motion.div 
-          initial={{ y: -50 }}
-          whileInView={{ y: 50 }}
-          transition={{ ease: "linear" }}
-          className="absolute inset-0 z-0"
-        >
-          <img 
-            src="https://landedtravel.com/wp-content/uploads/2020/02/Private-Custom-Travel-Design-Brazil-Chapada-Diamantina-Pratinha-Cave.jpg" 
-            alt="Exploração de cavernas e grutas na Chapada Diamantina - Chapada Tour" 
-            className="w-full h-[120%] object-cover"
-            referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </motion.div>
-        
-        <div className="relative z-10 text-center text-white px-6 max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <span className="text-4xl md:text-6xl font-serif italic font-light leading-tight block mb-8">
-              "A natureza não tem pressa, <br /> e ainda assim tudo é realizado."
-            </span>
-            <div className="w-12 h-[1px] bg-white/50 mx-auto mb-4" />
-            <span className="uppercase tracking-[0.3em] text-xs font-bold opacity-70">Lao Tzu</span>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* TripAdvisor Reviews */}
-      <TripAdvisorReviews />
-
-      {/* Instagram Feed */}
-      <InstagramFeed />
 
       {/* Why Choose Us */}
       <section className="py-32 px-6 bg-white overflow-hidden relative">
@@ -659,6 +641,41 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Parallax Quote */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <motion.div 
+          initial={{ y: -50 }}
+          whileInView={{ y: 50 }}
+          transition={{ ease: "linear" }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src="https://landedtravel.com/wp-content/uploads/2020/02/Private-Custom-Travel-Design-Brazil-Chapada-Diamantina-Pratinha-Cave.jpg" 
+            alt="Exploração de cavernas e grutas na Chapada Diamantina - Chapada Tour" 
+            className="w-full h-[120%] object-cover"
+            referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </motion.div>
+        
+        <div className="relative z-10 text-center text-white px-6 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span className="text-4xl md:text-6xl font-serif italic font-light leading-tight block mb-8">
+              "A natureza não tem pressa, <br /> e ainda assim tudo é realizado."
+            </span>
+            <div className="w-12 h-[1px] bg-white/50 mx-auto mb-4" />
+            <span className="uppercase tracking-[0.3em] text-xs font-bold opacity-70">Lao Tzu</span>
+          </motion.div>
         </div>
       </section>
     </div>

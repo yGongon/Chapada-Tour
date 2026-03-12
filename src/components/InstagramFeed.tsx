@@ -8,45 +8,45 @@ const InstagramFeed = () => {
   const posts = [
     {
       id: 1,
-      image: "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/crsalana_1773353101540.jpeg",
       likes: "1.2k",
       comments: "48",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     },
     {
       id: 2,
-      image: "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-9997.jpg",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/chapadatourbr_1773353111709.jpeg",
       likes: "856",
       comments: "32",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     },
     {
       id: 3,
-      image: "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/765d23f4-fabd-45e1-a0f8-da52978bdde1.jpg",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/chapadatourbr_1773353070598.jpeg",
       likes: "2.1k",
       comments: "94",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     },
     {
       id: 4,
-      image: "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-9466.jpg",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/chapadatourbr_1773353080295.jpeg",
       likes: "1.5k",
       comments: "56",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     },
     {
       id: 5,
-      image: "https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/chapadatourbr_1773353048873.jpeg",
       likes: "3.4k",
       comments: "120",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     },
     {
       id: 6,
-      image: "https://landedtravel.com/wp-content/uploads/2020/02/Private-Custom-Travel-Design-Brazil-Chapada-Diamantina-Pratinha-Cave.jpg",
+      image: "https://ik.imagekit.io/ozcvccl1z/Instagram/ferrazzgabriela_1773353059586.jpeg",
       likes: "920",
       comments: "28",
-      link: "https://www.instagram.com/chapadatour/"
+      link: "https://www.instagram.com/chapadatourbr/"
     }
   ];
 
@@ -65,11 +65,11 @@ const InstagramFeed = () => {
               </div>
               <span className="text-brand-olive font-bold uppercase tracking-widest text-xs">Siga-nos no Instagram</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif">@chapadatour</h2>
+            <h2 className="text-4xl md:text-5xl font-serif">@chapadatourbr</h2>
           </motion.div>
 
           <motion.a
-            href="https://www.instagram.com/chapadatour/"
+            href="https://www.instagram.com/chapadatourbr/"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, x: 20 }}
