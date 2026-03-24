@@ -35,7 +35,9 @@ const LanguageSelector = () => {
     setTimeout(() => {
       // 1. Set the cookie (most reliable way for Google Translate)
       const domain = window.location.hostname;
-      const cookieBase = `googtrans=/pt/${langCode}; path=/; SameSite=None; Secure`;
+      const expires = new Date();
+      expires.setFullYear(expires.getFullYear() + 1);
+      const cookieBase = `googtrans=/pt/${langCode}; path=/; expires=${expires.toUTCString()}; SameSite=None; Secure`;
       document.cookie = cookieBase;
       document.cookie = `${cookieBase}; domain=.${domain}`;
       document.cookie = `${cookieBase}; domain=${domain}`;
