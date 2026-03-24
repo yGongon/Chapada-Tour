@@ -106,32 +106,8 @@ const LanguageSelector = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-6 z-[9999] flex flex-col gap-3">
-      {/* Desktop: Vertical Flag Bar (Always Visible) */}
-      <div className="hidden md:flex flex-col gap-3">
-        {languages.map((lang, idx) => (
-          <motion.button
-            key={lang.code}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: idx * 0.1 }}
-            whileHover={{ scale: 1.15, x: 5 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => changeLanguage(lang.code)}
-            className={`w-14 h-14 flex items-center justify-center rounded-full shadow-xl transition-all border-2 ${
-              currentLang === lang.code 
-                ? 'bg-brand-olive border-brand-olive text-white' 
-                : 'bg-white border-stone-100 text-stone-600 hover:border-brand-olive/30'
-            }`}
-            title={lang.name}
-          >
-            <span className="text-2xl leading-none">{lang.flag}</span>
-          </motion.button>
-        ))}
-      </div>
-
-      {/* Mobile: Toggle Button (To save space) */}
-      <div className="md:hidden relative">
+    <div className="fixed bottom-6 left-6 z-[9999]">
+      <div className="relative">
         <AnimatePresence>
           {isOpen && (
             <>

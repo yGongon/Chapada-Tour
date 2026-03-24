@@ -1,16 +1,27 @@
+Options -Indexes -MultiViews
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
-  # Force HTTPS and non-www
+
+  # Force HTTPS e sem www
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^(.*)$ https://chapadatour.com/$1 [L,R=301]
-  
-  # Handle SPA Routing
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+
+  # Arquivos que existem (incluindo JSONs reais) → servir direto
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # JSON inexistente → redirecionar para empty.json (JSON válido e vazio)
+  # Evita tanto "Unexpected token '<'" quanto "Unexpected end of JSON input"
+  RewriteCond %{REQUEST_URI} \.json$
+  RewriteRule ^ /empty.json [L]
+
+  # Rota com .html pré-renderizado → servir o .html (ANTES de checar pasta)
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+  RewriteRule ^(.+)$ /$1.html [L]
+
+  # Tudo o mais → index.html (React Router cuida do roteamento)
+  RewriteRule ^ /index.html [L]
 </IfModule>
