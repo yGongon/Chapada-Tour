@@ -90,16 +90,11 @@ export const tours: Tour[] = [
     fullDesc: "O Vale do Pati: Travessia Completa em 5 dias é a experiência mais completa para quem deseja explorar o coração da Chapada Diamantina com profundidade, tempo e conexão total com a natureza. Este roteiro foi desenvolvido para proporcionar uma imersão real no vale, com trilhas históricas, mirantes icônicos, cachoeiras preservadas, cavernas naturais e hospedagem em casas de nativos, garantindo uma vivência autêntica e transformadora. Ao longo de cinco dias, o viajante percorre diferentes regiões do Vale do Pati, explorando áreas pouco visitadas, com ritmo mais equilibrado, maior tempo para contemplação e banhos em rios e cachoeiras, além de pernoites simples e acolhedores. Um roteiro ideal para quem busca viver a Chapada Diamantina de forma intensa, completa e sem pressa.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/Capa%20vale%20do%20pati%205%20dias.jpg?updatedAt=1772372075117",
     images: [
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6009.jpg?updatedAt=1772812666991",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-20250728-WA0027.jpg?updatedAt=1772812666776",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6022.jpg?updatedAt=1772812667048",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-0576.jpg?updatedAt=1772812667071",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/e427acda-3eb8-4988-afb3-14999b6d38b7.jpg?updatedAt=1772812667048",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6005.jpg?updatedAt=1772812666703",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-0570.jpg?updatedAt=1772812666784",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-5758.jpg?updatedAt=1772812666690",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/4c3dc52e-e796-416d-9ce4-25669854f76d.jpg?updatedAt=1772812666555"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8003.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_7999.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8031.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8008.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8005.HEIC"
     ],
     duration: "5 Dias",
     difficulty: "Avançado",
@@ -204,16 +199,11 @@ export const tours: Tour[] = [
     fullDesc: "O Vale do Pati: Travessia Completa em 3 dias é um roteiro voltado para quem deseja viver a Chapada Diamantina de forma intensa, autêntica e profundamente conectada à natureza. A experiência combina trilhas históricas, mirantes icônicos, cachoeiras, cavernas naturais e hospedagem em casas de nativos, proporcionando uma verdadeira imersão no coração da Chapada. Ao longo de três dias, o viajante percorre alguns dos cenários mais impressionantes do Brasil, com pernoites simples e acolhedores, logística bem planejada e acompanhamento profissional durante toda a travessia.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20Vale%20do%20pati%203%20dias.avif?updatedAt=1772372092370",
     images: [
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6009.jpg?updatedAt=1772812666991",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-20250728-WA0027.jpg?updatedAt=1772812666776",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6025.jpg?updatedAt=1772812667221",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6022.jpg?updatedAt=1772812667048",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-0576.jpg?updatedAt=1772812667071",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/e427acda-3eb8-4988-afb3-14999b6d38b7.jpg?updatedAt=1772812667048",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-6005.jpg?updatedAt=1772812666703",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-0570.jpg?updatedAt=1772812666784",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG-5758.jpg?updatedAt=1772812666690",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/4c3dc52e-e796-416d-9ce4-25669854f76d.jpg?updatedAt=1772812666555"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8003.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_7999.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8031.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8008.HEIC",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Vale%20do%20Pati/IMG_8005.HEIC"
     ],
     duration: "3 Dias",
     difficulty: "Avançado",
@@ -582,7 +572,9 @@ export const tours: Tour[] = [
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/2370eef8-49e9-4455-9190-5a6fab47fecc.jpg?updatedAt=1772812282657",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/IMG-6215.jpg?updatedAt=1772812282289",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/IMG-6220.jpg?updatedAt=1772812282486",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/6cbb48e8-dcec-43de-ad2d-ea47fd891780.jpg?updatedAt=1772812282504"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/6cbb48e8-dcec-43de-ad2d-ea47fd891780.jpg?updatedAt=1772812282504",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/c1929186-1089-4592-9337-e77d861e14cc.jpg?updatedAt=1772812282605",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/13fdfc9b-e57e-4e4a-8b1c-e1f64603f805.jpg?updatedAt=1772812282383"
     ],
     duration: "5 Dias",
     difficulty: "Leve",
@@ -932,7 +924,8 @@ export const tours: Tour[] = [
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-5279-Original.jpg?updatedAt=1772812165562",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/7eec9d7c-24fb-4050-bf51-9d914963ca21.jpg?updatedAt=1772812165608",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-6208.jpg?updatedAt=1772812165409",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-6211.jpg?updatedAt=1772812165289"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-6211.jpg?updatedAt=1772812165289",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-6240.jpg?updatedAt=1772812165309"
     ],
     duration: "4 Dias",
     difficulty: "Leve",
@@ -1030,7 +1023,6 @@ export const tours: Tour[] = [
     images: [
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/f65c3a32-a0c9-4f83-8f9f-b0648d117c16.jpg?updatedAt=1772812123253",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-9997.jpg?updatedAt=1772812123258",
-      "https://i.ibb.co/cKFvyjsM/f65c3a32-a0c9-4f83-8f9f-b0648d117c16.jpg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-5279-Original.jpg?updatedAt=1772812123107",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/pratinha-chapada-diamantina-bahia-006.jpg?updatedAt=1772812122886",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/IMG-6208.jpg?updatedAt=1772812122912",
@@ -1204,15 +1196,15 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Fácil – 3 dias é ideal para quem deseja conhecer os principais atrativos da Chapada Diamantina com tranquilidade, conforto e excelente custo-benefício. Em um roteiro bem distribuído, você visita grutas impressionantes, poços de águas cristalinas, cachoeiras e mirantes famosos, sempre acompanhado por guia local, com transporte, taxas e alimentação inclusos. Uma experiência completa, segura e inesquecível.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20facil.jpg?updatedAt=1772372074623",
     images: [
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20express/IMG-9681.jpg?updatedAt=1772812197891",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0037.jpg?updatedAt=1772812254304",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0035.jpg?updatedAt=1772812254334",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0034.jpg?updatedAt=1772812254235",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0013.jpg?updatedAt=1772812254439",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0030.jpg?updatedAt=1772812254351",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0032.jpg?updatedAt=1772812254221",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0043.jpg?updatedAt=1772812253872",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0031.jpg?updatedAt=1772812254113",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0043.jpg?updatedAt=1772812253872"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0032.jpg?updatedAt=1772812254221",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0030.jpg?updatedAt=1772812254351",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0013.jpg?updatedAt=1772812254439",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0034.jpg?updatedAt=1772812254235",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0035.jpg?updatedAt=1772812254334",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0037.jpg?updatedAt=1772812254304",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0038.jpg?updatedAt=1772812254377"
     ],
     duration: "3 Dias",
     difficulty: "Leve",
@@ -1290,62 +1282,6 @@ export const tours: Tour[] = [
     rating: 4.7
   },
   {
-    id: "12",
-    slug: "ametista-3-dias",
-    title: "AMETISTA – 3 DIAS",
-    desc: "Descubra o brilho das águas e das pedras em um roteiro místico de três dias.",
-    fullDesc: "Um roteiro especial que visita áreas de antigos garimpos e formações geológicas únicas. Três dias de descobertas sobre a história da mineração e as belezas naturais que as pedras preciosas escondem.",
-    img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20ametista.jpg?updatedAt=1772372074336",
-    images: [
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/IMG-9997.jpg?updatedAt=1772812098621",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/96e08d6b7222b04f47f24b6c1f75c5d9.jpg?updatedAt=1772812098578",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/IMG-2307.jpg?updatedAt=1772812098565",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/IMG-4759.jpg?updatedAt=1772812098463",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/IMG-4373.jpg?updatedAt=1772812098357",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes/Ametista/pratinha-chapada-diamantina-bahia-006.jpg?updatedAt=1772812098151"
-    ],
-    duration: "3 Dias",
-    difficulty: "Leve",
-    price: "R$ 2.450,00",
-    highlights: ["História do garimpo", "Geologia", "Cachoeiras"],
-    itinerary: [
-      {
-        day: "Dia 1",
-        title: "Cachoeira do Mosquito e Rio Mucugezinho",
-        description: "Visita à imponente Cachoeira do Mosquito e banho nas águas do Rio Mucugezinho e Poço do Diabo.",
-        physicalEffort: "Leve",
-        bathingSpots: "Poço do Diabo e Rio Mucugezinho",
-        carJourney: "40 km",
-        hiking: "3 km",
-        challenges: "Descida de escadaria na Cachoeira do Mosquito"
-      },
-      {
-        day: "Dia 2",
-        title: "Grutas e Morro do Pai Inácio",
-        description: "Exploração das grutas da Lapa Doce e Pratinha, finalizando com o pôr do sol no Morro do Pai Inácio.",
-        physicalEffort: "Leve",
-        bathingSpots: "Fazenda Pratinha",
-        carJourney: "150 km",
-        hiking: "2 km",
-        challenges: "Subida curta ao Morro do Pai Inácio"
-      },
-      {
-        day: "Dia 3",
-        title: "Poço Encantado e Poço Azul",
-        description: "Visita aos famosos poços de águas cristalinas e azuladas, com flutuação no Poço Azul.",
-        physicalEffort: "Leve",
-        bathingSpots: "Poço Azul (flutuação)",
-        carJourney: "180 km",
-        hiking: "1 km",
-        challenges: "Acesso por escadarias nas grutas"
-      }
-    ],
-    included: ["Guia historiador", "Transporte", "Seguro"],
-    faqs: commonFaqs,
-    views: 8200,
-    rating: 4.8
-  },
-  {
     id: "13",
     slug: "lapa-doce-pratinha-pai-inacio",
     title: "GRUTA DA LAPA DOCE, FAZENDA PRATINHA, GRUTA AZUL E MORRO DO PAI INÁCIO",
@@ -1361,8 +1297,10 @@ export const tours: Tour[] = [
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_2402.JPG?updatedAt=1773060229325",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/68acdfb9-6806-4440-9b4b-06ff9449fe30.jpg?updatedAt=1773060229525",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/97846b33-c213-4db8-8bba-e60d4a2e07c6.jpg?updatedAt=1773060229408",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/CAPA.jpg?updatedAt=1773060229182",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/0ede0e7b-9d10-4511-b3fa-77c20a8e99d6.jpg?updatedAt=1773060229264",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_6229.JPG?updatedAt=1773060228788"
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_6229.JPG?updatedAt=1773060228788",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/5f934895-d6e7-4148-a642-76bfc8d07e60.jpg?updatedAt=1773060229167"
     ],
     duration: "1 Dia",
     difficulty: "Leve",
@@ -1659,7 +1597,6 @@ export const tours: Tour[] = [
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/39a35a2f-baf4-4448-ad24-c04a1c8d99b5.jpg?updatedAt=1773059845620",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/CAPA.jpg?updatedAt=1773059845452",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6230.JPG?updatedAt=1773059845163",
-      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6210.JPG?updatedAt=1773059844874",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6240.JPG?updatedAt=1773059844797",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6209.JPG?updatedAt=1773059844945",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/IMG_6236.JPG?updatedAt=1773059844777",
