@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Menu, X, Instagram, MessageCircle } from 'lucide-react';
-import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -61,7 +60,6 @@ const Navbar = () => {
           ))}
           
           <div className="flex items-center gap-4 ml-4 pl-4 border-l border-stone-200">
-            <LanguageSelector />
             {socialLinks.map((social) => (
               <a 
                 key={social.name}
@@ -102,7 +100,6 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex justify-center gap-8 py-6 border-t border-stone-100 mt-2">
-              <LanguageSelector />
             </div>
             <div className="flex justify-center gap-8 pb-6">
             {socialLinks.map((social) => (

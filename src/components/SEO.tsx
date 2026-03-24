@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
+import { useLocation } from 'react-router-dom';
 import { DEFAULT_KEYWORDS } from '../constants/seoKeywords';
 
 interface SEOProps {
@@ -17,12 +18,25 @@ const SEO: React.FC<SEOProps> = ({
   description = 'Explore a Chapada Diamantina com a Chapada Tour. Oferecemos os melhores roteiros, guias especializados e experiências inesquecíveis em Lençóis e região.',
   keywords = DEFAULT_KEYWORDS,
   image = 'https://ik.imagekit.io/ozcvccl1z/Capa%20da%20home.avif',
-  url = 'https://chapadatour.com.br/',
+  url,
   schemaType = 'TravelAgency',
   schemaData,
 }) => {
+  const location = useLocation();
+  const baseUrl = 'https://chapadatour.com';
+  
+  // Construct current URL if not provided
+  // Normalize URL: ensure home page has trailing slash to match sitemap, others don't
+  const normalizeUrl = (u: string) => {
+    const cleanUrl = u.endsWith('/') ? u.slice(0, -1) : u;
+    if (cleanUrl === baseUrl) return `${baseUrl}/`;
+    return cleanUrl;
+  };
+
+  const currentUrl = normalizeUrl(url || `${baseUrl}${location.pathname}`);
+  
   const fullTitle = title.includes('Chapada Tour') ? title : `${title} | Chapada Tour`;
-  const canonicalUrl = url.endsWith('/') ? url : `${url}/`;
+  const canonicalUrl = currentUrl;
   const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
   // JSON-LD Structured Data
@@ -33,7 +47,7 @@ const SEO: React.FC<SEOProps> = ({
       "name": "Chapada Tour",
       "alternateName": "Chapada Tour Turismo",
       "description": description,
-      "url": "https://chapadatour.com.br/",
+      "url": baseUrl,
       "logo": "https://ik.imagekit.io/ozcvccl1z/LOGOMARCA1__2_-removebg-preview-1-e1736863590369-300x162.webp?updatedAt=1772365084253",
       "image": image,
       "address": {
@@ -121,7 +135,7 @@ const SEO: React.FC<SEOProps> = ({
           "@type": "ListItem",
           "position": index + 1,
           "name": item.name,
-          "item": `https://chapadatour.com.br${item.path}`
+          "item": `${baseUrl}${item.path}`
         }))
       };
     }
@@ -132,7 +146,7 @@ const SEO: React.FC<SEOProps> = ({
   const structuredData = getStructuredData();
 
   return (
-    <Helmet>
+    <Head>
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
@@ -181,7 +195,7 @@ const SEO: React.FC<SEOProps> = ({
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

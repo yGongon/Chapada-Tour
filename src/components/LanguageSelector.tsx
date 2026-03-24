@@ -13,6 +13,7 @@ const languages = [
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(() => {
+    if (typeof window === 'undefined') return 'pt';
     // Initialize from localStorage or cookie
     const saved = localStorage.getItem('selected_language');
     if (saved && languages.some(l => l.code === saved)) return saved;
@@ -20,6 +21,7 @@ const LanguageSelector = () => {
   });
 
   const changeLanguage = (langCode: string) => {
+    if (typeof window === 'undefined') return;
     setIsOpen(false);
     setCurrentLang(langCode); // Instant UI feedback
     localStorage.setItem('selected_language', langCode);
@@ -51,6 +53,7 @@ const LanguageSelector = () => {
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const syncLanguage = () => {
       const getCookie = (name: string) => {
         const value = `; ${document.cookie}`;
@@ -83,50 +86,81 @@ const LanguageSelector = () => {
   }, []);
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-stone-100 transition-colors text-stone-600"
-      >
-        <Globe size={18} />
-        <span className="text-xs font-bold uppercase tracking-widest">
-          {languages.find(l => l.code === currentLang)?.code}
-        </span>
-        <ChevronDown size={14} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+    <div className="fixed bottom-6 left-6 z-[9999]">
+      <div className="relative">
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsOpen(false)}
+                className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1]"
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5, y: 20, x: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+                exit={{ opacity: 0, scale: 0.5, y: 20, x: -20 }}
+                className="absolute bottom-20 left-0 mb-2 w-48 bg-white rounded-3xl shadow-2xl border border-stone-100 p-3 overflow-hidden"
+              >
+                <div className="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-3 px-3">
+                  Selecione o Idioma
+                </div>
+                <div className="space-y-1">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm transition-all ${
+                        currentLang === lang.code 
+                          ? 'bg-brand-olive text-white font-bold shadow-lg shadow-brand-olive/20' 
+                          : 'text-stone-600 hover:bg-stone-50'
+                      }`}
+                    >
+                      <span className="text-xl leading-none">{lang.flag}</span>
+                      <span className="flex-1 text-left">{lang.name}</span>
+                      {currentLang === lang.code && (
+                        <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-40"
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsOpen(!isOpen)}
+          className={`flex items-center justify-center w-16 h-16 rounded-full shadow-2xl transition-all duration-500 ${
+            isOpen ? 'bg-stone-800 text-white rotate-90' : 'bg-white text-brand-olive'
+          } border border-stone-100`}
+        >
+          {isOpen ? (
+            <ChevronDown size={28} />
+          ) : (
+            <div className="flex flex-col items-center">
+              <span className="text-2xl mb-0.5">
+                {languages.find(l => l.code === currentLang)?.flag}
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-tighter leading-none">
+                {currentLang}
+              </span>
+            </div>
+          )}
+          
+          {!isOpen && (
+            <motion.div 
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute -top-1 -right-1 w-4 h-4 bg-brand-olive rounded-full border-2 border-white"
             />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="absolute right-0 md:right-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 mt-2 w-40 bg-white rounded-2xl shadow-xl border border-stone-100 p-2 z-50 overflow-hidden"
-            >
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => changeLanguage(lang.code)}
-                  className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm transition-colors ${
-                    currentLang === lang.code ? 'bg-brand-cream text-brand-olive font-bold' : 'text-stone-600 hover:bg-stone-50'
-                  }`}
-                >
-                  <span>{lang.flag}</span>
-                  <span>{lang.name}</span>
-                </button>
-              ))}
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+          )}
+        </motion.button>
+      </div>
     </div>
   );
 };

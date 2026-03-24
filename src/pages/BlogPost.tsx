@@ -1,25 +1,19 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowLeft, Share2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import SEO from '../components/SEO';
 import { blogPosts } from '../data/blogPosts';
 import { optimizeImageUrl } from '../utils/imageOptimizer';
-import { useEffect } from 'react';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
+import NotFound from './NotFound';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const post = blogPosts.find((p) => p.slug === slug);
 
-  useEffect(() => {
-    if (!post) {
-      navigate('/blog');
-    }
-  }, [post, navigate]);
-
-  if (!post) return null;
+  // Mostra 404 real em vez de redirecionar — Google entende que a página não existe
+  if (!post) return <NotFound />;
 
   const getPostKeywords = () => {
     const k = [...SEO_KEYWORDS.BLOG_SEO, ...SEO_KEYWORDS.GENERAL];
@@ -151,7 +145,6 @@ const BlogPost = () => {
           </motion.footer>
         </article>
 
-        {/* Related Posts or CTA */}
         <div className="mt-32 bg-stone-900 rounded-[3rem] p-12 md:p-20 text-center text-white">
           <h3 className="text-3xl md:text-4xl font-serif mb-6">Inspirado para sua próxima aventura?</h3>
           <p className="text-stone-400 mb-10 max-w-2xl mx-auto">

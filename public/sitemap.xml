@@ -1,155 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chapadatour.com.br/</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/passeios</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/hospedagem</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/hospedagem</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/sobre</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/sobre</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/blog</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/blog</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/contato</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://chapadatour.com/contato</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://chapadatour.com/politica-de-privacidade</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/termos-de-uso</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Tours -->
   <url>
-    <loc>https://chapadatour.com.br/passeios/vale-do-pati-5-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/vale-do-pati-5-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/vale-do-pati-3-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/vale-do-pati-3-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-profunda-10-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-profunda-10-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-hardcore-10-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-hardcore-10-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-selvagem-6-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-horizonte-5-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-horizonte-5-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-serena-6-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-adventure-4-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-selvagem-6-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/chapada-classica-4-dias</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-classica-4-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/cachoeira-do-buracao-1-dia</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-adventure-3-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/cachoeira-da-fumaca-1-dia</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-express-2-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/grutas-e-pai-inacio-1-dia</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/chapada-facil-3-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/passeios/cachoeira-do-mosquito-e-azul-1-dia</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/passeios/ametista-3-dias</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/lapa-doce-pratinha-pai-inacio</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/mosquito-mucugezinho-poco-do-diabo</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/poco-encantado-poco-azul</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/parque-da-muritiba</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/fumaca-riachinho</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/cachoeira-do-buracao</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/buracao-fumacinha-2-dias</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/vinicola-uvva</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chapadatour.com/passeios/marimbus-roncador</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog -->
   <url>
-    <loc>https://chapadatour.com.br/blog/chapada-diamantina-viajantes-solo</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/blog/chapada-diamantina-viajantes-solo</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/blog/chapada-diamantina-casais</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/blog/chapada-diamantina-casais</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/blog/lencois-joia-historica</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/blog/lencois-joia-historica</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/blog/chapada-melhor-destino-ano</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/blog/chapada-melhor-destino-ano</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <!-- Accommodations -->
   <url>
-    <loc>https://chapadatour.com.br/hospedagem/quarto-duplo-banheiro-compartilhado</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/hospedagem/quarto-duplo-banheiro-compartilhado</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/hospedagem/quarto-duplo-com-varanda</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/hospedagem/quarto-duplo-com-varanda</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://chapadatour.com.br/hospedagem/quarto-triplo-com-varanda</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://chapadatour.com/hospedagem/quarto-triplo-com-varanda</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

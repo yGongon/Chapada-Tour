@@ -42,7 +42,7 @@ Alguns dos lugares mais inspiradores incluem:
 * **Poço Azul** – famoso pela luz azul que atravessa a água cristalina.
 * **Poço Encantado** – um espetáculo natural que impressiona qualquer visitante.
 
-Essos lugares fazem muitos viajantes desacelerarem e simplesmente contemplarem a natureza.
+Esses lugares fazem muitos viajantes desacelerarem e simplesmente contemplarem a natureza.
 
 ### Conexão com a Natureza e com Você Mesmo
 
@@ -118,13 +118,13 @@ Para casais aventureiros, o trekking pelo Vale do Pati é uma experiência inesq
 
 Considerado um dos trekkings mais bonitos do Brasil, o Vale do Pati oferece trilhas que passam por montanhas, rios, mirantes incríveis e pequenas comunidades locais.
 
-A travessia geralmente dura entre 3 e 5 dias, e durante o percurso os viajantes se hospedam em casas de moradores della região. Dormir cercado pela natureza, acordar com vistas incríveis e caminhar juntos por paisagens únicas transforma essa aventura em uma experiência marcante para qualquer casal.
+A travessia geralmente dura entre 3 e 5 dias, e durante o percurso os viajantes se hospedam em casas de moradores da região. Dormir cercado pela natureza, acordar com vistas incríveis e caminhar juntos por paisagens únicas transforma essa aventura em uma experiência marcante para qualquer casal.
 
 ### Noites Tranquilas nas Vilas da Chapada
 
 Depois de um dia explorando trilhas e cachoeiras, nada melhor do que relaxar em uma das charmosas cidades da região.
 
-Lugares como Lençóis, Mucugê e Vale do Capão oferecerem pousadas aconchegantes, restaurantes charmosos e um clima tranquilo que combina perfeitamente com viagens românticas.
+Lugares como Lençóis, Mucugê e Vale do Capão oferecem pousadas aconchegantes, restaurantes charmosos e um clima tranquilo que combina perfeitamente com viagens românticas.
 
 Muitos casais aproveitam a noite para caminhar pelas ruas históricas, jantar à luz de velas ou simplesmente relaxar depois de um dia cheio de aventuras.
 

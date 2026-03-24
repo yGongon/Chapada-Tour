@@ -5,8 +5,8 @@ import { ArrowLeft, Wifi, Wind, Ban, Bed, ShowerHead, CheckCircle2, ChevronLeft,
 import { rooms } from '../data/accommodations';
 import SEO from '../components/SEO';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
-
 import { optimizeImageUrl } from '../utils/imageOptimizer';
+import NotFound from './NotFound';
 
 const RoomDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -18,18 +18,7 @@ const RoomDetail = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!room) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-serif mb-4">Quarto não encontrado</h1>
-          <Link to="/hospedagem" className="text-brand-olive font-bold flex items-center justify-center gap-2">
-            <ArrowLeft size={20} /> Voltar para Hospedagens
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!room) return <NotFound />;
 
   const roomImages = room.images || [room.img];
 

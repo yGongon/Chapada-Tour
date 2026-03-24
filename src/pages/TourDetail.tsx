@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 import BookingCalendar from '../components/BookingCalendar';
+import NotFound from './NotFound';
 
 const TourDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -20,15 +21,7 @@ const TourDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!tour) {
-    return (
-      <div className="pt-40 pb-24 text-center">
-        <SEO title="Passeio não encontrado" />
-        <h2 className="text-3xl font-serif mb-4">Passeio não encontrado</h2>
-        <Link to="/passeios" className="text-brand-olive font-bold underline">Voltar para a lista</Link>
-      </div>
-    );
-  }
+  if (!tour) return <NotFound />;
 
   // Dynamic keywords based on tour content
   const getSpecificKeywords = () => {
@@ -60,13 +53,15 @@ const TourDetail = () => {
     setCurrentImageIndex((prev) => (prev - 1 + tourImages.length) % tourImages.length);
   };
 
-  const shareUrl = window.location.href;
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
   const shareTitle = `Confira este passeio na Chapada Diamantina: ${tour.title}`;
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(shareUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (typeof window !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   const shareLinks = [
@@ -103,7 +98,7 @@ const TourDetail = () => {
         description={tour.desc}
         keywords={getSpecificKeywords()}
         image={tour.img}
-        url={`https://chapadatour.com.br/passeios/${tour.slug}`}
+        url={`https://chapadatour.com/passeios/${tour.slug}`}
         schemaType="Trip"
         schemaData={{
           name: tour.title,
@@ -114,7 +109,6 @@ const TourDetail = () => {
       />
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center mb-6 md:mb-8">
-          {/* Back Button */}
           <button 
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-stone-500 hover:text-brand-olive transition-colors font-medium"
@@ -122,7 +116,6 @@ const TourDetail = () => {
             <ArrowLeft size={20} /> Voltar
           </button>
 
-          {/* Share Button */}
           <div className="relative">
             <button 
               onClick={() => setIsShareOpen(!isShareOpen)}
@@ -180,7 +173,6 @@ const TourDetail = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          {/* Main Content */}
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -188,7 +180,6 @@ const TourDetail = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              {/* Image Carousel */}
               <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-10 shadow-2xl group">
                 <AnimatePresence mode="wait">
                   <motion.img 
@@ -257,11 +248,35 @@ const TourDetail = () => {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-serif mb-6">{tour.title}</h1>
+
+              <div className="lg:hidden mb-10">
+                <div className="bg-white p-8 rounded-[2.5rem] shadow-xl border border-stone-100">
+                  <div className="mb-8">
+                    <p className="text-stone-400 text-xs uppercase tracking-widest font-bold mb-2">Investimento</p>
+                    <p className="text-4xl font-serif text-brand-olive">{tour.price}</p>
+                    <p className="text-xs text-stone-400 mt-2">* Valor por pessoa. Grupos privativos sob consulta.</p>
+                  </div>
+                  <div className="mb-8">
+                    <BookingCalendar tour={tour} />
+                  </div>
+                  <div className="mt-8 pt-8 border-t border-stone-100">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-stone-400 mb-4">Reserva e Pagamento</h4>
+                    <p className="text-xs text-stone-600 leading-relaxed mb-4">
+                      Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['Pix', 'Cartão', 'Dinheiro'].map(tag => (
+                        <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <p className="text-lg md:text-xl text-stone-600 mb-10 leading-relaxed font-light">
                 {tour.fullDesc}
               </p>
 
-              {/* Video Section */}
               {tour.videoUrl && (
                 <div className="mb-16">
                   <h3 className="text-3xl font-serif mb-8 flex items-center gap-3">
@@ -279,7 +294,6 @@ const TourDetail = () => {
                 </div>
               )}
 
-              {/* Itinerary Section */}
               {tour.itinerary && (
                 <div className="mb-16">
                   <h3 className="text-3xl font-serif mb-8 flex items-center gap-3">
@@ -362,9 +376,7 @@ const TourDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-serif mb-6 flex items-center gap-2">
-                    Destaques do Roteiro
-                  </h3>
+                  <h3 className="text-2xl font-serif mb-6">Destaques do Roteiro</h3>
                   <ul className="space-y-4">
                     {tour.highlights.map((item, i) => (
                       <motion.li 
@@ -387,9 +399,7 @@ const TourDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-serif mb-6 flex items-center gap-2">
-                    O que está incluso
-                  </h3>
+                  <h3 className="text-2xl font-serif mb-6">O que está incluso</h3>
                   <ul className="space-y-4">
                     {tour.included.map((item, i) => (
                       <motion.li 
@@ -408,7 +418,6 @@ const TourDetail = () => {
                 </motion.div>
               </div>
 
-              {/* Accommodation & Food */}
               {(tour.accommodation || tour.food) && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                   {tour.accommodation && (
@@ -442,7 +451,6 @@ const TourDetail = () => {
                 </div>
               )}
 
-              {/* What to Bring & Not Included */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 {tour.whatToBring && (
                   <motion.div
@@ -484,11 +492,8 @@ const TourDetail = () => {
                 )}
               </div>
 
-              {/* Related Tours Section */}
               <div className="mt-20 pt-20 border-t border-stone-100">
-                <h3 className="text-3xl font-serif mb-10 flex items-center gap-3">
-                  Outros Passeios Recomendados
-                </h3>
+                <h3 className="text-3xl font-serif mb-10">Outros Passeios Recomendados</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {tours.filter(t => t.id !== tour.id).slice(0, 2).map((relatedTour) => (
                     <Link 
@@ -512,7 +517,6 @@ const TourDetail = () => {
                 </div>
               </div>
 
-              {/* FAQ Section */}
               {tour.faqs && tour.faqs.length > 0 && (
                 <div className="mt-20 pt-20 border-t border-stone-100">
                   <h3 className="text-3xl font-serif mb-10 flex items-center gap-3">
@@ -535,13 +539,12 @@ const TourDetail = () => {
             </motion.div>
           </div>
 
-          {/* Sidebar / Booking */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 hidden lg:block"
           >
             <div className="sticky top-32">
               <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-stone-100">

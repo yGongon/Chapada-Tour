@@ -66,6 +66,54 @@
   @apply my-12 border-stone-200;
 }
 
+/* React Calendar Custom Styling */
+.calendar-container .react-calendar {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit !important;
+}
+
+.calendar-container .react-calendar__navigation {
+  @apply mb-4 flex items-center justify-between;
+}
+
+.calendar-container .react-calendar__navigation button {
+  @apply min-w-[44px] h-11 bg-stone-50 rounded-xl text-stone-900 font-bold hover:bg-stone-100 transition-colors disabled:opacity-30;
+}
+
+.calendar-container .react-calendar__navigation__label {
+  @apply !text-stone-900 !font-bold !text-base;
+}
+
+.calendar-container .react-calendar__month-view__weekdays {
+  @apply text-stone-400 font-bold text-[10px] uppercase tracking-widest mb-2;
+}
+
+.calendar-container .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+.calendar-container .react-calendar__tile {
+  @apply !h-12 !rounded-xl !text-sm !font-medium !text-stone-700 hover:!bg-stone-50 !transition-all !flex !items-center !justify-center;
+}
+
+.calendar-container .react-calendar__tile--now {
+  @apply !bg-stone-100 !text-stone-900 !font-bold;
+}
+
+.calendar-container .react-calendar__tile--active {
+  @apply !bg-brand-olive !text-white !font-bold !shadow-lg !shadow-brand-olive/20;
+}
+
+.calendar-container .react-calendar__tile:disabled {
+  @apply !opacity-20 !cursor-not-allowed hover:!bg-transparent;
+}
+
+.calendar-container .react-calendar__month-view__days__day--neighboringMonth {
+  @apply !opacity-30;
+}
+
 .glass-card {
   @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
 }

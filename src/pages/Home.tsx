@@ -248,12 +248,12 @@ const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-16 gap-x-8">
             {[
-              { label: "Paisagens que ficam na memória", icon: <Mountain size={32} /> },
-              { label: "Trilhas guiadas com segurança", icon: <Compass size={32} /> },
-              { label: "Sabores da Chapada", icon: <Utensils size={32} /> },
-              { label: "Contato com a cultura local", icon: <Users size={32} /> },
-              { label: "Turismo responsável", icon: <ShieldCheck size={32} /> },
-              { label: "Experiências autênticas", icon: <Flame size={32} /> }
+              { label: "+5 mil vidas guiadas", icon: <Users size={32} /> },
+              { label: "Experiência profunda na chapada", icon: <Mountain size={32} /> },
+              { label: "+10 anos de experiência", icon: <Compass size={32} /> },
+              { label: "Cadastur 100% regularizado", icon: <ShieldCheck size={32} /> },
+              { label: "80% da renda para moradores locais", icon: <Heart size={32} /> },
+              { label: "Idiomas: PT, EN, FR, ES", icon: <Languages size={32} /> }
             ].map((item, idx) => (
               <motion.div
                 key={idx}

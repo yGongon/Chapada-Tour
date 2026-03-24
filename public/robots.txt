@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
+Disallow: /api/
 
-Sitemap: https://chapadatour.com.br/sitemap.xml
+# Host
+Host: https://chapadatour.com
+
+# Sitemap
+Sitemap: https://chapadatour.com/sitemap.xml
