@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLocation } from 'react-router-dom';
 
 const languages = [
   { code: 'pt', name: 'Português', flag: '🇧🇷' },
@@ -12,6 +13,7 @@ const languages = [
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   const [currentLang, setCurrentLang] = useState(() => {
     if (typeof window === 'undefined') return 'pt';
     // Initialize from localStorage or cookie
@@ -20,8 +22,29 @@ const LanguageSelector = () => {
     return 'pt';
   });
 
+  const triggerTranslation = (langCode: string) => {
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      
+      setTimeout(() => {
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      }, 100);
+      return true;
+    }
+    return false;
+  };
+
   const changeLanguage = (langCode: string) => {
     if (typeof window === 'undefined') return;
+    
+    // If we are already on this language, do nothing
+    if (currentLang === langCode) {
+      setIsOpen(false);
+      return;
+    }
+
     setIsOpen(false);
     setCurrentLang(langCode); // Instant UI feedback
     localStorage.setItem('selected_language', langCode);
@@ -31,46 +54,69 @@ const LanguageSelector = () => {
     url.searchParams.set('lang', langCode);
     window.history.replaceState({}, '', url.toString());
     
-    // Small delay to allow menu to close before potentially reloading
-    setTimeout(() => {
-      // 1. Set the cookie (most reliable way for Google Translate)
-      const domain = window.location.hostname;
-      const expires = new Date();
-      expires.setFullYear(expires.getFullYear() + 1);
-      const cookieBase = `googtrans=/pt/${langCode}; path=/; expires=${expires.toUTCString()}; SameSite=None; Secure`;
-      document.cookie = cookieBase;
-      document.cookie = `${cookieBase}; domain=.${domain}`;
-      document.cookie = `${cookieBase}; domain=${domain}`;
+    const domain = window.location.hostname;
 
-      // 2. Try to find the select element and trigger it
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-        
-        // Sometimes a small delay and second trigger helps
-        setTimeout(() => {
-          select.dispatchEvent(new Event('change'));
-        }, 100);
-      } else {
-        // If the widget isn't ready yet, the cookie + reload is the fallback
-        window.location.reload();
-      }
-    }, 300);
+    // If returning to the default language (Portuguese), clear the cookie.
+    if (langCode === 'pt') {
+      document.cookie = `googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure`;
+      document.cookie = `googtrans=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure`;
+      document.cookie = `googtrans=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure`;
+      window.location.reload();
+      return;
+    }
+
+    // 1. Set the cookie (most reliable way for Google Translate)
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    const cookieBase = `googtrans=/pt/${langCode}; path=/; expires=${expires.toUTCString()}; SameSite=None; Secure`;
+    document.cookie = cookieBase;
+    document.cookie = `${cookieBase}; domain=.${domain}`;
+    document.cookie = `${cookieBase}; domain=${domain}`;
+
+    // Reload the page to apply the new language cleanly.
+    // This fixes the issue where switching from one foreign language to another (e.g., English to Spanish)
+    // doesn't work because Google Translate gets stuck.
+    window.location.reload();
   };
+
+  // Re-trigger translation when the route changes
+  useEffect(() => {
+    if (currentLang !== 'pt') {
+      // Trigger translation multiple times to account for lazy-loaded routes
+      const timeouts = [100, 500, 1000, 2000].map(delay => 
+        setTimeout(() => {
+          triggerTranslation(currentLang);
+        }, delay)
+      );
+      
+      return () => {
+        timeouts.forEach(clearTimeout);
+      };
+    }
+  }, [location.pathname, currentLang]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
+    const getCookie = (name: string) => {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return match[2];
+      return null;
+    };
+
     // Check for 'lang' parameter in URL (e.g., ?lang=en)
     const params = new URLSearchParams(window.location.search);
     const langParam = params.get('lang');
     
-    if (langParam && languages.some(l => l.code === langParam)) {
-      // If the URL param is different from current, change it
-      if (langParam !== currentLang) {
-        changeLanguage(langParam);
-      }
+    const targetLang = (langParam && languages.some(l => l.code === langParam)) ? langParam : currentLang;
+    
+    const googtrans = getCookie('googtrans');
+    const expectedCookieValue = `/pt/${targetLang}`;
+    const actualCookieValue = googtrans ? decodeURIComponent(googtrans).replace(/"/g, '') : null;
+    
+    // If the URL has a lang parameter, or the cookie is missing/wrong, trigger translation
+    if ((langParam && langParam !== currentLang) || (targetLang !== 'pt' && actualCookieValue !== expectedCookieValue)) {
+      changeLanguage(targetLang);
     }
   }, []);
 
@@ -78,9 +124,8 @@ const LanguageSelector = () => {
     if (typeof window === 'undefined') return;
     const syncLanguage = () => {
       const getCookie = (name: string) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop()?.split(';').shift();
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        if (match) return match[2];
         return null;
       };
 

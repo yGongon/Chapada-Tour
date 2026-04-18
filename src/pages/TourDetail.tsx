@@ -180,7 +180,7 @@ const TourDetail = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-10 shadow-2xl group">
+              <div className="relative aspect-[4/5] sm:aspect-square md:aspect-video rounded-[2.5rem] overflow-hidden mb-10 shadow-2xl group">
                 <AnimatePresence mode="wait">
                   <motion.img 
                     key={currentImageIndex}
@@ -501,7 +501,7 @@ const TourDetail = () => {
                       to={`/passeios/${relatedTour.slug}`}
                       className="group block bg-stone-50 rounded-3xl overflow-hidden border border-stone-100 hover:shadow-xl transition-all"
                     >
-                      <div className="aspect-video overflow-hidden">
+                      <div className="aspect-[4/3] overflow-hidden">
                         <img 
                           src={optimizeImageUrl(relatedTour.img, 600)} 
                           alt={relatedTour.title} 

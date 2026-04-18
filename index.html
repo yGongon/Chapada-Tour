@@ -62,6 +62,54 @@
         }
       })();
     </script>
+    <script>
+      // Monkey-patch DOM methods to prevent React from crashing when Google Translate mutates the DOM
+      if (typeof Node === 'function' && Node.prototype) {
+        const originalRemoveChild = Node.prototype.removeChild;
+        Node.prototype.removeChild = function(child) {
+          if (child.parentNode !== this) {
+            console.warn('React Google Translate workaround: suppressed removeChild error');
+            return child;
+          }
+          return originalRemoveChild.apply(this, arguments);
+        };
+
+        const originalInsertBefore = Node.prototype.insertBefore;
+        Node.prototype.insertBefore = function(newNode, referenceNode) {
+          if (referenceNode && referenceNode.parentNode !== this) {
+            console.warn('React Google Translate workaround: suppressed insertBefore error');
+            return newNode;
+          }
+          return originalInsertBefore.apply(this, arguments);
+        };
+      }
+    </script>
+    <script>
+      // Set language cookie immediately if 'lang' parameter is present
+      // This ensures Google Translate picks it up on initial load (crucial for Ad clicks)
+      (function() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var lang = params.get('lang');
+          var validLangs = ['en', 'es', 'fr', 'iw', 'pt'];
+          if (lang && validLangs.includes(lang)) {
+            var domain = window.location.hostname;
+            if (lang === 'pt') {
+              document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure";
+              document.cookie = "googtrans=; path=/; domain=." + domain + "; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure";
+            } else {
+              var expires = new Date();
+              expires.setFullYear(expires.getFullYear() + 1);
+              var cookieStr = "googtrans=/pt/" + lang + "; path=/; expires=" + expires.toUTCString() + "; SameSite=None; Secure";
+              document.cookie = cookieStr;
+              document.cookie = cookieStr + "; domain=." + domain;
+              document.cookie = cookieStr + "; domain=" + domain;
+            }
+            localStorage.setItem('selected_language', lang);
+          }
+        } catch(e) {}
+      })();
+    </script>
     <script type="text/javascript">
       window.googleTranslateElementInit = function() {
         new google.translate.TranslateElement({
