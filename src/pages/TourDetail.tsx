@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play, Activity, Waves, Car, Footprints, Mountain } from 'lucide-react';
+import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play, Activity, Waves, Car, Footprints, Mountain, Zap, Sparkles } from 'lucide-react';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
 import BookingCalendar from '../components/BookingCalendar';
 import NotFound from './NotFound';
+import { calculatePixDiscount } from '../utils/pricing';
 
 const TourDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -22,6 +23,8 @@ const TourDetail = () => {
   }, []);
 
   if (!tour) return <NotFound />;
+
+  const pricingPix = calculatePixDiscount(tour.price, 2);
 
   // Dynamic keywords based on tour content
   const getSpecificKeywords = () => {
@@ -237,12 +240,15 @@ const TourDetail = () => {
                   </>
                 )}
 
-                <div className="absolute top-6 left-6 flex gap-3">
+                <div className="absolute top-6 left-6 flex flex-wrap gap-2.5">
                   <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                     <Clock size={14} /> {tour.duration}
                   </span>
                   <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                     <Star size={14} /> {tour.difficulty}
+                  </span>
+                  <span className="bg-amber-400 text-stone-950 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 shadow-lg border border-amber-300">
+                    <Zap size={13} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (2+ PESSOAS)
                   </span>
                 </div>
               </div>
@@ -251,10 +257,36 @@ const TourDetail = () => {
 
               <div className="lg:hidden mb-10">
                 <div className="bg-white p-8 rounded-[2.5rem] shadow-xl border border-stone-100">
-                  <div className="mb-8">
-                    <p className="text-stone-400 text-xs uppercase tracking-widest font-bold mb-2">Investimento</p>
-                    <p className="text-4xl font-serif text-brand-olive">{tour.price}</p>
-                    <p className="text-xs text-stone-400 mt-2">* Valor por pessoa. Grupos privativos sob consulta.</p>
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
+                      <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
+                        <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-baseline gap-2.5">
+                      <span className="text-lg text-stone-400 line-through decoration-amber-700/60 font-semibold">
+                        {tour.price}
+                      </span>
+                      <p className="text-4xl font-serif font-black text-brand-earth">
+                        {pricingPix.unitWithDiscountFormatted}
+                      </p>
+                      <span className="bg-amber-400 text-stone-950 text-xs font-black px-2.5 py-0.5 rounded-full shadow-sm">
+                        -10%
+                      </span>
+                    </div>
+                    <p className="text-xs text-stone-500 font-medium mt-1">
+                      Valor por pessoa no PIX para 2 ou mais vagas
+                    </p>
+
+                    <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
+                      <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
+                      <span>
+                        Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas (preço individual: <span className="line-through">{tour.price}</span>).
+                      </span>
+                    </div>
+                    <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
                   </div>
                   <div className="mb-8">
                     <BookingCalendar tour={tour} />
@@ -265,7 +297,10 @@ const TourDetail = () => {
                       Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {['Pix', 'Cartão', 'Dinheiro'].map(tag => (
+                      <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
+                        ✓ Pix (10% OFF p/ 2+ reservas)
+                      </span>
+                      {['Cartão', 'Dinheiro'].map(tag => (
                         <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
                       ))}
                     </div>
@@ -548,10 +583,36 @@ const TourDetail = () => {
           >
             <div className="sticky top-32">
               <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-stone-100">
-                <div className="mb-8">
-                  <p className="text-stone-400 text-xs uppercase tracking-widest font-bold mb-2">Investimento</p>
-                  <p className="text-4xl font-serif text-brand-olive">{tour.price}</p>
-                  <p className="text-xs text-stone-400 mt-2">* Valor por pessoa. Grupos privativos sob consulta.</p>
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
+                    <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
+                      <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap items-baseline gap-2.5">
+                    <span className="text-lg text-stone-400 line-through decoration-amber-700/60 font-semibold">
+                      {tour.price}
+                    </span>
+                    <p className="text-4xl font-serif font-black text-brand-earth">
+                      {pricingPix.unitWithDiscountFormatted}
+                    </p>
+                    <span className="bg-amber-400 text-stone-950 text-xs font-black px-2 py-0.5 rounded-full shadow-sm">
+                      -10%
+                    </span>
+                  </div>
+                  <p className="text-xs text-stone-500 font-medium mt-1">
+                    Valor por pessoa no PIX para 2 ou mais vagas
+                  </p>
+
+                  <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
+                    <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
+                    <span>
+                      Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas (preço individual: <span className="line-through">{tour.price}</span>).
+                    </span>
+                  </div>
+                  <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
                 </div>
 
                 <div className="mb-8">
@@ -564,7 +625,10 @@ const TourDetail = () => {
                     Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {['Pix', 'Cartão', 'Dinheiro'].map(tag => (
+                    <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
+                      ✓ Pix (10% OFF p/ 2+ reservas)
+                    </span>
+                    {['Cartão', 'Dinheiro'].map(tag => (
                       <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
                     ))}
                   </div>

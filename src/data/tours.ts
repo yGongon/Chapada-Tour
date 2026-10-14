@@ -207,7 +207,7 @@ export const tours: Tour[] = [
     ],
     duration: "3 Dias",
     difficulty: "Avançado",
-    price: "R$ 1.800,00",
+    price: "R$ 1.900,00",
     highlights: [
       "Travessia completa pelo Vale do Pati",
       "Hospedagem e alimentação em casas de nativos",
@@ -287,6 +287,8 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Profunda – 10 dias é o roteiro mais completo da Chapada Diamantina, ideal para quem deseja viver a região de forma intensa, imersiva e transformadora. Ao longo de dez dias, você percorre desde os principais clássicos até áreas remotas e selvagens, incluindo grandes cachoeiras, cânions impressionantes, grutas, poços de águas cristalinas e o icônico Vale do Pati. Um pacote pensado para quem quer ir além do turismo convencional, com acompanhamento especializado, logística bem planejada e pernoites estratégicos que garantem conforto, segurança e melhor aproveitamento de cada experiência.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20profunda.jpg?updatedAt=1772372076783",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/WhatsApp%20Image%202026-07-17%20at%2019.54.03.jpeg",
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/0053b5aa-bcca-44f1-8d3a-eaa871923d72.jpg?updatedAt=1772812335053",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/tinified/IMG_4193.jpg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/tinified/IMG_4192.jpg",
@@ -467,6 +469,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Hardcore – 10 dias é o roteiro mais intenso, desafiador e completo da Chapada Diamantina. Criado para quem busca uma experiência de expedição real, esse pacote reúne as trilhas mais exigentes, os cenários mais selvagens e os trekkings mais emblemáticos da região. Ao longo de dez dias, você enfrenta grandes caminhadas, cânions fechados, travessias de rio, desníveis acentuados e longas jornadas dentro da natureza bruta, incluindo uma travessia estendida pelo Vale do Pati, a imponente Cachoeira da Fumacinha e a clássica Cachoeira do Buracão. Um roteiro para quem quer ir ao limite, com segurança, planejamento e acompanhamento profissional do início ao fim.",
     img: "https://i.ibb.co/QgKwt63/39a35a2f-baf4-4448-ad24-c04a1c8d99b5.jpg",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/WhatsApp%20Image%202026-07-17%20at%2019.54.03.jpeg",
       "https://i.ibb.co/QgKwt63/39a35a2f-baf4-4448-ad24-c04a1c8d99b5.jpg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/tinified/IMG_4193.jpg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Cachoeira%20da%20fuma%C3%A7a/tinified/IMG_4192.jpg",
@@ -604,6 +607,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Horizonte – 5 dias é o pacote ideal para quem deseja explorar a Chapada Diamantina com mais tempo, profundidade e tranquilidade. Em um roteiro completo e bem distribuído, você visita grutas impressionantes, cachoeiras, poços de águas cristalinas, áreas alagadas de beleza singular e mirantes icônicos, sempre com acompanhamento de guia local, transporte, taxas e alimentação inclusos. Uma experiência rica, equilibrada e inesquecível para quem quer conhecer a Chapada além do básico.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20horizonte.jpg?updatedAt=1772372074372",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Horizonte/FOTO-DE-CAPA.jpg?updatedAt=1772812282804",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7106.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7110.JPG.jpeg",
@@ -638,7 +642,7 @@ export const tours: Tour[] = [
     ],
     duration: "5 Dias",
     difficulty: "Leve",
-    price: "R$ 1.800,00",
+    price: "R$ 1.970,00",
     highlights: [
       "Banhos em poços, rios e cachoeiras de águas cristalinas",
       "Visitas a grutas e fenômenos naturais únicos no Brasil",
@@ -740,6 +744,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Serena – 6 dias é um roteiro pensado para quem deseja viver a Chapada Diamantina com calma, profundidade e conexão com a natureza. Ao longo de seis dias bem distribuídos, você visita os principais clássicos da região, explora áreas preservadas, conhece cachoeiras grandiosas, poços de águas cristalinas e paisagens únicas, com tempo para contemplar, relaxar e aproveitar cada experiência. O pacote inclui guia local, transporte, taxas, alimentação durante os passeios e hospedagem com café da manhã, garantindo conforto, segurança e uma vivência completa.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20serena.jpg?updatedAt=1772372075493",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Serena/cb29d010-088e-4b95-99d3-9415123524cd.jpg?updatedAt=1772812390482",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7106.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7110.JPG.jpeg",
@@ -892,6 +897,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Selvagem – 6 dias é um roteiro voltado para quem deseja viver a Chapada Diamantina de forma intensa, autêntica e profundamente conectada à natureza. A experiência combina uma travessia completa pelo Vale do Pati, com hospedagem e alimentação em casas de nativos, trilhas em áreas remotas, cachoeiras monumentais e fenômenos naturais únicos. Ao longo de seis dias, o viajante vivencia a Chapada de dentro para fora, com pernoites estratégicos, logística bem planejada e acompanhamento profissional do início ao fim.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20selvagem.jpg?updatedAt=1772372077779",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/WhatsApp%20Image%202026-07-17%20at%2019.54.03.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Selvagem/7eec9d7c-24fb-4050-bf51-9d914963ca21.jpg?updatedAt=1772812361028",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4034.jpg.jpeg?updatedAt=1774913476495",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4033.jpg.jpeg?updatedAt=1774913476833",
@@ -1009,6 +1015,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Clássica – 4 dias é o roteiro ideal para quem quer vivenciar a Chapada Diamantina de forma completa, equilibrando natureza, aventura leve e conforto. Em quatro dias bem distribuídos, você conhece grutas impressionantes, cachoeiras exuberantes, poços de águas cristalinas e mirantes icônicos, com acompanhamento de guia local, transporte, taxas e alimentação inclusos. Um pacote completo para quem quer conhecer os clássicos da Chapada com tranquilidade e segurança.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20classica.avif?updatedAt=1772372091229",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20classica/IMG-9466.jpg?updatedAt=1772812165593",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7106.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7110.JPG.jpeg",
@@ -1133,6 +1140,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Adventure: 3 dias é o roteiro ideal para quem busca uma experiência intensa e marcante na Chapada Diamantina em pouco tempo. Em três dias bem planejados, o pacote reúne duas das trilhas mais impressionantes e desafiadoras da região — Buracão e Fumacinha — combinadas com fenômenos naturais únicos, como o Poço Encantado e o Poço Azul. O roteiro inclui pernoites estratégicos em comunidades locais e pousada, proporcionando conforto, logística eficiente e imersão na natureza, sempre com acompanhamento profissional do início ao fim.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20adventure.jpg?updatedAt=1772372074347",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/WhatsApp%20Image%202026-07-17%20at%2019.54.03.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Adventure/f65c3a32-a0c9-4f83-8f9f-b0648d117c16.jpg?updatedAt=1772812123253",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4034.jpg.jpeg?updatedAt=1774913476495",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4033.jpg.jpeg?updatedAt=1774913476833",
@@ -1148,7 +1156,7 @@ export const tours: Tour[] = [
     ],
     duration: "3 Dias",
     difficulty: "Intermediário",
-    price: "R$ 1.800,00",
+    price: "R$ 2.100,00",
     highlights: [
       "Trilhas emblemáticas e de nível moderado a intenso",
       "Cânions profundos e cachoeiras monumentais",
@@ -1231,6 +1239,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Express – 2 dias é perfeito para quem quer conhecer o melhor da Chapada Diamantina em pouco tempo. Em um roteiro prático e bem organizado, você visita grutas, poços e cachoeiras, além do famoso Morro do Pai Inácio, com guia local, transporte, taxas e alimentação inclusos. Uma experiência segura, completa e inesquecível.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20express.jpg?updatedAt=1772372074459",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20express/IMG-0396.jpg?updatedAt=1772812198309",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7106.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7110.JPG.jpeg",
@@ -1333,6 +1342,7 @@ export const tours: Tour[] = [
     fullDesc: "O Chapada Fácil – 3 dias é ideal para quem deseja conhecer os principais atrativos da Chapada Diamantina com tranquilidade, conforto e excelente custo-benefício. Em um roteiro bem distribuído, você visita grutas impressionantes, poços de águas cristalinas, cachoeiras e mirantes famosos, sempre acompanhado por guia local, com transporte, taxas e alimentação inclusos. Uma experiência completa, segura e inesquecível.",
     img: "https://ik.imagekit.io/ozcvccl1z/Capas/Capas%20dos%20pacotes/CAPA%20chapada%20facil.jpg?updatedAt=1772372074623",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20Facil/IMG-20250728-WA0043.jpg?updatedAt=1772812253872",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7106.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Mosquito/Mosquito/IMG_7110.JPG.jpeg",
@@ -1447,6 +1457,7 @@ export const tours: Tour[] = [
     fullDesc: "O roteiro Gruta da Lapa Doce, Fazenda Pratinha, Gruta Azul e Morro do Pai Inácio reúne alguns dos atrativos mais famosos da Chapada Diamantina em um único dia. A experiência começa com a visita à Gruta da Lapa Doce, uma das maiores cavernas de calcário do Brasil, com impressionantes formações naturais. Em seguida, o passeio continua na Fazenda Pratinha, conhecida por suas águas cristalinas e pela Gruta Azul, onde a luz do sol cria um belo efeito azul na água. Para finalizar, a subida ao Morro do Pai Inácio revela um dos mirantes mais icônicos da Chapada, com vista panorâmica para a Serra do Sincorá.",
     img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_6229.JPG?updatedAt=1773060228788",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_7666.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pratinha/IMG_8597.HEIC?updatedAt=1773060230891",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pai%20inacio/Pai%20incaio/IMG_7147.JPG.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Pai%20inacio/Pai%20incaio/IMG_7132.JPG.jpeg",
@@ -1689,7 +1700,7 @@ export const tours: Tour[] = [
     ],
     duration: "1 Dia",
     difficulty: "Moderado",
-    price: "R$ 450,00",
+    price: "R$ 550,00",
     highlights: [
       "Trilha até o mirante da Cachoeira da Fumaça, uma das mais altas do Brasil",
       "Contemplação do cânion e da paisagem dos Gerais do Rio Preto",
@@ -1779,6 +1790,7 @@ export const tours: Tour[] = [
     fullDesc: "O roteiro Cachoeira do Buracão e Cachoeira da Fumacinha é uma das experiências mais intensas e impressionantes da Chapada Diamantina. Em dois dias de aventura na região de Ibicoara, o viajante explora dois dos cenários naturais mais grandiosos do parque. No primeiro dia, a trilha leva à Cachoeira do Buracão, famosa por sua queda de cerca de 85 metros cercada por um imenso cânion rochoso. No segundo dia, a jornada segue para a Cachoeira da Fumacinha, considerada uma das trilhas mais bonitas e desafiadoras da Chapada, com caminhada pelo leito do rio entre grandes blocos de pedra até alcançar a impressionante queda d'água de aproximadamente 100 metros. O roteiro inclui pernoite em casas de nativos, proporcionando uma experiência autêntica com café da manhã e jantar preparados pelos moradores locais.",
     img: "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/CAPA.jpg?updatedAt=1773059845452",
     images: [
+      "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/WhatsApp%20Image%202026-07-17%20at%2019.54.03.jpeg",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes%20de%201%20dia/Burac%C3%A3o%20e%20fumacinha/7eec9d7c-24fb-4050-bf51-9d914963ca21.jpg?updatedAt=1773059846068",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4034.jpg.jpeg?updatedAt=1774913476495",
       "https://ik.imagekit.io/ozcvccl1z/Pacotes/Chapada%20profunda/Burac%C3%A3o/IMG_4033.jpg.jpeg?updatedAt=1774913476833",
@@ -1900,7 +1912,7 @@ export const tours: Tour[] = [
     ],
     duration: "1 Dia",
     difficulty: "Leve",
-    price: "R$ 500,00",
+    price: "R$ 550,00",
     highlights: [
       "Travessia de canoa pelo Mini Pantanal Marimbus",
       "Contato com a paisagem alagada e biodiversidade da região",

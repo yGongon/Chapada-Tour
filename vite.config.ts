@@ -4,19 +4,16 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import { tours } from './src/data/tours';
 import { blogPosts } from './src/data/blogPosts';
-import { rooms } from './src/data/accommodations';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   const tourRoutes = tours.map(t => `/passeios/${t.slug}`);
   const blogRoutes = blogPosts.map(p => `/blog/${p.slug}`);
-  const roomRoutes = rooms.map(a => `/hospedagem/${a.slug}`);
 
   const staticRoutes = [
     '/',
     '/passeios',
-    '/hospedagem',
     '/sobre',
     '/blog',
     '/contato',
@@ -49,7 +46,7 @@ export default defineConfig(({ mode }) => {
       script: 'async',
       formatting: 'none',
       includedRoutes() {
-        return [...staticRoutes, ...tourRoutes, ...blogRoutes, ...roomRoutes];
+        return [...staticRoutes, ...tourRoutes, ...blogRoutes];
       },
     },
   };

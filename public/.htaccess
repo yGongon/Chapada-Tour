@@ -22,6 +22,19 @@ Options -Indexes -MultiViews
   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
   RewriteRule ^(.+)$ /$1.html [L]
 
+  # Se for um arquivo de recurso estático que não existe, retorne 404, NÃO o index.html
+  RewriteCond %{REQUEST_URI} \.(js|css|map|png|jpe?g|gif|svg|webp|woff2?|ttf|eot)$ [NC]
+  RewriteRule ^ - [R=404,L]
+
   # Tudo o mais → index.html (React Router cuida do roteamento)
   RewriteRule ^ /index.html [L]
 </IfModule>
+
+# Desativa cache para arquivos HTML para evitar problemas de versão (MIME type JS errors)
+<FilesMatch "\.html$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Menu, X, Instagram, MessageCircle } from 'lucide-react';
+import { MapPin, Menu, X, Instagram, MessageCircle, Zap } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -10,7 +10,6 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Início', path: '/' },
     { name: 'Passeios', path: '/passeios' },
-    { name: 'Hospedagem', path: '/hospedagem' },
     { name: 'Sobre Nós', path: '/sobre' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contato', path: '/contato' },
@@ -30,9 +29,28 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3">
-        <Link to="/" className="flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Promo Announcement Banner */}
+      <div className="bg-gradient-to-r from-stone-950 via-amber-950/90 to-stone-950 border-b border-amber-500/40 text-white text-xs sm:text-sm py-2 px-4 shadow-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 sm:gap-3 text-center flex-wrap">
+          <span className="inline-flex items-center gap-1 bg-amber-400 text-stone-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm">
+            <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+          </span>
+          <span className="text-amber-100 text-xs sm:text-sm">
+            Ganhe <strong>10% de desconto no PIX</strong> em todos os pacotes a partir de <strong>2 reservas</strong>!
+          </span>
+          <Link 
+            to="/passeios" 
+            className="text-amber-400 hover:text-white font-bold underline underline-offset-2 text-xs sm:text-sm ml-1 transition-colors"
+          >
+            Aproveitar &rarr;
+          </Link>
+        </div>
+      </div>
+
+      <nav className="w-full px-6 py-3">
+        <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3">
+          <Link to="/" className="flex items-center">
           <img 
             src="https://ik.imagekit.io/ozcvccl1z/LOGOMARCA1__2_-removebg-preview-1-e1736863590369-300x162.webp?updatedAt=1772365084253" 
             alt="Logo Chapada Tour - Agência de Turismo na Chapada Diamantina" 
@@ -87,7 +105,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-24 left-6 right-6 glass-card rounded-3xl p-8 flex flex-col gap-6 text-center shadow-2xl"
+            className="md:hidden absolute top-28 left-6 right-6 glass-card rounded-3xl p-8 flex flex-col gap-6 text-center shadow-2xl"
           >
             {navLinks.map((link) => (
               <Link 
@@ -118,7 +136,8 @@ const Navbar = () => {
         </motion.div>
       )}
       </AnimatePresence>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

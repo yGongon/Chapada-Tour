@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, ChevronLeft, Users, Compass, Heart, Shield, MapPin, Languages, Mountain, Utensils, ShieldCheck, Flame } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Users, Compass, Heart, Shield, MapPin, Languages, Mountain, Utensils, ShieldCheck, Flame, ShieldPlus, Zap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
@@ -10,6 +10,7 @@ import GuidesSection from '../components/GuidesSection';
 import TransferSection from '../components/TransferSection';
 import TripAdvisorReviews from '../components/TripAdvisorReviews';
 import { optimizeImageUrl, generateSrcSet } from '../utils/imageOptimizer';
+import { calculatePixDiscount } from '../utils/pricing';
 
 const Home = () => {
   const featuredTours = tours.slice(0, 2);
@@ -106,10 +107,22 @@ const Home = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-stone-950/80 border border-amber-400/50 backdrop-blur-md text-amber-200 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 shadow-2xl"
+          >
+            <span className="bg-amber-400 text-stone-950 text-[10px] uppercase font-black px-2 py-0.5 rounded-full tracking-wider flex items-center gap-1 shadow-sm">
+              <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+            </span>
+            <span className="text-amber-100">A partir de 2 reservas em todos os pacotes!</span>
+          </motion.div>
+
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="uppercase tracking-[0.3em] text-sm font-semibold mb-4 block"
           >
             Explore o Coração da Bahia
@@ -128,8 +141,8 @@ const Home = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link to="/passeios" className="bg-white text-brand-olive px-10 py-4 rounded-full font-semibold hover:bg-brand-cream transition-all flex items-center justify-center gap-2 group">
-              Ver Roteiros <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <Link to="/passeios" className="bg-white text-brand-olive px-10 py-4 rounded-full font-semibold hover:bg-brand-cream transition-all flex items-center justify-center gap-2 group shadow-xl">
+              Ver Roteiros com Desconto <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
@@ -175,50 +188,68 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {featuredTours.map((tour, idx) => (
-              <motion.div 
-                key={tour.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2, duration: 0.8 }}
-                whileHover={{ y: -10 }}
-                className="group"
-              >
-                <Link to={`/passeios/${tour.slug}`} className="block">
-                  <div className="relative overflow-hidden rounded-[2.5rem] mb-8 aspect-[3/2] shadow-lg">
-                    <img 
-                      src={optimizeImageUrl(tour.img, 800)} 
-                      srcSet={generateSrcSet(tour.img, [400, 800, 1200])}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      alt={`Passeio ${tour.title} na Chapada Diamantina - Chapada Tour`} 
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
-                    <div className="absolute top-6 left-6 flex flex-col gap-2">
-                      <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit">{tour.duration}</span>
-                      <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit shadow-lg ${
-                        tour.difficulty === 'Leve' ? 'bg-green-500 text-white' : 
-                        tour.difficulty === 'Moderado' ? 'bg-orange-500 text-white' : 
-                        'bg-red-500 text-white'
-                      }`}>
-                        {tour.difficulty}
-                      </span>
-                    </div>
-                    <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                      <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-olive shadow-2xl">
-                        <ChevronRight size={28} />
+            {featuredTours.map((tour, idx) => {
+              const pricing = calculatePixDiscount(tour.price, 2);
+              return (
+                <motion.div 
+                  key={tour.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2, duration: 0.8 }}
+                  whileHover={{ y: -10 }}
+                  className="group"
+                >
+                  <Link to={`/passeios/${tour.slug}`} className="block">
+                    <div className="relative overflow-hidden rounded-[2.5rem] mb-8 aspect-[3/2] shadow-lg">
+                      <img 
+                        src={optimizeImageUrl(tour.img, 800)} 
+                        srcSet={generateSrcSet(tour.img, [400, 800, 1200])}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        alt={`Passeio ${tour.title} na Chapada Diamantina - Chapada Tour`} 
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+                      <div className="absolute top-6 left-6 flex flex-col gap-2">
+                        <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit">{tour.duration}</span>
+                        <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit shadow-lg ${
+                          tour.difficulty === 'Leve' ? 'bg-green-500 text-white' : 
+                          tour.difficulty === 'Moderado' ? 'bg-orange-500 text-white' : 
+                          'bg-red-500 text-white'
+                        }`}>
+                          {tour.difficulty}
+                        </span>
+                      </div>
+                      <div className="absolute top-6 right-6">
+                        <span className="bg-amber-400 text-stone-950 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-xl flex items-center gap-1.5 border border-amber-300">
+                          <Zap size={12} className="fill-stone-950 text-stone-950" />
+                          10% OFF no PIX (2+ vagas)
+                        </span>
+                      </div>
+                      <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-olive shadow-2xl">
+                          <ChevronRight size={28} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-serif mb-4 group-hover:text-brand-olive transition-colors">{tour.title}</h3>
-                  <p className="text-stone-500 text-lg mb-4 line-clamp-2 leading-relaxed">{tour.desc}</p>
-                </Link>
-              </motion.div>
-            ))}
+                    <h3 className="text-3xl md:text-4xl font-serif mb-3 group-hover:text-brand-olive transition-colors">{tour.title}</h3>
+                    <p className="text-stone-500 text-lg mb-4 line-clamp-2 leading-relaxed">{tour.desc}</p>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 pt-3 border-t border-stone-200/60">
+                      <span className="text-stone-400 text-xs uppercase tracking-wider font-semibold">A partir de</span>
+                      <span className="text-sm text-stone-400 line-through decoration-amber-700/60 font-semibold">{tour.price}</span>
+                      <span className="text-2xl font-serif text-brand-earth font-black">{pricing.unitWithDiscountFormatted}</span>
+                      <span className="text-[11px] bg-amber-100 text-amber-950 border border-amber-300 font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                        <span className="bg-amber-400 text-stone-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-xs">-10%</span>
+                        no PIX (2+ vagas)
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -246,14 +277,15 @@ const Home = () => {
             O que você vive na Chapada com a gente
           </motion.h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-16 gap-x-8">
+          <div className="flex flex-wrap justify-center gap-y-16 gap-x-8 lg:gap-x-12">
             {[
               { label: "+5 mil vidas guiadas", icon: <Users size={32} /> },
               { label: "Experiência profunda na chapada", icon: <Mountain size={32} /> },
               { label: "+10 anos de experiência", icon: <Compass size={32} /> },
               { label: "Cadastur 100% regularizado", icon: <ShieldCheck size={32} /> },
               { label: "80% da renda para moradores locais", icon: <Heart size={32} /> },
-              { label: "Idiomas: PT, EN, FR, ES", icon: <Languages size={32} /> }
+              { label: "Idiomas: PT, EN, FR, ES", icon: <Languages size={32} /> },
+              { label: "Seguro viagem incluso", icon: <ShieldPlus size={32} /> }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -261,7 +293,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="flex flex-col items-center text-center group"
+                className="flex flex-col items-center text-center group w-[40%] md:w-[28%] lg:w-[12%]"
               >
                 <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
                   {/* Overlapping Circles */}
@@ -375,46 +407,66 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {popularTours.map((tour, idx) => (
-              <motion.div 
-                key={tour.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-stone-100"
-              >
-                <Link to={`/passeios/${tour.slug}`} className="block">
-                  <div className="relative aspect-[3/2] overflow-hidden">
-                    <img 
-                      src={optimizeImageUrl(tour.img, 600)} 
-                      srcSet={generateSrcSet(tour.img, [400, 800])}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      alt={`Passeio popular: ${tour.title} - Chapada Tour`} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg ${
-                      tour.difficulty === 'Leve' ? 'bg-green-500 text-white' : 
-                      tour.difficulty === 'Moderado' ? 'bg-orange-500 text-white' : 
-                      'bg-red-500 text-white'
-                    }`}>
-                      {tour.difficulty}
+            {popularTours.map((tour, idx) => {
+              const pricing = calculatePixDiscount(tour.price, 2);
+              return (
+                <motion.div 
+                  key={tour.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-stone-100"
+                >
+                  <Link to={`/passeios/${tour.slug}`} className="block">
+                    <div className="relative aspect-[3/2] overflow-hidden">
+                      <img 
+                        src={optimizeImageUrl(tour.img, 600)} 
+                        srcSet={generateSrcSet(tour.img, [400, 800])}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        alt={`Passeio popular: ${tour.title} - Chapada Tour`} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg ${
+                        tour.difficulty === 'Leve' ? 'bg-green-500 text-white' : 
+                        tour.difficulty === 'Moderado' ? 'bg-orange-500 text-white' : 
+                        'bg-red-500 text-white'
+                      }`}>
+                        {tour.difficulty}
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-amber-400 text-stone-950 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1 border border-amber-300">
+                          <Zap size={10} className="fill-stone-950 text-stone-950" />
+                          10% OFF no PIX
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-10">
-                    <h4 className="text-2xl font-serif mb-4 group-hover:text-brand-olive transition-colors">{tour.title}</h4>
-                    <p className="text-stone-500 text-sm mb-8 line-clamp-2 leading-relaxed">{tour.desc}</p>
-                    <div className="flex items-center justify-between pt-6 border-t border-stone-100">
-                      <span className="text-brand-olive font-bold text-lg">{tour.price}</span>
-                      <span className="text-stone-400 text-xs font-semibold uppercase tracking-wider">{tour.duration}</span>
+                    <div className="p-8">
+                      <h4 className="text-2xl font-serif mb-3 group-hover:text-brand-olive transition-colors">{tour.title}</h4>
+                      <p className="text-stone-500 text-sm mb-6 line-clamp-2 leading-relaxed">{tour.desc}</p>
+                      <div className="pt-4 border-t border-stone-100">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-stone-400 text-xs font-semibold uppercase tracking-wider">{tour.duration}</span>
+                          <span className="text-stone-400 text-xs line-through decoration-amber-700/60 font-semibold">{tour.price}</span>
+                        </div>
+                        <div className="flex items-baseline justify-between">
+                          <span className="text-brand-earth font-black text-xl font-serif">
+                            {pricing.unitWithDiscountFormatted}
+                          </span>
+                          <span className="text-[10px] bg-amber-100 text-amber-950 font-extrabold px-2 py-0.5 rounded-full border border-amber-300 flex items-center gap-1">
+                            <span className="bg-amber-400 text-stone-950 font-black text-[9px] px-1 rounded">-10%</span>
+                            no PIX (2+ vagas)
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -470,36 +522,50 @@ const Home = () => {
               ref={scrollRef}
               className="flex gap-8 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory scroll-smooth"
             >
-              {oneDayTours.map((tour, idx) => (
-                <motion.div 
-                  key={tour.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="min-w-[300px] md:min-w-[400px] snap-start bg-stone-50 rounded-[2.5rem] overflow-hidden group border border-stone-100 shadow-sm hover:shadow-xl transition-all"
-                >
-                  <Link to={`/passeios/${tour.slug}`} className="block">
-                    <div className="relative aspect-[4/5] overflow-hidden">
-                      <img 
-                        src={optimizeImageUrl(tour.img, 600)} 
-                        alt={`Passeio de 1 dia: ${tour.title} na Chapada Diamantina`} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
-                      <div className="absolute bottom-8 left-8 right-8 text-white">
-                        <h4 className="text-2xl font-serif mb-3 leading-tight">{tour.title}</h4>
-                        <div className="flex items-center justify-between">
-                          <span className="text-white font-bold text-lg">{tour.price}</span>
-                          <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold border border-white/30">Ver Detalhes</span>
+              {oneDayTours.map((tour, idx) => {
+                const pricing = calculatePixDiscount(tour.price, 2);
+                return (
+                  <motion.div 
+                    key={tour.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="min-w-[300px] md:min-w-[400px] snap-start bg-stone-50 rounded-[2.5rem] overflow-hidden group border border-stone-100 shadow-sm hover:shadow-xl transition-all"
+                  >
+                    <Link to={`/passeios/${tour.slug}`} className="block">
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <img 
+                          src={optimizeImageUrl(tour.img, 600)} 
+                          alt={`Passeio de 1 dia: ${tour.title} na Chapada Diamantina`} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          referrerPolicy="no-referrer"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-4 right-4 z-10">
+                          <span className="bg-amber-400 text-stone-950 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1 border border-amber-300">
+                            <Zap size={10} className="fill-stone-950 text-stone-950" />
+                            10% OFF no PIX
+                          </span>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-75" />
+                        <div className="absolute bottom-8 left-8 right-8 text-white z-10">
+                          <h4 className="text-2xl font-serif mb-2 leading-tight">{tour.title}</h4>
+                          <div className="flex flex-wrap items-baseline gap-2 mb-3">
+                            <span className="text-stone-300 text-xs line-through decoration-amber-400 font-semibold">{tour.price}</span>
+                            <span className="text-amber-300 font-black text-xl font-serif">{pricing.unitWithDiscountFormatted}</span>
+                            <span className="bg-amber-400 text-stone-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-xs">-10% no PIX</span>
+                          </div>
+                          <div className="flex items-center justify-between pt-2 border-t border-white/20">
+                            <span className="text-white/80 text-xs font-semibold uppercase tracking-wider">1 Dia</span>
+                            <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold border border-white/30 group-hover:bg-white group-hover:text-stone-900 transition-colors">Ver Detalhes</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
