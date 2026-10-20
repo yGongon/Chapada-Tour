@@ -171,3 +171,18 @@ body {
 iframe.goog-te-banner-frame {
   display: none !important;
 }
+
+/* Custom scrollbar for sticky sidebar */
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 9999px;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}

@@ -175,7 +175,7 @@ const TourDetail = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start relative">
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -280,12 +280,6 @@ const TourDetail = () => {
                       Valor por pessoa no PIX para 2 ou mais pessoas em reservas de <strong>Outubro e Novembro</strong>
                     </p>
 
-                    <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
-                      <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
-                      <span>
-                        Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas nos meses de <strong>outubro e novembro</strong> (preço individual: <span className="line-through">{tour.price}</span>).
-                      </span>
-                    </div>
                     <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
                   </div>
                   <div className="mb-8">
@@ -594,88 +588,81 @@ const TourDetail = () => {
             </motion.div>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="lg:col-span-1 hidden lg:block"
-          >
-            <div className="sticky top-32">
-              <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-stone-100">
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
-                    <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
-                      <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (OUT & NOV)
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap items-baseline gap-2.5">
-                    <span className="text-lg text-stone-400 line-through decoration-amber-700/60 font-semibold">
-                      {tour.price}
-                    </span>
-                    <p className="text-4xl font-serif font-black text-brand-earth">
-                      {pricingPix.unitWithDiscountFormatted}
-                    </p>
-                    <span className="bg-amber-400 text-stone-950 text-xs font-black px-2 py-0.5 rounded-full shadow-sm">
-                      -10%
-                    </span>
-                  </div>
-                  <p className="text-xs text-stone-500 font-medium mt-1">
-                    Valor por pessoa no PIX para 2 ou mais pessoas em reservas de <strong>Outubro e Novembro</strong>
-                  </p>
-
-                  <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
-                    <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
-                    <span>
-                      Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas nos meses de <strong>outubro e novembro</strong> (preço individual: <span className="line-through">{tour.price}</span>).
-                    </span>
-                  </div>
-                  <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
+          {/* Desktop Booking & Pricing Sidebar */}
+          <div className="lg:col-span-1 hidden lg:block">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="bg-white p-6 lg:p-8 rounded-[2rem] shadow-xl border border-stone-100"
+            >
+              <div className="mb-5">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
+                  <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
+                    <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (OUT & NOV)
+                  </span>
                 </div>
 
-                <div className="mb-8">
-                  <BookingCalendar tour={tour} />
-                </div>
-
-                <div className="mt-8 pt-8 border-t border-stone-100">
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-stone-400 mb-4">Reserva e Pagamento</h4>
-                  <p className="text-xs text-stone-600 leading-relaxed mb-4">
-                    Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
+                <div className="flex flex-wrap items-baseline gap-2.5">
+                  <span className="text-lg text-stone-400 line-through decoration-amber-700/60 font-semibold">
+                    {tour.price}
+                  </span>
+                  <p className="text-3xl lg:text-4xl font-serif font-black text-brand-earth">
+                    {pricingPix.unitWithDiscountFormatted}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <a 
-                      href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
-                        `Olá! Acessei o site da Chapada Tour e gostaria de informações sobre a promoção de 10% de desconto no PIX e formas de pagamento para o pacote "${tour.title}".`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[10px] bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1 transition-colors cursor-pointer"
-                      title="Falar sobre desconto PIX no WhatsApp"
-                    >
-                      ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
-                    </a>
-                    {['Cartão', 'Dinheiro'].map(tag => (
-                      <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
-                    ))}
-                  </div>
+                  <span className="bg-amber-400 text-stone-950 text-xs font-black px-2 py-0.5 rounded-full shadow-sm">
+                    -10%
+                  </span>
+                </div>
+                <p className="text-xs text-stone-500 font-medium mt-1">
+                  Valor por pessoa no PIX para 2 ou mais pessoas em reservas de <strong>Outubro e Novembro</strong>
+                </p>
 
-                  <a
+                <p className="text-xs text-stone-400 mt-1.5">* Grupos privativos sob consulta.</p>
+              </div>
+
+              <div className="mb-6">
+                <BookingCalendar tour={tour} />
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-stone-100">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-2.5">Reserva e Pagamento</h4>
+                <p className="text-xs text-stone-600 leading-relaxed mb-3">
+                  Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  <a 
                     href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
-                      `Olá! Acessei o site da Chapada Tour e gostaria de falar com um atendente sobre o pagamento e confirmação de reserva do pacote "${tour.title}".`
+                      `Olá! Acessei o site da Chapada Tour e gostaria de informações sobre a promoção de 10% de desconto no PIX e formas de pagamento para o pacote "${tour.title}".`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-stone-900 hover:bg-brand-olive text-white py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md group cursor-pointer"
+                    className="text-[10px] bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1 transition-colors cursor-pointer"
+                    title="Falar sobre desconto PIX no WhatsApp"
                   >
-                    <MessageCircle size={16} className="text-amber-400 group-hover:scale-110 transition-transform" />
-                    <span>Falar sobre Pagamento no WhatsApp</span>
+                    ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
                   </a>
+                  {['Cartão', 'Dinheiro'].map(tag => (
+                    <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
+                  ))}
                 </div>
+
+                <a
+                  href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
+                    `Olá! Acessei o site da Chapada Tour e gostaria de falar com um atendente sobre o pagamento e confirmação de reserva do pacote "${tour.title}".`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-stone-900 hover:bg-brand-olive text-white py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md group cursor-pointer"
+                >
+                  <MessageCircle size={15} className="text-amber-400 group-hover:scale-110 transition-transform" />
+                  <span>Falar sobre Pagamento no WhatsApp</span>
+                </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
