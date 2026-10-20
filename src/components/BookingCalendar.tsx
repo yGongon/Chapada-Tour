@@ -19,27 +19,36 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
   const selectedMonth = selectedDate ? parseInt(selectedDate.split('-')[1], 10) : null;
   const isPromoMonth = selectedMonth === 10 || selectedMonth === 11; // 10 = Outubro, 11 = Novembro
 
-  const handleReserve = () => {
+  const formattedSelectedDate = selectedDate ? (() => {
+    const [year, month, day] = selectedDate.split('-');
+    return `${day}/${month}/${year}`;
+  })() : null;
+
+  const whatsappUrl = React.useMemo(() => {
     const phoneNumber = "5575998188802";
-    let message = `Olá! Acessei o site e tenho interesse no pacote "${tour.title}"`;
+    let message = `Olá! Acessei o site da Chapada Tour e tenho interesse no pacote "${tour.title}".`;
     
-    if (selectedDate) {
-      // Format date from YYYY-MM-DD to DD/MM/YYYY
-      const [year, month, day] = selectedDate.split('-');
-      const formattedDate = `${day}/${month}/${year}`;
-      message += `, para a data: ${formattedDate}`;
+    if (formattedSelectedDate) {
+      message += `\n📅 Data pretendida: ${formattedSelectedDate}`;
+    } else {
+      message += `\n📅 Data: A combinar / Consultar disponibilidade`;
     }
     
-    message += `, para ${peopleCount} ${peopleCount === 1 ? 'pessoa' : 'pessoas'}.`;
+    message += `\n👥 Quantidade de pessoas: ${peopleCount} ${peopleCount === 1 ? 'pessoa' : 'pessoas'}`;
 
     if (pricing.hasDiscount && (isPromoMonth || !selectedDate)) {
-      message += ` Gostaria de aproveitar a promoção de 10% de desconto no PIX para ${peopleCount} reservas nos meses de Outubro e Novembro (Valor estimado no PIX: ${pricing.totalWithDiscountFormatted}).`;
+      message += `\n🎉 Promoção 10% OFF no PIX (Outubro e Novembro):`;
+      message += `\n   - Valor total no PIX: ${pricing.totalWithDiscountFormatted}`;
+      message += `\n   - Economia total: ${pricing.savedAmountFormatted}`;
+      message += `\n   - Por pessoa: ${pricing.unitWithDiscountFormatted}`;
+    } else {
+      message += `\n💵 Valor total estimado: ${pricing.totalOriginalFormatted}`;
     }
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-  };
+    message += `\n\nGostaria de confirmar a reserva e os dados para pagamento do sinal de 30%.`;
+
+    return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  }, [tour.title, formattedSelectedDate, peopleCount, pricing, isPromoMonth, selectedDate]);
 
   return (
     <div className="space-y-4">
@@ -60,7 +69,7 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
             className="w-full bg-stone-50 border border-stone-200 p-4 pl-12 rounded-2xl focus:outline-none focus:border-brand-olive transition-all text-sm font-medium text-stone-900 appearance-none cursor-pointer"
           />
         </div>
-        {selectedDate && (
+        {selectedDate ? (
           <p className="text-[11px] mt-1.5 px-1 font-medium">
             {isPromoMonth ? (
               <span className="text-amber-800 font-bold flex items-center gap-1">
@@ -71,6 +80,10 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
                 * A promoção de 10% OFF no PIX é exclusiva para os meses de <strong>Outubro e Novembro</strong>.
               </span>
             )}
+          </p>
+        ) : (
+          <p className="text-[11px] mt-1.5 px-1 text-stone-500">
+            Selecione uma data acima ou combine diretamente no WhatsApp.
           </p>
         )}
       </div>
@@ -138,26 +151,33 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
         </div>
       )}
 
-      <button
-        onClick={handleReserve}
-        className={`w-full font-bold py-5 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-2 group ${
-          !selectedDate 
-            ? 'bg-stone-200 text-stone-400 cursor-not-allowed' 
-            : 'bg-brand-olive text-white hover:bg-stone-800 shadow-brand-olive/20'
-        }`}
-        disabled={!selectedDate}
+      {/* WhatsApp Action Button - Always clickable on PC and Mobile */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full font-bold py-4 px-6 rounded-2xl transition-all shadow-lg flex flex-col items-center justify-center gap-1 bg-brand-olive hover:bg-stone-800 text-white shadow-brand-olive/20 group cursor-pointer"
       >
-        <MessageCircle size={20} />
-        {selectedDate 
-          ? (pricing.hasDiscount && (isPromoMonth || !selectedDate) ? 'Reservar com 10% OFF no PIX' : 'Reservar para esta data') 
-          : 'Reservar este Passeio'}
-      </button>
+        <span className="flex items-center justify-center gap-2 text-base">
+          <MessageCircle size={22} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+          {selectedDate
+            ? (pricing.hasDiscount && isPromoMonth 
+                ? 'Reservar no WhatsApp com 10% OFF' 
+                : `Reservar no WhatsApp (${formattedSelectedDate})`)
+            : (pricing.hasDiscount
+                ? 'Reservar no WhatsApp com 10% OFF'
+                : 'Reservar via WhatsApp')}
+        </span>
+        <span className="text-[11px] font-normal text-stone-200">
+          {selectedDate 
+            ? 'Clique para abrir o WhatsApp e confirmar sua reserva'
+            : 'Clique para falar com o atendente e definir sua data'}
+        </span>
+      </a>
       
-      {!selectedDate && (
-        <p className="text-[10px] text-center text-stone-400 animate-pulse">
-          Escolha uma data no calendário acima para habilitar a reserva
-        </p>
-      )}
+      <p className="text-[11px] text-center text-stone-500">
+        💬 Atendimento rápido via WhatsApp para confirmação e pagamento (PIX / Cartão)
+      </p>
     </div>
   );
 };

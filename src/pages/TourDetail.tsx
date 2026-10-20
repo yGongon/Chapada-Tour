@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play, Activity, Waves, Car, Footprints, Mountain, Zap, Sparkles } from 'lucide-react';
+import { Clock, Star, CheckCircle2, ArrowLeft, Calendar, Phone, Share2, Copy, Mail, Facebook, Twitter, Check, ChevronLeft, ChevronRight, MapPin, Utensils, Home, Briefcase, HelpCircle, AlertCircle, X, Play, Activity, Waves, Car, Footprints, Mountain, Zap, Sparkles, MessageCircle } from 'lucide-react';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
 import { SEO_KEYWORDS } from '../constants/seoKeywords';
@@ -296,14 +296,34 @@ const TourDetail = () => {
                     <p className="text-xs text-stone-600 leading-relaxed mb-4">
                       Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <a 
+                        href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
+                          `Olá! Acessei o site da Chapada Tour e gostaria de informações sobre a promoção de 10% de desconto no PIX e formas de pagamento para o pacote "${tour.title}".`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1 transition-colors cursor-pointer"
+                        title="Falar sobre desconto PIX no WhatsApp"
+                      >
                         ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
-                      </span>
+                      </a>
                       {['Cartão', 'Dinheiro'].map(tag => (
                         <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
                       ))}
                     </div>
+
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
+                        `Olá! Acessei o site da Chapada Tour e gostaria de falar com um atendente sobre o pagamento e confirmação de reserva do pacote "${tour.title}".`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-stone-900 hover:bg-brand-olive text-white py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md group cursor-pointer"
+                    >
+                      <MessageCircle size={16} className="text-amber-400 group-hover:scale-110 transition-transform" />
+                      <span>Falar sobre Pagamento no WhatsApp</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -624,14 +644,34 @@ const TourDetail = () => {
                   <p className="text-xs text-stone-600 leading-relaxed mb-4">
                     Reserva confirmada mediante pagamento antecipado de 30%. O restante deve ser pago até 1 dia antes do passeio.
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <a 
+                      href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
+                        `Olá! Acessei o site da Chapada Tour e gostaria de informações sobre a promoção de 10% de desconto no PIX e formas de pagamento para o pacote "${tour.title}".`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1 transition-colors cursor-pointer"
+                      title="Falar sobre desconto PIX no WhatsApp"
+                    >
                       ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
-                    </span>
+                    </a>
                     {['Cartão', 'Dinheiro'].map(tag => (
                       <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
                     ))}
                   </div>
+
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=5575998188802&text=${encodeURIComponent(
+                      `Olá! Acessei o site da Chapada Tour e gostaria de falar com um atendente sobre o pagamento e confirmação de reserva do pacote "${tour.title}".`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-stone-900 hover:bg-brand-olive text-white py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md group cursor-pointer"
+                  >
+                    <MessageCircle size={16} className="text-amber-400 group-hover:scale-110 transition-transform" />
+                    <span>Falar sobre Pagamento no WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </div>
