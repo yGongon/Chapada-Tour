@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Users, Clock, Star, Search, X, Zap, Sparkles } from 'lucide-react';
+import { Users, Clock, Star, Search, X, Zap, Sparkles, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 import SEO from '../components/SEO';
@@ -90,15 +90,23 @@ const Tours = () => {
               </div>
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-white">Todos os pacotes com 10% de desconto no PIX</h2>
               <p className="text-stone-300 text-xs sm:text-sm mt-1">
-                Válido para pagamentos via PIX em reservas a partir de <strong>2 pessoas</strong>. Escolha qualquer roteiro e garanta sua economia!
+                Promoção exclusiva para reservas nos meses de <strong>outubro e novembro</strong>! Válido para pagamentos via PIX em reservas a partir de <strong>2 pessoas</strong> em qualquer roteiro.
               </p>
             </div>
           </div>
-          <div className="shrink-0 bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/15 text-center w-full md:w-auto">
-            <span className="text-[11px] uppercase tracking-wider text-amber-300 font-bold block">Válido a partir de</span>
-            <span className="text-lg font-bold text-white flex items-center justify-center gap-1.5">
-              <Users size={18} className="text-amber-400" /> 2 Pessoas / Reservas
-            </span>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+            <div className="bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 text-center flex-1 sm:flex-initial">
+              <span className="text-[11px] uppercase tracking-wider text-amber-300 font-bold block">Período</span>
+              <span className="text-sm sm:text-base font-bold text-white flex items-center justify-center gap-1.5 mt-0.5">
+                <Calendar size={16} className="text-amber-400" /> Outubro & Novembro
+              </span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 text-center flex-1 sm:flex-initial">
+              <span className="text-[11px] uppercase tracking-wider text-amber-300 font-bold block">A partir de</span>
+              <span className="text-sm sm:text-base font-bold text-white flex items-center justify-center gap-1.5 mt-0.5">
+                <Users size={16} className="text-amber-400" /> 2 Pessoas
+              </span>
+            </div>
           </div>
         </motion.div>
 
@@ -129,7 +137,7 @@ const Tours = () => {
                           decoding="async"
                         />
                         <div className="absolute top-4 left-4 bg-amber-400 text-stone-950 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1 border border-amber-300">
-                          <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF no PIX
+                          <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF no PIX (Out/Nov)
                         </div>
                         <div className="absolute top-4 right-4 bg-stone-900/80 backdrop-blur-sm text-white px-3.5 py-1 rounded-full text-xs font-bold">
                           {tour.price}
@@ -166,7 +174,7 @@ const Tours = () => {
                         </span>
                       </div>
                       <p className="text-[10px] text-amber-900 font-medium text-right mt-0.5">
-                        por pessoa a partir de 2 reservas
+                        por pessoa a partir de 2 reservas • exclusivo p/ Outubro e Novembro
                       </p>
                     </div>
 

@@ -16,6 +16,9 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
 
   const pricing = calculatePixDiscount(tour.price, peopleCount);
 
+  const selectedMonth = selectedDate ? parseInt(selectedDate.split('-')[1], 10) : null;
+  const isPromoMonth = selectedMonth === 10 || selectedMonth === 11; // 10 = Outubro, 11 = Novembro
+
   const handleReserve = () => {
     const phoneNumber = "5575998188802";
     let message = `Olá! Acessei o site e tenho interesse no pacote "${tour.title}"`;
@@ -29,8 +32,8 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
     
     message += `, para ${peopleCount} ${peopleCount === 1 ? 'pessoa' : 'pessoas'}.`;
 
-    if (pricing.hasDiscount) {
-      message += ` Gostaria de aproveitar a condição de 10% de desconto no PIX para ${peopleCount} reservas (Valor estimado no PIX: ${pricing.totalWithDiscountFormatted}).`;
+    if (pricing.hasDiscount && (isPromoMonth || !selectedDate)) {
+      message += ` Gostaria de aproveitar a promoção de 10% de desconto no PIX para ${peopleCount} reservas nos meses de Outubro e Novembro (Valor estimado no PIX: ${pricing.totalWithDiscountFormatted}).`;
     }
 
     const encodedMessage = encodeURIComponent(message);
@@ -41,7 +44,12 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
   return (
     <div className="space-y-4">
       <div className="relative">
-        <p className="text-stone-400 text-xs uppercase tracking-widest font-bold mb-2">Selecione a data da sua viagem</p>
+        <div className="flex justify-between items-center mb-2">
+          <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Data da viagem</p>
+          <span className="text-[10px] text-amber-800 font-bold bg-amber-100/90 border border-amber-300 px-2 py-0.5 rounded-full">
+            Promoção: Outubro & Novembro
+          </span>
+        </div>
         <div className="relative group">
           <Calendar size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-olive pointer-events-none z-10" />
           <input
@@ -52,13 +60,26 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
             className="w-full bg-stone-50 border border-stone-200 p-4 pl-12 rounded-2xl focus:outline-none focus:border-brand-olive transition-all text-sm font-medium text-stone-900 appearance-none cursor-pointer"
           />
         </div>
+        {selectedDate && (
+          <p className="text-[11px] mt-1.5 px-1 font-medium">
+            {isPromoMonth ? (
+              <span className="text-amber-800 font-bold flex items-center gap-1">
+                ✓ Data em {selectedMonth === 10 ? 'Outubro' : 'Novembro'}: elegível para a promoção de 10% OFF no PIX (a partir de 2 pessoas)!
+              </span>
+            ) : (
+              <span className="text-stone-500">
+                * A promoção de 10% OFF no PIX é exclusiva para os meses de <strong>Outubro e Novembro</strong>.
+              </span>
+            )}
+          </p>
+        )}
       </div>
 
       <div className="relative">
         <div className="flex justify-between items-center mb-2">
           <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Quantidade de pessoas</p>
           <span className="text-[11px] font-bold text-amber-900 bg-amber-100/80 px-2.5 py-0.5 rounded-full border border-amber-300">
-            10% OFF no PIX a partir de 2
+            10% OFF no PIX (2+ pessoas • Out/Nov)
           </span>
         </div>
         <div className="relative group">
@@ -103,13 +124,16 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
             <p className="text-[11px] text-amber-900 font-medium pt-1 border-t border-amber-200/70">
               Equivalente a <strong className="font-bold text-amber-950 underline">{pricing.unitWithDiscountFormatted}</strong> por pessoa
             </p>
+            <p className="text-[10px] text-amber-800 font-semibold italic">
+              * Promoção válida exclusivamente para reservas nos meses de <strong>Outubro e Novembro</strong>.
+            </p>
           </div>
         </div>
       ) : (
         <div className="p-3.5 bg-amber-50/70 border border-amber-200/80 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950">
           <Zap size={16} className="text-amber-600 shrink-0 fill-amber-500" />
           <span>
-            Dica: Adicione mais <strong>1 pessoa</strong> para ativar <strong>10% de desconto no PIX</strong> neste pacote!
+            Dica: Adicione mais <strong>1 pessoa</strong> para reservas em <strong>Outubro ou Novembro</strong> e ative <strong>10% de desconto no PIX</strong>!
           </span>
         </div>
       )}
@@ -124,7 +148,9 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({ tour }) => {
         disabled={!selectedDate}
       >
         <MessageCircle size={20} />
-        {selectedDate ? (pricing.hasDiscount ? 'Reservar com 10% OFF no PIX' : 'Reservar para esta data') : 'Reservar este Passeio'}
+        {selectedDate 
+          ? (pricing.hasDiscount && (isPromoMonth || !selectedDate) ? 'Reservar com 10% OFF no PIX' : 'Reservar para esta data') 
+          : 'Reservar este Passeio'}
       </button>
       
       {!selectedDate && (

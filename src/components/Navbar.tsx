@@ -37,7 +37,7 @@ const Navbar = () => {
             <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
           </span>
           <span className="text-amber-100 text-xs sm:text-sm">
-            Ganhe <strong>10% de desconto no PIX</strong> em todos os pacotes a partir de <strong>2 reservas</strong>!
+            Ganhe <strong>10% de desconto no PIX</strong> em todos os pacotes a partir de <strong>2 reservas</strong> para os meses de <strong>Outubro e Novembro</strong>!
           </span>
           <Link 
             to="/passeios" 

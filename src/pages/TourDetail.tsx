@@ -248,7 +248,7 @@ const TourDetail = () => {
                     <Star size={14} /> {tour.difficulty}
                   </span>
                   <span className="bg-amber-400 text-stone-950 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 shadow-lg border border-amber-300">
-                    <Zap size={13} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (2+ PESSOAS)
+                    <Zap size={13} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (2+ PESSOAS • OUT & NOV)
                   </span>
                 </div>
               </div>
@@ -261,7 +261,7 @@ const TourDetail = () => {
                     <div className="flex items-center justify-between mb-2">
                       <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
                       <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
-                        <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+                        <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (OUT & NOV)
                       </span>
                     </div>
 
@@ -277,13 +277,13 @@ const TourDetail = () => {
                       </span>
                     </div>
                     <p className="text-xs text-stone-500 font-medium mt-1">
-                      Valor por pessoa no PIX para 2 ou mais vagas
+                      Valor por pessoa no PIX para 2 ou mais pessoas em reservas de <strong>Outubro e Novembro</strong>
                     </p>
 
                     <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
                       <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
                       <span>
-                        Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas (preço individual: <span className="line-through">{tour.price}</span>).
+                        Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas nos meses de <strong>outubro e novembro</strong> (preço individual: <span className="line-through">{tour.price}</span>).
                       </span>
                     </div>
                     <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
@@ -298,7 +298,7 @@ const TourDetail = () => {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
-                        ✓ Pix (10% OFF p/ 2+ reservas)
+                        ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
                       </span>
                       {['Cartão', 'Dinheiro'].map(tag => (
                         <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>
@@ -587,7 +587,7 @@ const TourDetail = () => {
                   <div className="flex items-center justify-between mb-2">
                     <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">Investimento</p>
                     <span className="bg-amber-400 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm flex items-center gap-1">
-                      <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
+                      <Zap size={10} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX (OUT & NOV)
                     </span>
                   </div>
 
@@ -603,13 +603,13 @@ const TourDetail = () => {
                     </span>
                   </div>
                   <p className="text-xs text-stone-500 font-medium mt-1">
-                    Valor por pessoa no PIX para 2 ou mais vagas
+                    Valor por pessoa no PIX para 2 ou mais pessoas em reservas de <strong>Outubro e Novembro</strong>
                   </p>
 
                   <div className="mt-3.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2.5 text-xs text-amber-950 font-medium shadow-sm">
                     <Sparkles size={16} className="text-amber-600 fill-amber-500 shrink-0" />
                     <span>
-                      Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas (preço individual: <span className="line-through">{tour.price}</span>).
+                      Pague apenas <strong className="text-amber-900 font-black">{pricingPix.unitWithDiscountFormatted}</strong> por pessoa no PIX em reservas para 2 ou mais pessoas nos meses de <strong>outubro e novembro</strong> (preço individual: <span className="line-through">{tour.price}</span>).
                     </span>
                   </div>
                   <p className="text-xs text-stone-400 mt-2">* Grupos privativos sob consulta.</p>
@@ -626,7 +626,7 @@ const TourDetail = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-1 rounded-md font-bold uppercase flex items-center gap-1">
-                      ✓ Pix (10% OFF p/ 2+ reservas)
+                      ✓ Pix (10% OFF p/ 2+ reservas em Out/Nov)
                     </span>
                     {['Cartão', 'Dinheiro'].map(tag => (
                       <span key={tag} className="text-[10px] bg-stone-100 px-2 py-1 rounded-md font-bold text-stone-500 uppercase">{tag}</span>

@@ -116,7 +116,7 @@ const Home = () => {
             <span className="bg-amber-400 text-stone-950 text-[10px] uppercase font-black px-2 py-0.5 rounded-full tracking-wider flex items-center gap-1 shadow-sm">
               <Zap size={11} className="fill-stone-950 text-stone-950" /> 10% OFF NO PIX
             </span>
-            <span className="text-amber-100">A partir de 2 reservas em todos os pacotes!</span>
+            <span className="text-amber-100">A partir de 2 reservas em todos os pacotes • Válido para Outubro e Novembro!</span>
           </motion.div>
 
           <motion.span 
@@ -226,7 +226,7 @@ const Home = () => {
                       <div className="absolute top-6 right-6">
                         <span className="bg-amber-400 text-stone-950 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-xl flex items-center gap-1.5 border border-amber-300">
                           <Zap size={12} className="fill-stone-950 text-stone-950" />
-                          10% OFF no PIX (2+ vagas)
+                          10% OFF no PIX (Out/Nov • 2+ vagas)
                         </span>
                       </div>
                       <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
@@ -243,7 +243,7 @@ const Home = () => {
                       <span className="text-2xl font-serif text-brand-earth font-black">{pricing.unitWithDiscountFormatted}</span>
                       <span className="text-[11px] bg-amber-100 text-amber-950 border border-amber-300 font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
                         <span className="bg-amber-400 text-stone-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-xs">-10%</span>
-                        no PIX (2+ vagas)
+                        no PIX (Out e Nov • 2+ vagas)
                       </span>
                     </div>
                   </Link>
@@ -440,7 +440,7 @@ const Home = () => {
                       <div className="absolute top-4 right-4">
                         <span className="bg-amber-400 text-stone-950 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1 border border-amber-300">
                           <Zap size={10} className="fill-stone-950 text-stone-950" />
-                          10% OFF no PIX
+                          10% OFF no PIX (Out/Nov)
                         </span>
                       </div>
                     </div>
@@ -458,7 +458,7 @@ const Home = () => {
                           </span>
                           <span className="text-[10px] bg-amber-100 text-amber-950 font-extrabold px-2 py-0.5 rounded-full border border-amber-300 flex items-center gap-1">
                             <span className="bg-amber-400 text-stone-950 font-black text-[9px] px-1 rounded">-10%</span>
-                            no PIX (2+ vagas)
+                            no PIX (Out/Nov • 2+ vagas)
                           </span>
                         </div>
                       </div>
@@ -545,7 +545,7 @@ const Home = () => {
                         <div className="absolute top-4 right-4 z-10">
                           <span className="bg-amber-400 text-stone-950 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1 border border-amber-300">
                             <Zap size={10} className="fill-stone-950 text-stone-950" />
-                            10% OFF no PIX
+                            10% OFF no PIX (Out/Nov)
                           </span>
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-75" />
@@ -554,7 +554,7 @@ const Home = () => {
                           <div className="flex flex-wrap items-baseline gap-2 mb-3">
                             <span className="text-stone-300 text-xs line-through decoration-amber-400 font-semibold">{tour.price}</span>
                             <span className="text-amber-300 font-black text-xl font-serif">{pricing.unitWithDiscountFormatted}</span>
-                            <span className="bg-amber-400 text-stone-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-xs">-10% no PIX</span>
+                            <span className="bg-amber-400 text-stone-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-xs">-10% no PIX (Out/Nov)</span>
                           </div>
                           <div className="flex items-center justify-between pt-2 border-t border-white/20">
                             <span className="text-white/80 text-xs font-semibold uppercase tracking-wider">1 Dia</span>
